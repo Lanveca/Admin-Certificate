@@ -202,8 +202,8 @@
       "Home Page Components",
       "Chatter"
     ],
-    "correctAnswers": [2],
-    "explanation": "Home Page Components allow users to customize their Home page layout."
+    "correctAnswers": [1],
+    "explanation": "The Lightning App Builder in Salesforce allows users (especially admins) to customize and personalize the Salesforce Home page."
   },
   {
     "id": 18,
