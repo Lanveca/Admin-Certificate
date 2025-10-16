@@ -2,7 +2,6 @@ class QuestionBank {
   constructor() {
     this.questions = [];
   }
-
   async loadQuestions() {
     try {
       const response = await fetch('questions.json');
@@ -24,14 +23,7 @@ const units_keywords = {
   'User Setup & Licensing': ['Users', 'User Setup', 'Licensing', 'Salesforce User Interface', 'Salesforce Mobile'],
   'Salesforce Platform & Lightning': ['Salesforce Platform', 'Lightning'],
   'Business Processes & Scenarios': [
-    'Business Scenario',
-    'Business Processes',
-    'Validations',
-    'Record Types',
-    'AppExchange',
-    'Audit',
-    'Cases',
-    'Mobile'
+    'Business Scenario', 'Business Processes', 'Validations', 'Record Types', 'AppExchange', 'Audit', 'Cases', 'Mobile'
   ]
 };
 
@@ -66,7 +58,6 @@ function showMainMenu() {
   examMode = false;
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
-
   const title = document.createElement('h1');
   title.textContent = 'Salesforce Admin Practice';
   appDiv.appendChild(title);
@@ -152,6 +143,7 @@ function showQuestion(question) {
     appDiv.appendChild(multiAns);
   }
 
+  // Respuestas
   question.options.forEach((opt, idx) => {
     const label = document.createElement('label');
     const inputType = question.correctAnswers.length > 1 ? 'checkbox' : 'radio';
@@ -166,7 +158,14 @@ function showQuestion(question) {
 
   const btn = document.createElement('button');
   btn.textContent = 'Submit';
-  btn.onclick = () => validateAnswer(question);
+  btn.onclick = function () {
+    // BLOQUEAR el botón
+    btn.disabled = true;
+    // BLOQUEAR las opciones
+    const inputs = document.querySelectorAll('input[name="option"]');
+    inputs.forEach(i => i.disabled = true);
+    validateAnswer(question);
+  };
   appDiv.appendChild(btn);
 }
 
@@ -176,7 +175,6 @@ function validateAnswer(question) {
   const correct =
     selected.length === question.correctAnswers.length &&
     selected.every(v => question.correctAnswers.includes(v));
-
   const appDiv = document.getElementById('app');
 
   const result = document.createElement('p');
@@ -260,6 +258,20 @@ function showExamQuestion(question) {
   btnsWrapper.appendChild(earlyFinishBtn);
 
   appDiv.appendChild(btnsWrapper);
+
+  // --- BLOQUEAR Submit múltiples en modo examen ---
+  // Solo permitir contestar una vez
+  const inputs = document.querySelectorAll('input[name="option"]');
+  inputs.forEach((i) => {
+    i.addEventListener('change', () => {
+      // Si ya se ha respondido guardamos respuesta y bloqueamos
+      if (![...inputs].some(x => x.checked)) return;
+      // Deshabilitar tras seleccionar
+      setTimeout(() => {
+        inputs.forEach(x => x.disabled = true);
+      }, 100);
+    });
+  });
 }
 
 function captureExamAnswer(question) {
