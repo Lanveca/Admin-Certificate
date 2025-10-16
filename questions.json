@@ -1,0 +1,1841 @@
+[
+  {
+    "id": 1,
+    "module": "Salesforce Basics",
+    "question": "What is Salesforce primarily used for?",
+    "options": [
+      "Customer Relationship Management",
+      "Graphic Design",
+      "Data Mining",
+      "Video Editing"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Salesforce is primarily a CRM platform used to manage customer data and relationships."
+  },
+  {
+    "id": 2,
+    "module": "Salesforce Basics",
+    "question": "Which of the following are Salesforce standard objects?",
+    "options": ["Contact", "Account", "Invoice", "Employee"],
+    "correctAnswers": [0,1],
+    "explanation": "Contact and Account are standard objects; Invoice and Employee are not standard Salesforce objects."
+  },
+  {
+    "id": 3,
+    "module": "Salesforce Security",
+    "question": "What does the role hierarchy control in Salesforce?",
+    "options": [
+      "Field-level security",
+      "Record-level access",
+      "Organization-wide defaults",
+      "Profiles"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Role hierarchy controls record-level access; users above in the hierarchy can access records owned by those below."
+  },
+  {
+    "id": 4,
+    "module": "Salesforce Data Model",
+    "question": "Which relationship type supports a many-to-many relationship?",
+    "options": ["Lookup", "Master-detail", "Junction Object", "External Lookup"],
+    "correctAnswers": [2],
+    "explanation": "A junction object represents a many-to-many relationship between two objects."
+  },
+  {
+    "id": 5,
+    "module": "Salesforce Automation",
+    "question": "Which tool is best for automating complex business processes with multiple criteria and branching?",
+    "options": ["Workflow Rules", "Process Builder", "Approval Processes", "Flow Builder"],
+    "correctAnswers": [3],
+    "explanation": "Flow Builder allows automation of complex processes including multiple branching and criteria."
+  },
+  {
+    "id": 6,
+    "module": "Salesforce Security",
+    "question": "What does the profile control in Salesforce?",
+    "options": [
+      "Field-level security",
+      "Record ownership",
+      "Object permissions and access",
+      "Role hierarchy"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Profiles define object-level permissions and access to records via object permissions."
+  },
+  {
+    "id": 7,
+    "module": "Salesforce User Interface",
+    "question": "Where can users view their recently accessed records?",
+    "options": [
+      "Home page",
+      "Chatter",
+      "Reports tab",
+      "Setup menu"
+    ],
+    "correctAnswers": [0],
+    "explanation": "The Home page contains a list of recently accessed records for quick navigation."
+  },
+  {
+    "id": 8,
+    "module": "Salesforce Data Management",
+    "question": "Which tool allows you to import large amounts of data into Salesforce?",
+    "options": [
+      "Data Import Wizard",
+      "Data Loader",
+      "Workflows",
+      "Reports"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Data Loader is used to import large volumes of data (50,000+ records) into Salesforce."
+  },
+  {
+    "id": 9,
+    "module": "Salesforce Reporting",
+    "question": "What type of report includes records from multiple related objects?",
+    "options": [
+      "Tabular",
+      "Summary",
+      "Matrix",
+      "Joined"
+    ],
+    "correctAnswers": [3],
+    "explanation": "Joined reports allow combining multiple report blocks with different objects."
+  },
+  {
+    "id": 10,
+    "module": "Salesforce Reporting",
+    "question": "What does a dashboard show in Salesforce?",
+    "options": [
+      "Single record details",
+      "Visual summaries of reports",
+      "Workflow tasks",
+      "Field-level permissions"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Dashboards visually display report data via charts and graphs for quick insight."
+  },
+  {
+    "id": 11,
+    "module": "Salesforce Data Model",
+    "question": "What is a lookup relationship in Salesforce?",
+    "options": [
+      "A strong ownership link",
+      "A loose relationship without ownership",
+      "A many-to-many relationship",
+      "Controlled by external system"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Lookup relationships provide a loose link between objects without ownership or cascade delete."
+  },
+  {
+    "id": 12,
+    "module": "Salesforce Security",
+    "question": "How do organization-wide defaults affect record visibility?",
+    "options": [
+      "Control field access",
+      "Set baseline record access for all users",
+      "Define profile permissions",
+      "Control sharing rules"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Organization-Wide Defaults set the baseline record access for records users donâ€™t own."
+  },
+  {
+    "id": 13,
+    "module": "Salesforce Automation",
+    "question": "Which automation tool supports immediate and time-dependent actions?",
+    "options": [
+      "Approval Processes",
+      "Workflow Rules",
+      "Flow Builder",
+      "Validation Rules"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Workflow rules support immediate and scheduled time-dependent actions."
+  },
+  {
+    "id": 14,
+    "module": "Salesforce Data Management",
+    "question": "How can you prevent duplicate records from being created?",
+    "options": [
+      "Use validation rules",
+      "Use duplicate management rules",
+      "Use workflow rules",
+      "Use Apex triggers"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Duplicate Management Rules provide features to prevent and alert on duplicates."
+  },
+  {
+    "id": 15,
+    "module": "Salesforce Reporting",
+    "question": "Which report format summarizes data in both rows and columns?",
+    "options": [
+      "Tabular",
+      "Summary",
+      "Matrix",
+      "Joined"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Matrix reports summarize data in both rows and columns."
+  },
+  {
+    "id": 16,
+    "module": "Salesforce Security",
+    "question": "Which feature can restrict a user's access to records owned by certain users or groups?",
+    "options": [
+      "Role Hierarchy",
+      "Sharing Rules",
+      "Profiles",
+      "Public Groups"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Sharing Rules extend record access to users based on criteria, overriding OWD."
+  },
+  {
+    "id": 17,
+    "module": "Salesforce User Interface",
+    "question": "What feature allows users to personalize the Salesforce Home page?",
+    "options": [
+      "App Builder",
+      "Lightning App Builder",
+      "Home Page Components",
+      "Chatter"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Home Page Components allow users to customize their Home page."
+  },
+  {
+    "id": 18,
+    "module": "Salesforce Automation",
+    "question": "Which tool can be used to automate multi-step complex processes without code?",
+    "options": [
+      "Flow Builder",
+      "Process Builder",
+      "Workflow Rules",
+      "Apex"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Flow Builder supports automation of complex multi-step processes without code."
+  },
+  {
+    "id": 19,
+    "module": "Salesforce Data Model",
+    "question": "What is a master-detail relationship?",
+    "options": [
+      "A relationship with no ownership",
+      "A strong relationship with ownership and cascade delete",
+      "A lookup with external ID",
+      "A custom field"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Master-detail relationships tightly link objects with ownership and cascade deletes."
+  },
+  {
+    "id": 20,
+    "module": "Salesforce Reporting",
+    "question": "What does the â€˜Running Userâ€™ in a dashboard specify?",
+    "options": [
+      "User who created the dashboard",
+      "Default user who runs the dashboard",
+      "User viewing the dashboard",
+      "User who viewed last"
+    ],
+    "correctAnswers": [1],
+    "explanation": "The â€˜Running Userâ€™ defines whose security settings are used when viewing the dashboard."
+  },
+  {
+    "id": 21,
+    "module": "Salesforce Security",
+    "question": "Which access option does 'Grant Access Using Hierarchies' apply to?",
+    "options": [
+      "Profiles",
+      "Role hierarchy",
+      "Sharing rules",
+      "Field permissions"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Grant Access Using Hierarchies applies record access via the role hierarchy."
+  },
+  {
+    "id": 22,
+    "module": "Salesforce Automation",
+    "question": "Which tool can send email alerts automatically?",
+    "options": [
+      "Workflow Rules",
+      "Validation Rules",
+      "Approval Processes",
+      "Process Builder"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Workflow Rules can send auto email alerts on defined triggers."
+  },
+  {
+    "id": 23,
+    "module": "Salesforce Data Management",
+    "question": "What kind of data can be exported with Data Loader?",
+    "options": [
+      "Standard objects only",
+      "Custom objects only",
+      "Both standard and custom objects",
+      "Reports only"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Data Loader exports both standard and custom object records."
+  },
+  {
+    "id": 24,
+    "module": "Salesforce User Interface",
+    "question": "How can a user access Chatter in Salesforce?",
+    "options": [
+      "Through the Chatter tab",
+      "Through Setup",
+      "From Reports",
+      "From Dashboards"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Users access Chatter primarily through the Chatter tab."
+  },
+  {
+    "id": 25,
+    "module": "Salesforce Reporting",
+    "question": "Which chart type is not available in Salesforce dashboards?",
+    "options": [
+      "Pie Chart",
+      "Bar Chart",
+      "Scatter Plot",
+      "Gauge Chart"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Salesforce dashboards do not support scatter plot charts."
+  },
+  {
+    "id": 26,
+    "module": "Salesforce Security",
+    "question": "How do Permission Sets enhance security?",
+    "options": [
+      "Override profiles",
+      "Grant additional permissions without changing profiles",
+      "Act like roles",
+      "Replace profiles"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Permission sets grant additional permissions on top of profiles."
+  },
+  {
+    "id": 27,
+    "module": "Salesforce Data Model",
+    "question": "What is the maximum number of master-detail relationships that can be created on a custom object?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "5"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Each custom object can have up to 3 master-detail relationships."
+  },
+  {
+    "id": 28,
+    "module": "Salesforce Automation",
+    "question": "What does a Process Builder action of type 'Create a Record' do?",
+    "options": [
+      "Creates a workflow rule",
+      "Creates a new Salesforce record",
+      "Creates a report",
+      "Creates a custom field"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Process Builder can automate creating new records based on triggers."
+  },
+  {
+    "id": 29,
+    "module": "Salesforce User Interface",
+    "question": "Which feature provides a visual interface for creating apps?",
+    "options": [
+      "Lightning App Builder",
+      "Process Builder",
+      "Flow Builder",
+      "Apex"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Lightning App Builder allows drag-and-drop app creation without code."
+  },
+  {
+    "id": 30,
+    "module": "Salesforce Reporting",
+    "question": "Which Salesforce report contains grouped data with subtotals?",
+    "options": [
+      "Tabular",
+      "Summary",
+      "Matrix",
+      "Joined"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Summary reports group data and show subtotals."
+  },
+  {
+    "id": 31,
+    "module": "Salesforce Security",
+    "question": "What controls access to fields in Salesforce?",
+    "options": [
+      "Profiles",
+      "Field-level security",
+      "Roles",
+      "Sharing rules"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Field-level security controls who can view or edit fields."
+  },
+  {
+    "id": 32,
+    "module": "Salesforce Automation",
+    "question": "What is a time-dependent workflow action?",
+    "options": [
+      "Occurs immediately when criteria are met",
+      "Occurs at a scheduled time after criteria are met",
+      "Triggered by user clicks",
+      "Triggered by record ownership"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Time-dependent actions execute after a defined delay following criteria."
+  },
+  {
+    "id": 33,
+    "module": "Salesforce Data Management",
+    "question": "Which tool provides duplicate management in Salesforce?",
+    "options": [
+      "Validation Rules",
+      "Duplicate Rules",
+      "Reports",
+      "Workflow Rules"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Duplicate Rules enforce duplicate management policies."
+  },
+  {
+    "id": 34,
+    "module": "Salesforce Reporting",
+    "question": "What report format allows viewing data in columns and rows?",
+    "options": [
+      "Summary",
+      "Joined",
+      "Matrix",
+      "Tabular"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Matrix reports display records in rows and columns."
+  },
+  {
+    "id": 35,
+    "module": "Salesforce Security",
+    "question": "What are Public Groups used for?",
+    "options": [
+      "Sharing rules criteria",
+      "Role hierarchy definition",
+      "Object permissions",
+      "Field-level access"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Public Groups are collections for record sharing and sharing rules."
+  },
+  {
+    "id": 36,
+    "module": "Salesforce User Interface",
+    "question": "What is the Salesforce mobile app designed for?",
+    "options": [
+      "Data import",
+      "On-the-go access to Salesforce",
+      "Admin setup",
+      "Report building"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Salesforce mobile app allows users to access Salesforce anywhere."
+  },
+  {
+    "id": 37,
+    "module": "Salesforce Automation",
+    "question": "Which automation step can automatically update a field on a record?",
+    "options": [
+      "Workflow field update",
+      "Validation rule",
+      "Approval process",
+      "Report"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Workflow rules can automatically update fields upon triggering."
+  },
+  {
+    "id": 38,
+    "module": "Salesforce Data Model",
+    "question": "What does a junction object link?",
+    "options": [
+      "Two unrelated records",
+      "Two objects in a many-to-many relationship",
+      "An object to a custom field",
+      "Two users"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Junction objects are used to model many-to-many relationships."
+  },
+  {
+    "id": 39,
+    "module": "Salesforce Reporting",
+    "question": "Which report type summarizes grouped data by two different dimensions?",
+    "options": [
+      "Summary",
+      "Matrix",
+      "Joined",
+      "Tabular"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Matrix reports group data in rows and columns."
+  },
+  {
+    "id": 40,
+    "module": "Salesforce Security",
+    "question": "What does Object Permissions setting control?",
+    "options": [
+      "Access to the setup menu",
+      "CRUD operations on objects",
+      "Field visibility",
+      "Record ownership"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Object permissions control Create, Read, Update, Delete (CRUD) on objects."
+  },
+  {
+    "id": 41,
+    "module": "Salesforce Automation",
+    "question": "Which automation tool can launch flows based on record changes?",
+    "options": [
+      "Process Builder",
+      "Workflow Rules",
+      "Reports",
+      "Chatter"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Process Builder can trigger flows based on changes."
+  },
+  {
+    "id": 42,
+    "module": "Salesforce User Interface",
+    "question": "Which feature lets users personalize record pages without code?",
+    "options": [
+      "Lightning App Builder",
+      "Flow Builder",
+      "Process Builder",
+      "Apex"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Lightning App Builder enables drag-and-drop record page customization."
+  },
+  {
+    "id": 43,
+    "module": "Salesforce Data Management",
+    "question": "Which import tool is user-friendly but limited to smaller data volumes?",
+    "options": [
+      "Data Loader",
+      "Data Import Wizard",
+      "API",
+      "Flow Builder"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Data Import Wizard supports up to 50,000 records in a simple UI."
+  },
+  {
+    "id": 44,
+    "module": "Salesforce Reporting",
+    "question": "What does the 'Subscribe' option on dashboards allow?",
+    "options": [
+      "Schedule regular email updates",
+      "Change report filters",
+      "Export data",
+      "Share reports"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Subscribe lets users receive scheduled dashboard emails."
+  },
+  {
+    "id": 45,
+    "module": "Salesforce Security",
+    "question": "What does IP range restriction manage?",
+    "options": [
+      "Access based on login location",
+      "Field-level permissions",
+      "Profile selection",
+      "Role assignment"
+    ],
+    "correctAnswers": [0],
+    "explanation": "IP range restrictions limit login access to specified IP addresses."
+  },
+  {
+    "id": 46,
+    "module": "Salesforce Automation",
+    "question": "Which automation tool supports approvals?",
+    "options": [
+      "Approval Processes",
+      "Workflow Rules",
+      "Process Builder",
+      "Flow Builder"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Approval Processes manage multi-step approvals."
+  },
+  {
+    "id": 47,
+    "module": "Salesforce Data Model",
+    "question": "Which object type is used to track setup changes and user activity?",
+    "options": [
+      "Setup Audit Trail",
+      "Event Monitoring",
+      "Chatter Feed",
+      "Reports"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Setup Audit Trail tracks changes made to setup by users."
+  },
+  {
+    "id": 48,
+    "module": "Salesforce Reporting",
+    "question": "Which field types can be grouped in reports?",
+    "options": [
+      "Text",
+      "Picklist",
+      "Formula",
+      "All of the above"
+    ],
+    "correctAnswers": [3],
+    "explanation": "Reports can group by various field types including text, picklist, and formula."
+  },
+  {
+    "id": 49,
+    "module": "Salesforce Security",
+    "question": "What does a permission set group?",
+    "options": [
+      "A collection of users",
+      "A collection of permissions",
+      "Roles",
+      "Profiles"
+    ],
+    "correctAnswers": [1],
+    "explanation": "A permission set is a collection of permissions to extend user privileges."
+  },
+  {
+    "id": 50,
+    "module": "Salesforce User Interface",
+    "question": "What is Lightning Experience?",
+    "options": [
+      "A mobile app",
+      "A new user interface for Salesforce",
+      "An automation tool",
+      "An integration service"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Lightning Experience is the modern, updated Salesforce user interface."
+  },
+  {
+    "id": 51,
+    "module": "Business Scenario",
+    "question": "Your company wants sales reps to only see accounts in their region. What Salesforce feature should you configure?",
+    "options": [
+      "Role hierarchy with regional roles",
+      "Sharing rules based on account territories",
+      "Profile field-level security",
+      "Permission sets"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Sharing rules based on account territories can be used to restrict visibility to accounts by region."
+  },
+  {
+    "id": 52,
+    "module": "Business Scenario",
+    "question": "A sales manager needs a dashboard showing team sales performance updated daily. How can this be achieved?",
+    "options": [
+      "Create a dashboard with scheduled refresh",
+      "Send manual report emails",
+      "Use workflow email alerts",
+      "Create a custom object to track performance"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Dashboards can be scheduled to refresh automatically daily, providing up-to-date team sales info."
+  },
+  {
+    "id": 53,
+    "module": "Business Scenario",
+    "question": "Your company requires that contacts related to an account cannot be deleted if the account is active. How do you enforce this?",
+    "options": [
+      "Validation rule on contact referencing account status",
+      "Workflow field update",
+      "Sharing rule",
+      "Approval process"
+    ],
+    "correctAnswers": [0],
+    "explanation": "A validation rule on contact can reference the accountâ€™s status to prevent deletion when active."
+  },
+  {
+    "id": 54,
+    "module": "Automation",
+    "question": "You need to send a reminder email 3 days before a contract expiry date. What automation tool do you use?",
+    "options": [
+      "Time-dependent workflow rule",
+      "Approval process",
+      "Process Builder immediate action",
+      "Manual email"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Time-dependent workflows can schedule emails relative to date fields like contract expiry."
+  },
+  {
+    "id": 55,
+    "module": "Business Scenario",
+    "question": "A team needs access to some but not all records owned by another group. How can this level of access be granted?",
+    "options": [
+      "Criteria-based sharing rule",
+      "Role hierarchy",
+      "Profile permission update",
+      "Manual sharing only"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Criteria-based sharing rules extend record access based on defined record criteria."
+  },
+  {
+    "id": 56,
+    "module": "Business Scenario",
+    "question": "Your company needs to track customer feedback on products. What should you create?",
+    "options": [
+      "Custom object",
+      "Standard object",
+      "Validation rule",
+      "Approval process"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Custom objects are used to store unique business data like customer feedback."
+  },
+  {
+    "id": 57,
+    "module": "Automation",
+    "question": "A support agent needs to update a case status automatically when a high priority email arrives. What tool can help?",
+    "options": [
+      "Email-to-Case",
+      "Workflow Rule",
+      "Process Builder",
+      "Chatter"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Process Builder can automate updates like changing case status based on email-related triggers."
+  },
+  {
+    "id": 58,
+    "module": "Business Scenario",
+    "question": "Your sales team wants to approve discounts over 10%. What Salesforce feature do you use?",
+    "options": [
+      "Validation rule",
+      "Approval process",
+      "Workflow rule",
+      "Process Builder"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Approval processes manage multi-step approvals like discount authorization."
+  },
+  {
+    "id": 59,
+    "module": "Business Scenario",
+    "question": "You want to ensure that a contract cannot be activated unless it has a signed PDF attached. What should you do?",
+    "options": [
+      "Use a validation rule checking attachment presence",
+      "Manual review",
+      "Workflow alert",
+      "Process Builder to check attachments"
+    ],
+    "correctAnswers": [0],
+    "explanation": "A validation rule can enforce required conditions before status changes."
+  },
+  {
+    "id": 60,
+    "module": "Security",
+    "question": "You want custom object records visible only to record owners and their managers. Which setting ensures this?",
+    "options": [
+      "Private OWD with role hierarchy enabled",
+      "Public Read/Write",
+      "Controlled by parent",
+      "Sharing rule by profile"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Private organization-wide defaults restrict access to owners and their hierarchical superiors."
+  },
+  {
+    "id": 61,
+    "module": "Business Scenario",
+    "question": "Users report they cannot see related contacts from their accounts. What is the most likely cause?",
+    "options": [
+      "Field-level security hides contacts",
+      "Sharing settings restrict access",
+      "Role hierarchy is incorrect",
+      "Profile permission missing"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Sharing settings and organization-wide defaults affect visibility of related records."
+  },
+  {
+    "id": 62,
+    "module": "Automation",
+    "question": "How can you automate creating follow-up tasks when a case is closed?",
+    "options": [
+      "Workflow task creation",
+      "Manual task creation",
+      "Approval process",
+      "Report subscription"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Workflow rules can automate the creation of follow-up tasks."
+  },
+  {
+    "id": 63,
+    "module": "Business Scenario",
+    "question": "Your company wants to capture approval comments during a multi-tier approval process. What should you do?",
+    "options": [
+      "Use the approval process comments feature",
+      "Add a custom field",
+      "Send email alerts",
+      "Use workflow task notes"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Approval processes support capturing approver comments during submissions."
+  },
+  {
+    "id": 64,
+    "module": "Business Scenario",
+    "question": "A sales rep must associate multiple contacts to one opportunity. How do you design this?",
+    "options": [
+      "Add multiple contact lookup fields",
+      "Use opportunity contact roles related list",
+      "Create a custom junction object",
+      "Use a multi-select picklist"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Opportunity Contact Roles allow associating multiple contacts with a single opportunity."
+  },
+  {
+    "id": 65,
+    "module": "Salesforce Mobile",
+    "question": "How can you ensure custom objects are visible in the Salesforce mobile app?",
+    "options": [
+      "Set object permissions in profiles and permission sets",
+      "Enable mobile access in setup",
+      "Add objects to the mobile app layout",
+      "Create mobile-only objects"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Profiles and permission sets control object visibility across devices."
+  },
+  {
+    "id": 66,
+    "module": "Business Scenario",
+    "question": "Your marketing team wants a campaign report showing total leads and converted leads. Which report type suits best?",
+    "options": [
+      "Campaigns with Campaign Members",
+      "Leads with Opportunities",
+      "Contacts and Accounts",
+      "Custom report type"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Campaigns with Campaign Members shows campaign statistics including lead conversions."
+  },
+  {
+    "id": 67,
+    "module": "Automation",
+    "question": "How can you ensure an account rating is updated when the opportunity stage changes to Closed Won?",
+    "options": [
+      "Workflow field update rule",
+      "Manual update",
+      "Approval process",
+      "Report refresh"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Workflow rules can automatically update fields based on criteria like opportunity stage."
+  },
+  {
+    "id": 68,
+    "module": "Business Scenario",
+    "question": "A global company wants to ensure users only see localized data based on their country. Which feature helps?",
+    "options": [
+      "Territory management",
+      "Sharing rules",
+      "Field-level security",
+      "Record types"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Territory management supports data visibility based on geography."
+  },
+  {
+    "id": 69,
+    "module": "Salesforce Security",
+    "question": "How can you restrict login hours for users in a profile?",
+    "options": [
+      "Set login hours in profile settings",
+      "Use sharing rules",
+      "Role hierarchy controls this",
+      "Field accessibility"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Profiles allow administrators to restrict login hours for users assigned to them."
+  },
+  {
+    "id": 70,
+    "module": "Business Scenario",
+    "question": "How can you automate sending follow-up emails 7 days after a lead is created?",
+    "options": [
+      "Time-dependent workflow action",
+      "Approval process",
+      "Manual email",
+      "Report subscriptions"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Time-dependent workflows send emails after a specified delay from a date/time field."
+  },
+  {
+    "id": 71,
+    "module": "Business Scenario",
+    "question": "A company wants to track the source of leads effectively. What is the best method?",
+    "options": [
+      "Use Lead Source picklist",
+      "Custom text field",
+      "Use a formula field",
+      "Create a custom object"
+    ],
+    "correctAnswers": [0],
+    "explanation": "The Lead Source picklist is the standard way to track lead origins."
+  },
+  {
+    "id": 72,
+    "module": "Automation",
+    "question": "You want to trigger an action when a new case is created from email. Which tool is best?",
+    "options": [
+      "Email-to-case with workflow",
+      "Process Builder standalone",
+      "Manual entry",
+      "Lightning App Builder"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Email-to-Case combined with workflow automation triggers actions on cases created from email."
+  },
+  {
+    "id": 73,
+    "module": "Business Scenario",
+    "question": "How do you allow external partners to update opportunities without giving full Salesforce access?",
+    "options": [
+      "Use Partner Community licenses",
+      "Create full user profiles",
+      "Use regular user licenses",
+      "Share passwords"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Partner Community licenses restrict access and allow partners to manage specific records."
+  },
+  {
+    "id": 74,
+    "module": "Business Scenario",
+    "question": "Your company requires that only specific users can delete records. How do you enforce this?",
+    "options": [
+      "Profile and permission set permissions",
+      "Criteria-based sharing rules",
+      "Validation rules",
+      "Role hierarchy"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Delete permissions must be granted explicitly via profiles or permission sets."
+  },
+  {
+    "id": 75,
+    "module": "Salesforce Reporting",
+    "question": "Which report component allows dynamic filtering based on user input?",
+    "options": [
+      "Report filter",
+      "Dashboard component",
+      "Bucket field",
+      "Joined report"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Report filters enable dynamic filtering as per user selections."
+  },
+  {
+    "id": 76,
+    "module": "Business Scenario",
+    "question": "Your finance team wants to track invoice payments linked to accounts. What is the best data model approach?",
+    "options": [
+      "Create a custom â€˜Invoiceâ€™ object linked to Account",
+      "Use opportunity records",
+      "Add fields on account",
+      "Use campaign members"
+    ],
+    "correctAnswers": [0],
+    "explanation": "A custom Invoice object linked to Account allows tracking payments effectively."
+  },
+  {
+    "id": 77,
+    "module": "Automation",
+    "question": "You want to update a field based on a change in a related object. How do you do this?",
+    "options": [
+      "Use Process Builder with cross-object field update",
+      "Validation rule",
+      "Manual updates",
+      "Workflow with email alerts"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Process Builder supports cross-object field updates."
+  },
+  {
+    "id": 78,
+    "module": "Business Scenario",
+    "question": "How can you ensure mobile users get access to essential Salesforce features securely?",
+    "options": [
+      "Assign appropriate profiles and permission sets",
+      "Enable mobile app default",
+      "Create mobile-only users",
+      "Give full system admin rights"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Correct permission assignment is key to secure mobile access."
+  },
+  {
+    "id": 79,
+    "module": "Business Scenario",
+    "question": "A company requires a duplicate contact alert during data entry. How is this implemented?",
+    "options": [
+      "Duplicate Rules",
+      "Validation Rules",
+      "Workflow Rule",
+      "Approval Process"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Duplicate Rules help prevent or alert users about duplicate records."
+  },
+  {
+    "id": 80,
+    "module": "Salesforce Security",
+    "question": "What setting allows restricting field access for certain users?",
+    "options": [
+      "Field-level security",
+      "Sharing rule",
+      "Role hierarchy",
+      "Permission set group"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Field-level security controls visibility and editability of fields."
+  },
+  {
+    "id": 81,
+    "module": "Business Scenario",
+    "question": "Your company wants to automate contract renewals based on expiry dates. What tool do you use?",
+    "options": [
+      "Flow Builder with scheduled path",
+      "Manual intervention",
+      "Approval Process",
+      "Workflow email alert"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Flow Builder supports scheduled automation paths based on date fields."
+  },
+  {
+    "id": 82,
+    "module": "Automation",
+    "question": "How do you notify a manager when a high-value opportunity is closed?",
+    "options": [
+      "Workflow email alert",
+      "Manual call",
+      "Approval Process",
+      "Report subscription"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Workflow rules can trigger email alerts based on criteria."
+  },
+  {
+    "id": 83,
+    "module": "Business Scenario",
+    "question": "How can a sales rep see only their own opportunities and team members' accounts?",
+    "options": [
+      "Set role hierarchy appropriately",
+      "Set organization-wide defaults to public",
+      "Use manual sharing",
+      "Assign permission sets"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Role hierarchy controls access to data owned by team members below reps."
+  },
+  {
+    "id": 84,
+    "module": "Business Scenario",
+    "question": "Your company wants to control record visibility at the field level. What is the correct approach?",
+    "options": [
+      "Field-level security",
+      "Profile permissions",
+      "Sharing rules",
+      "Permission sets"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Field-level security controls visibility per field regardless of record access."
+  },
+  {
+    "id": 85,
+    "module": "Business Scenario",
+    "question": "How do you create a report that combines data from multiple unrelated objects?",
+    "options": [
+      "Joined report",
+      "Tabular report",
+      "Summary report",
+      "Matrix report"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Joined reports combine multiple report types into one view."
+  },
+  {
+    "id": 86,
+    "module": "Salesforce Data Model",
+    "question": "What is a roll-up summary field used for?",
+    "options": [
+      "Aggregate data from child records",
+      "Aggregate data from unrelated objects",
+      "Sum values in a report",
+      "Calculate formula fields"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Roll-up summary fields calculate aggregate values from child records."
+  },
+  {
+    "id": 87,
+    "module": "Salesforce Security",
+    "question": "How do you allow users to view but not edit records?",
+    "options": [
+      "Set Read-only object permissions",
+      "Remove profile completely",
+      "Use permission sets",
+      "Use manual sharing"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Read-only permissions allow viewing but prevent editing."
+  },
+  {
+    "id": 88,
+    "module": "Business Scenario",
+    "question": "You want to track customer account health with custom scoring. How do you implement it?",
+    "options": [
+      "Create a custom formula field",
+      "Manual notes",
+      "Use reports only",
+      "Create a custom object"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Custom formula fields automate scoring metrics using business logic."
+  },
+  {
+    "id": 89,
+    "module": "Business Scenario",
+    "question": "What is the best way to grant temporary project-based access to a group of users?",
+    "options": [
+      "Use permission set groups with expiration",
+      "Change profiles",
+      "Role changes",
+      "Manual sharing only"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Permission set groups can be assigned temporarily with expiration dates."
+  },
+  {
+    "id": 90,
+    "module": "Automation",
+    "question": "How can you ensure data consistency by preventing invalid entries?",
+    "options": [
+      "Validation rules",
+      "Workflow field updates",
+      "Reports",
+      "Data Loader"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Validation rules enforce data quality by blocking incorrect inputs."
+  },
+  {
+    "id": 91,
+    "module": "Business Scenario",
+    "question": "How can you alert a user when a record has not been updated in 30 days?",
+    "options": [
+      "Time-dependent workflow email alert",
+      "Report subscription",
+      "Manual checking",
+      "Process Builder only"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Time-dependent workflows can send alerts based on date criteria."
+  },
+  {
+    "id": 92,
+    "module": "Business Scenario",
+    "question": "Your company wants to restrict access to sensitive fields only to HR team members. How do you configure this?",
+    "options": [
+      "Field-level security with profile restrictions",
+      "Sharing rules",
+      "Role hierarchy",
+      "Permission sets"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Field-level security with profiles ensures sensitive data only is visible to authorized users."
+  },
+  {
+    "id": 93,
+    "module": "Salesforce Data Management",
+    "question": "How do you migrate Salesforce data between environments?",
+    "options": [
+      "Using Data Loader",
+      "Manual entry",
+      "Reports export",
+      "Apex code"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Data Loader supports bulk data migration between Salesforce orgs."
+  },
+  {
+    "id": 94,
+    "module": "Business Scenario",
+    "question": "You want to give an external consultant limited access to Salesforce records for a specific project. What license should you assign?",
+    "options": [
+      "Salesforce Platform license",
+      "Full Salesforce license",
+      "Chatter Free license",
+      "Force.com license"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Salesforce Platform licenses grant access to custom apps without full CRM functionality."
+  },
+  {
+    "id": 95,
+    "module": "Business Scenario",
+    "question": "Your company requires that users enter a reason whenever they change the status of a case to 'Escalated'. How do you enforce this?",
+    "options": [
+      "Validation rule requiring a comment",
+      "Process Builder email alert",
+      "Workflow task creation",
+      "Approval process"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Validation rules can enforce data entry by making fields mandatory based on criteria."
+  },
+  {
+    "id": 96,
+    "module": "Business Scenario",
+    "question": "How can you provide real-time notifications for important account changes?",
+    "options": [
+      "Use Chatter feed tracking",
+      "Send manual emails",
+      "Use dashboards",
+      "Send reports"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Chatter feed tracking sends real-time updates on record changes."
+  },
+  {
+    "id": 97,
+    "module": "Automation",
+    "question": "You want to automate task assignment when leads are assigned to users in a specific territory. Which tool is best?",
+    "options": [
+      "Process Builder with criteria on territory",
+      "Workflow task assignment",
+      "Manual assignment",
+      "Report filters"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Process Builder automates actions based on specific criteria like territory."
+  },
+  {
+    "id": 98,
+    "module": "Business Scenario",
+    "question": "How can sales reps enter notes on their meetings with customers?",
+    "options": [
+      "Use Activities and Task objects",
+      "Custom object for notes",
+      "Chatter posts",
+      "Reports"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Standard activities and tasks provide meeting note capabilities."
+  },
+  {
+    "id": 99,
+    "module": "Salesforce Security",
+    "question": "Your security team wants to audit login activity and access patterns. Which tool helps?",
+    "options": [
+      "Login History and Setup Audit Trail",
+      "Reports",
+      "Manual logs",
+      "Approval processes"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Login History and Setup Audit Trail help track user activity for security audits."
+  },
+  {
+    "id": 100,
+    "module": "Business Scenario",
+    "question": "How do you prevent opportunity stage changes without manager approval?",
+    "options": [
+      "Use an approval process",
+      "Validation rule",
+      "Workflow field update",
+      "Manual approval email"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Approval processes enforce multi-level approvals on record changes."
+  },
+  {
+    "id": 101,
+    "module": "Salesforce Basics",
+    "question": "You have a group of new Sales Users starting at Cloud Kicks. The standard requirement for each rep is that they be able to - Use Sales Cloud Analytic templates and apps - Create, edit, and delete surveys - Read, create, edit, and delete Accounts and Opportunities. What is the best way to meet these requirements?",
+    "options": [
+      "Permission Set Groups",
+      "Public Group",
+      "Sharing Group",
+      "Permission Sets"
+    ],
+    "correctAnswers": [3],
+    "explanation": "Permission Sets allow granting specific permissions without changing user profiles, making it ideal to assign the necessary capabilities individually."
+  },
+  {
+    "id": 102,
+    "module": "Salesforce Basics",
+    "question": "Which of these objects and fields come out of the box with Salesforce? Select 3.",
+    "options": [
+      "Standard Fields",
+      "Custom Objects",
+      "Other Standard Fields",
+      "Custom Fields",
+      "Standard Objects",
+      "Other Standard Objects"
+    ],
+    "correctAnswers": [0,4,5],
+    "explanation": "Salesforce includes standard fields, standard objects, and other standard objects by default; custom objects and fields are created by users."
+  },
+  {
+    "id": 103,
+    "module": "Salesforce Basics",
+    "question": "Currently, users can't delete cases. The VP of Support wants to let selected employees delete cases from the system. Which steps should the admin follow? Select 2.",
+    "options": [
+      "Assign Users",
+      "Create a Validation Rule",
+      "Assign Profiles",
+      "Create a Permission Set"
+    ],
+    "correctAnswers": [0,3],
+    "explanation": "To allow selective deletion, the admin must assign users and create a permission set with the delete rights."
+  },
+  {
+    "id": 104,
+    "module": "Salesforce Basics",
+    "question": "Your company has agreed to set the days Mon.-Fri. and hours 8AM-5PM when Sales users can log into the org. It's 5:03PM and a sales user is still logged in. Why is that?",
+    "options": [
+      "The user is working on a weekend",
+      "Users can’t log in after 5PM. If they were logged in before, they can carry on with their work",
+      "Users can continue to view their current page, but they can’t take any further action",
+      "The time on their laptop is incorrect"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Users can continue viewing pages but cannot perform any further actions after login hours expire."
+  },
+  {
+    "id": 105,
+    "module": "Salesforce Basics",
+    "question": "The VP of Finance wants Asset records to be visible to Platform users and let the Finance team populate these records. How can this be accomplished? Select 3.",
+    "options": [
+      "Set org-wide defaults to read-write",
+      "Assign users",
+      "Set org-wide defaults to read only",
+      "Assign profiles",
+      "Create a permission set"
+    ],
+    "correctAnswers": [2,3,4],
+    "explanation": "Setting org-wide defaults to read-only combined with profile assignment and permission sets enables controlled visibility and editing."
+  },
+  {
+    "id": 106,
+    "module": "Salesforce Basics",
+    "question": "A sales user is trying to log in to Salesforce and receives a code sent to their mobile phone for verification of identity. What would cause this?",
+    "options": [
+      "They are logging in from outside the trusted IP range",
+      "They are logging in outside of allowed login hours",
+      "They used the wrong password too many times",
+      "They logged in from a new email address"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Salesforce may require identity verification when logging in from outside trusted IP ranges for security."
+  },
+  {
+    "id": 107,
+    "module": "Salesforce Basics",
+    "question": "When sharing a case with another user, what sort of access and permission should the other user have? Select 2.",
+    "options": [
+      "Access to the Account associated with the Case",
+      "Access to the Contact associated with the Case",
+      "Read permission on Cases",
+      "ReadWrite permission on Cases"
+    ],
+    "correctAnswers": [0,2],
+    "explanation": "Case sharing typically requires at least read access on the case and access to the related account."
+  },
+  {
+    "id": 108,
+    "module": "Salesforce Platform Lightning",
+    "question": "The VP of Sales started using a new app and has asked the admin to create a custom Accounts page with related records and activities in the app. Which Lightning Page type would an admin use?",
+    "options": [
+      "Email Application Pane",
+      "App Page",
+      "Home Page",
+      "Record Page"
+    ],
+    "correctAnswers": [3],
+    "explanation": "Record Page is designed to show details for a specific record, including related lists and activities."
+  },
+  {
+    "id": 109,
+    "module": "Salesforce Platform Lightning",
+    "question": "In the Lightning App Builder, the admin wants to use the Highlights Panel Component to display key record fields along with page-level actions. Which steps should the admin complete before adding the component? Select 2.",
+    "options": [
+      "Add actions to the page layout",
+      "Add global actions to the page",
+      "Add fields to the compact layout assigned to the object",
+      "Make fields mandatory"
+    ],
+    "correctAnswers": [0,2],
+    "explanation": "The highlights panel requires actions added to the page layout and fields on the compact layout."
+  },
+  {
+    "id": 110,
+    "module": "Salesforce Platform Lightning",
+    "question": "Your sales team is working together on their Opportunities. They want to see who worked on a recent opportunity last. How can this information appear on the Recently Viewed list on the Opportunities home page?",
+    "options": [
+      "The admin should select Last Modified By to display the Recently Viewed list",
+      "Sales users should select Created by to display on the Recently Viewed list",
+      "Sales users should select Last Modified By to display on the Recently Viewed list",
+      "The admin should select Created by to display on the Recently Viewed list"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Selecting 'Last Modified By' controls the display of recent modifications in the Recently Viewed list."
+  },
+  {
+    "id": 111,
+    "module": "Salesforce Platform Lightning",
+    "question": "How can you delete standard fields from the record pages?",
+    "options": [
+      "Run a report and backup data then delete",
+      "You can't delete standard fields",
+      "Remove from page layouts then delete",
+      "Run a report to check if fields are blank then delete"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Standard Salesforce fields cannot be deleted; they can only be removed from page layouts."
+  },
+  {
+    "id": 112,
+    "module": "Salesforce Platform Lightning",
+    "question": "How can you automatically calculate values based on the contents of other fields?",
+    "options": [
+      "Workflow Rule",
+      "Formula Fields",
+      "Roll-up Summary Fields",
+      "Process Builder"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Formula fields automatically calculate their values based on other fields' data."
+  },
+  {
+    "id": 113,
+    "module": "Salesforce Platform Lightning",
+    "question": "A Lightning page region can contain up to how many components?",
+    "options": [
+      "25",
+      "50",
+      "75",
+      "100"
+    ],
+    "correctAnswers": [3],
+    "explanation": "A Lightning page region supports up to 100 components."
+  },
+  {
+    "id": 114,
+    "module": "Salesforce Platform Lightning",
+    "question": "The admin is trying to set up Field History Tracking for Opportunities. There are 20 fields selected but the admin isn't able to save the changes. What could be the reason? Select 3.",
+    "options": [
+      "Roll-up Summary Fields are selected",
+      "Picklist Fields are selected",
+      "Auto-number fields are selected",
+      "Formula Fields are selected"
+    ],
+    "correctAnswers": [0,2,3],
+    "explanation": "Field History Tracking doesn't support roll-up summary, auto-number, and formula fields."
+  },
+  {
+    "id": 115,
+    "module": "Business Processes",
+    "question": "What object can you use to organize and track your marketing efforts?",
+    "options": [
+      "Tasks",
+      "Events",
+      "Campaigns",
+      "Marketing",
+      "Campaign Members"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Campaigns are Salesforce’s designed objects to manage marketing efforts."
+  },
+  {
+    "id": 116,
+    "module": "Business Processes",
+    "question": "In Cases, which types of actions are associated with milestones? Select 3.",
+    "options": [
+      "Success",
+      "Violation",
+      "Completion",
+      "Warning",
+      "Alert"
+    ],
+    "correctAnswers": [0,1,3],
+    "explanation": "Success, Violation, and Warning actions are typical milestone statuses in case management."
+  },
+  {
+    "id": 117,
+    "module": "Business Processes",
+    "question": "You need a tool that will help you attribute a portion of success to noteworthy campaigns. How can you understand how your campaigns are impacting your opportunity pipeline?",
+    "options": [
+      "Campaign Report Types",
+      "Campaign Influence",
+      "A solution from the AppExchange",
+      "Sales Dashboards"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Campaign Influence helps relate campaign impact on opportunities and revenue."
+  },
+  {
+    "id": 118,
+    "module": "Business Processes",
+    "question": "The Sales leadership team has a process that they would like their team to follow when working on opportunities. It is a better and more efficient way but it requires different stages. What do you have to do in order to activate the new process for the team? Select 2.",
+    "options": [
+      "Create a new Record Type",
+      "Create a new Sales Process",
+      "Add more stages to the current Sales Process",
+      "Create a new Page Layout",
+      "Create a new Status"
+    ],
+    "correctAnswers": [0,1],
+    "explanation": "Activating a new process involves creating a new record type and a new sales process."
+  },
+  {
+    "id": 120,
+    "module": "Data Management",
+    "question": "The Sales manager created a report, the new sales user can’t access the report but everyone else can. What could cause this?",
+    "options": [
+      "Missing access to the folder",
+      "Missing sharing rule",
+      "Missing permission set to view reports",
+      "Missing reports tab"
+    ],
+    "correctAnswers": [0],
+    "explanation": "[translate:Missing access to the folder] usually restricts report visibility to users."
+  },
+  {
+    "id": 121,
+    "module": "Data Management",
+    "question": "You need to import 5,000 contact records and prevent duplicates by uploading records according to contact email addresses. What tool should you use for this task?",
+    "options": [
+      "Data Import Wizard",
+      "Dataloader.io",
+      "Data Loader",
+      "Email"
+    ],
+    "correctAnswers": [0],
+    "explanation": "[translate:Data Import Wizard] is suitable for handling duplicates during record import."
+  },
+  {
+    "id": 122,
+    "module": "Data Management",
+    "question": "Which configuration option shows sales representatives the fields they must fill in prior to saving an Opportunity?",
+    "options": [
+      "Field-level Security",
+      "Page Layout required fields",
+      "Opportunity Validation Rules",
+      "Dependent Picklist Fields"
+    ],
+    "correctAnswers": [1],
+    "explanation": "[translate:Page Layout required fields] ensure required data is captured before record save."
+  },
+  {
+    "id": 123,
+    "module": "Data Management",
+    "question": "At Ursa Major Solar, Sales representatives use a custom report type for Account reports. New fields have been created on the Account Object. An administrator needs to report on the newly created fields. What should the administrator do to achieve this goal?",
+    "options": [
+      "From the Custom Report Type, Edit Layout, then add the new fields to the report.",
+      "Create a new account report and add the new fields from the Report Builder.",
+      "Create a new account report folder, go to share, and then add the new fields.",
+      "From the Custom Report Type, Edit Object Relationships, then add the new fields to the report."
+    ],
+    "correctAnswers": [0],
+    "explanation": "Custom report types require new fields added explicitly to the layout to be included in reports."
+  },
+  {
+    "id": 124,
+    "module": "Data Management",
+    "question": "Which two best practices are recommended prior to mass-deleting records? (Select 2)",
+    "options": [
+      "Schedule a weekly data export and download the backup zip files.",
+      "Run and export a report to archive data before deletion.",
+      "Download a Setup Audit Trail for the last six months before deletion.",
+      "Create a new list view for all records that need to be deleted."
+    ],
+    "correctAnswers": [0,1],
+    "explanation": "Backing up data and archiving reports ensure data safety before deletion."
+  },
+  {
+    "id": 125,
+    "module": "Data Management",
+    "question": "Universal Containers uses a private data access model. Product managers and sales representatives are in different branches of the role hierarchy. What should an Administrator do to ensure that product managers can report on opportunities in their product line?",
+    "options": [
+      "Save all opportunity reports in a public folder.",
+      "Create a new role for product managers and sales representatives.",
+      "Create a sharing rule based on criteria.",
+      "Move all product managers to a role below the sales representatives."
+    ],
+    "correctAnswers": [2],
+    "explanation": "Sharing rules allow specific access based on criteria without reorganizing the role hierarchy."
+  },
+  {
+    "id": 126,
+    "module": "Data Management",
+    "question": "Ursa Major Solar is looking into backup methods. Which set of small and large data backup methods are available in native Salesforce?",
+    "options": [
+      "Data Loader Exports, Mass Exports, and Weekly Data Export Service",
+      "Report Exports, Dashboard Exports, and Weekly Data Export Service",
+      "Data Loader Exports, Report Exports, and Weekly Data Export Service",
+      "Mass Export Wizard, Weekly Data Export Service, and Data Loader Exports"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Data Loader Exports, Report Exports, and Weekly Data Export Service are standard Salesforce backup options."
+  },
+  {
+    "id": 127,
+    "module": "Workflow & Process Automation",
+    "question": "When using the Flow Builder user interface, which of the following items display on Flows? (Select 3)",
+    "options": [
+      "Toolbox",
+      "Components",
+      "Button Bar",
+      "Highlights Panel",
+      "Canvas"
+    ],
+    "correctAnswers": [0,2,4],
+    "explanation": "[translate:Toolbox], [translate:Button Bar], and [translate:Canvas] are core UI elements in the Flow Builder."
+  },
+  {
+    "id": 128,
+    "module": "Workflow & Process Automation",
+    "question": "When a user updates opportunities to meet specific criteria, it should trigger an email alert and launch a flow. Which automation tool can help you with this?",
+    "options": [
+      "Workflow Rules",
+      "Process Builder",
+      "Approval Process",
+      "Assignment Rules"
+    ],
+    "correctAnswers": [1],
+    "explanation": "[translate:Process Builder] supports triggering flows and alerts based on record changes."
+  },
+  {
+    "id": 129,
+    "module": "Workflow & Process Automation",
+    "question": "Universal Containers has asked its Administrator to automatically set some fields when a Lead is created. What is the best way for the administrator to perform this automation?",
+    "options": [
+      "Create one Workflow rule per field",
+      "Record Triggered-Flow that runs Before save",
+      "Use Process Builder that launches a flow",
+      "Use a Screen Flow with default values"
+    ],
+    "correctAnswers": [1],
+    "explanation": "[translate:Record Triggered-Flow that runs Before save] is an efficient way to set fields on record creation."
+  },
+  {
+    "id": 130,
+    "module": "Workflow & Process Automation",
+    "question": "Universal Containers wants to create a Workflow Rule to send an email alert to members of its Board of Directors, none of whom use Salesforce. How many of the board members can be added to a single Email Alert?",
+    "options": [
+      "It is not possible to add additional email addresses to the Email Alert.",
+      "Up to 5 additional email addresses can be added to the Email Alert.",
+      "Up to 250 additional email addresses can be added to the Email Alert.",
+      "Up to 25 additional email addresses can be added to the Email Alert."
+    ],
+    "correctAnswers": [1],
+    "explanation": "Standard email alerts allow adding up to 5 external email addresses."
+  },
+  {
+    "id": 131,
+    "module": "Workflow & Process Automation",
+    "question": "Ursa Major Solar placed a time-dependent action in the workflow queue when the record was created. What are two situations that will cause this action to be removed from the queue? (Select 2)",
+    "options": [
+      "If the record no longer matches the rule criteria",
+      "If a validation rule is triggered for the record",
+      "If the action is deleted from the workflow queue",
+      "If another record triggers the same workflow rule"
+    ],
+    "correctAnswers": [0,2],
+    "explanation": "Workflow queue actions are removed if criteria no longer apply or if the action is deleted."
+  },
+  {
+    "id": 132,
+    "module": "Practice Test",
+    "question": "Universal Containers has set the organization-wide default settings for accounts to private. Amy and Bob are on separate sales teams but are assigned to the same role in the hierarchy. Amy is a member of the \"Sales West\" public group and needs access to all accounts owned by Bob, a member of the \"Sales East\" public group. How would Amy obtain access to only Bob's accounts?",
+    "options": [
+      "Add Amy to the \"Sales East\" public group.",
+      "Create a sharing rule between the \"Sales West\" and \"Sales East\" public groups.",
+      "Add Amy to the role above Bob in the role hierarchy.",
+      "Add Amy to Bob's default account team."
+    ],
+    "correctAnswers": [3],
+    "explanation": "Adding Amy to Bob's default account team grants access to his accounts without modifying the role hierarchy."
+  },
+  {
+    "id": 133,
+    "module": "Practice Test",
+    "question": "A system administrator has gotten a request from the Accounts Payable team for new fields to capture additional details on customer contracts. There are several standard fields on the contract object already that be could possibly be used instead of creating new fields. What customization options are available for those standard fields? (Choose two answers.)",
+    "options": [
+      "Delete standard fields",
+      "Change the field type of standard fields",
+      "Remove non-required standard fields from a page layout",
+      "Rename standard field labels in the user interface"
+    ],
+    "correctAnswers": [2,3],
+    "explanation": "Standard fields can be removed from page layouts if not required and their labels can be renamed via UI."
+  },
+  {
+    "id": 134,
+    "module": "Practice Test",
+    "question": "A system administrator at Universal Containers incorrectly imported a set of lead records from a .csv file they received from the Marketing Manager. They need to remove some of the records from Salesforce quickly before users begin to work with the incorrect records. Which tool should the administrator use to complete the task? (Choose two answers.)",
+    "options": [
+      "Salesforce roll-back",
+      "Data Loader",
+      "Mass Delete",
+      "Import Wizard"
+    ],
+    "correctAnswers": [1,2],
+    "explanation": "[translate:Data Loader] and [translate:Mass Delete] are effective tools for bulk record removal."
+  },
+  {
+    "id": 135,
+    "module": "Practice Test",
+    "question": "The Marketing team at Universal Containers is responsible for creating new leads and distributing them to different regional sales groups for qualification. How can a system administrator automate this process?",
+    "options": [
+      "Create a queue for the marketing team and a flow to notify the team each time a lead is assigned to the queue.",
+      "Create a queue for each regional group and a lead assignment rule to route leads to the queues.",
+      "Create a default sales team for each regional group and a lead assignment rule to route leads to the default sales team.",
+      "Create a queue for each regional group and a validation rule to enforce that the leads are assigned to the correct group."
+    ],
+    "correctAnswers": [1],
+    "explanation": "Lead assignment rules route leads to regional queues for automatic distribution."
+  },
+  {
+    "id": 136,
+    "module": "Practice Test",
+    "question": "What does the report type determine when a new report is created? (Choose two answers.)",
+    "options": [
+      "The objects included in the report",
+      "Whether the report can be displayed in a dashboard",
+      "The default columns in the report",
+      "Whether the report can contain a chart"
+    ],
+    "correctAnswers": [0,2],
+    "explanation": "Report types specify the objects and default columns available in reports."
+  },
+  {
+    "id": 137,
+    "module": "Practice Test",
+    "question": "Universal Finance has segmented its customer base into two categories: High Wealth and Retirement. High Wealth accounts should be visible to the High Wealth sales team members only. Retirement accounts should be visible to all sales users. How can a system administrator accomplish this?",
+    "options": [
+      "Create a new profile for Retirement sales team members and remove read access to High Wealth account records.",
+      "Set the organization-wide default sharing to private and create sharing rules to share High Wealth accounts with the High Wealth team members public group and Retirement accounts with all sales users.",
+      "Create a new record type for the High Wealth accounts and share the record type with High Wealth sales team members.",
+      "Set the organization-wide default sharing to public read-only and create a sharing rule to limit access to High Wealth accounts."
+    ],
+    "correctAnswers": [1],
+    "explanation": "Sharing rules on private org-wide defaults restrict High Wealth account visibility appropriately."
+  },
+  {
+    "id": 138,
+    "module": "Practice Test",
+    "question": "An administrator needs to prevent users from exporting reports. Which tools could the admin use to accomplish this request? (Choose two answers.)",
+    "options": [
+      "User Record",
+      "Permission Set",
+      "Profile",
+      "Muting Permission Set in Group"
+    ],
+    "correctAnswers": [2,3],
+    "explanation": "Profiles and muting permission sets can restrict report export permissions."
+  },
+  {
+    "id": 139,
+    "module": "Practice Test",
+    "question": "A system administrator is creating new user records for a new hire class starting next week for the Service team. The first few records created with no issues, but this last one is not saving properly. What could be the issue? (Choose two answers.)",
+    "options": [
+      "The username is not unique.",
+      "The time zone is different from the corporate default.",
+      "The Manager field is left blank.",
+      "A license is not available."
+    ],
+    "correctAnswers": [3],
+    "explanation": "User records fail to save when no licenses are available for assignment."
+  },
+  {
+    "id": 140,
+    "module": "Practice Test",
+    "question": "Universal Containers set the organization-wide default settings for account to private. The system administrator has added a new role to the role hierarchy. Users assigned to the new role need read access to accounts owned by other members of the role. How can an administrator accomplish this?",
+    "options": [
+      "Select Grant Access Using Hierarchies for accounts.",
+      "Add the role to the account teams.",
+      "Create an account sharing rule.",
+      "Create a public group for the role."
+    ],
+    "correctAnswers": [2],
+    "explanation": "Account sharing rules can grant read access across roles beyond hierarchy defaults."
+  },
+  {
+    "id": 141,
+    "module": "Practice Test",
+    "question": "The Support team has a case record type for refund requests. The account owner should be notified when a refund request is entered for one of their accounts. What tool would the administrator use to fulfill this requirement?",
+    "options": [
+      "Assignment Rules",
+      "Flow",
+      "Chatter Post",
+      "Escalation Rules"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Flows can automate notifications based on case record actions."
+  },
+  {
+    "id": 142,
+    "module": "Practice Test",
+    "question": "Sales representatives at Universal Containers perform the initial steps in the lead qualification process and sales managers complete the final qualification steps. Universal Containers' requirements include those listed below: Sales managers can access all lead status values. Sales representatives can only access the first three lead status values. Sales representatives cannot access the final two lead status values. How can a system administrator meet these requirements?",
+    "options": [
+      "Use field-level security to restrict access to the lead status values.",
+      "Create two separate page layouts.",
+      "Create two separate lead processes and record types.",
+      "Create a validation rule to prevent lead conversion."
+    ],
+    "correctAnswers": [2],
+    "explanation": "Separate lead processes and record types control access to lead status values per user group."
+  },
+  {
+    "id": 143,
+    "module": "Practice Test",
+    "question": "It's important for Universal Containers to always convey a consistent message. When marketing reps talk with leads, they should follow a specific script written by the marketing manager. An administrator is planning to take the script and create a flow with it. What flow element would an administrator use to present the script?",
+    "options": [
+      "Screen",
+      "Loop",
+      "Assignment",
+      "Variable"
+    ],
+    "correctAnswers": [0],
+    "explanation": "[translate:Screen] elements are used to present information to users during flows."
+  }
+]
+
