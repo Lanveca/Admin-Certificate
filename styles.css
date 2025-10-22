@@ -159,3 +159,26 @@ input[type="checkbox"] {
 .exam-btns-wrapper .finish-early-btn {
   margin-left: auto;
 }
+.question-nav-buttons {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  display: flex;
+  gap: 16px;
+  z-index: 10;
+}
+
+.nav-arrow-btn {
+  font-size: 2rem;
+  padding: 8px 16px;
+  background: #0e1726;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  transition: background 0.2s;
+}
+.nav-arrow-btn:hover {
+  background: #26396c;
+}

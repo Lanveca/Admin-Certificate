@@ -4,7 +4,7 @@ class QuestionBank {
   }
   async loadQuestions() {
     try {
-      const response = await fetch('questions.json');
+    const response = await fetch('questions.json');
       const data = await response.json();
       this.questions = data;
       assignUnitToQuestions(this.questions);
@@ -15,29 +15,24 @@ class QuestionBank {
   }
 }
 
+// Nuevo mapeo de unidades (categorías definitivas)
 const units_keywords = {
-  'Security & Access': ['Security', 'Salesforce Security'],
-  'Data Management': ['Data Management', 'Salesforce Data Management', 'Salesforce Basics', 'Salesforce Data Model'],
-  'Salesforce Automation': ['Automation', 'Salesforce Automation', 'Flows'],
-  'Reporting & Dashboards': ['Reporting', 'Salesforce Reporting', 'Reports & Dashboards', 'Dashboards'],
-  'User Setup & Licensing': ['Users', 'User Setup', 'Licensing', 'Salesforce User Interface', 'Salesforce Mobile'],
-  'Salesforce Platform & Lightning': ['Salesforce Platform', 'Lightning'],
-  'Business Processes & Scenarios': [
-    'Business Scenario', 'Business Processes', 'Validations', 'Record Types', 'AppExchange', 'Audit', 'Cases', 'Mobile'
-  ]
+  'Configuration and Setup': ['Configuration and Setup'],
+  'Object Manager and Lightning App Builder': ['Object Manager and Lightning App Builder'],
+  'Sales and Marketing Applications': ['Sales and Marketing Applications'],
+  'Service and Support Applications': ['Service and Support Applications'],
+  'Productivity and Collaboration': ['Productivity and Collaboration'],
+  'Data and Analytics Management': ['Data and Analytics Management'],
+  'Workflow/Process Automation': ['Workflow/Process Automation']
 };
 
 function assignUnitToQuestions(questions) {
   questions.forEach(q => {
-    let assigned = false;
-    for (const [unit, keywords] of Object.entries(units_keywords)) {
-      if (keywords.includes(q.module)) {
-        q.unit = unit;
-        assigned = true;
-        break;
-      }
+    if (units_keywords[q.module]) {
+      q.unit = q.module; // La unidad ahora es el mismo nombre del módulo
+    } else {
+      q.unit = 'Miscellaneous'; // Por si alguna pregunta queda sin categoría válida
     }
-    if (!assigned) q.unit = 'Miscellaneous';
   });
 }
 
@@ -95,6 +90,7 @@ function showUnitsMenu() {
     appDiv.appendChild(btn);
   });
 }
+
 
 function startUnitQuiz(unit) {
   examMode = false;
@@ -167,7 +163,45 @@ function showQuestion(question) {
     validateAnswer(question);
   };
   appDiv.appendChild(btn);
+
+  // ---- Flechas de navegación al fondo a la derecha ----
+  const navDiv = document.createElement('div');
+  navDiv.className = 'question-nav-buttons';
+
+  // Botón flecha izquierda (←)
+  if (currentIndex > 0) {
+    const prevBtn = document.createElement('button');
+    prevBtn.innerHTML = '&#8592;';
+    prevBtn.className = 'nav-arrow-btn';
+    prevBtn.onclick = function () {
+      currentIndex -= 1;
+      showQuestion(currentQuestions[currentIndex]);
+    };
+    navDiv.appendChild(prevBtn);
+  }
+
+  // Botón flecha derecha (→)
+  if (currentIndex < currentQuestions.length - 1) {
+    const nextBtn = document.createElement('button');
+    nextBtn.innerHTML = '&#8594;';
+    nextBtn.className = 'nav-arrow-btn';
+    nextBtn.onclick = function () {
+      currentIndex += 1;
+      showQuestion(currentQuestions[currentIndex]);
+    };
+    navDiv.appendChild(nextBtn);
+  } else {
+    // Si es la última pregunta, botón finalizar
+    const finishBtn = document.createElement('button');
+    finishBtn.textContent = 'Finalizar';
+    finishBtn.onclick = showEndScreen;
+    finishBtn.className = 'nav-arrow-btn';
+    navDiv.appendChild(finishBtn);
+  }
+
+  appDiv.appendChild(navDiv);
 }
+
 
 function validateAnswer(question) {
   const inputs = document.querySelectorAll('input[name="option"]');
