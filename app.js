@@ -235,11 +235,13 @@ function showExamQuestion(question) {
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
 
+  // Botón de salir del examen
   const backBtn = document.createElement('button');
   backBtn.textContent = 'Exit Exam';
   backBtn.onclick = () => showMainMenu();
   appDiv.appendChild(backBtn);
 
+  // Info y enunciado de la pregunta
   const info = document.createElement('p');
   info.textContent = `(Exam Mode) Question ${currentIndex + 1} of ${currentQuestions.length}`;
   appDiv.appendChild(info);
@@ -254,6 +256,7 @@ function showExamQuestion(question) {
     multiAns.textContent = 'Select ALL that apply.';
     appDiv.appendChild(multiAns);
   }
+
 
   question.options.forEach((opt, idx) => {
     const label = document.createElement('label');
@@ -292,20 +295,6 @@ function showExamQuestion(question) {
   btnsWrapper.appendChild(earlyFinishBtn);
 
   appDiv.appendChild(btnsWrapper);
-
-  // --- BLOQUEAR Submit múltiples en modo examen ---
-  // Solo permitir contestar una vez
-  const inputs = document.querySelectorAll('input[name="option"]');
-  inputs.forEach((i) => {
-    i.addEventListener('change', () => {
-      // Si ya se ha respondido guardamos respuesta y bloqueamos
-      if (![...inputs].some(x => x.checked)) return;
-      // Deshabilitar tras seleccionar
-      setTimeout(() => {
-        inputs.forEach(x => x.disabled = true);
-      }, 100);
-    });
-  });
 }
 
 function captureExamAnswer(question) {
