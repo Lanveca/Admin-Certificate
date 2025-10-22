@@ -3620,7 +3620,7 @@
     "correctAnswers": [
       1
     ],
-    "explanation": "The Master-Detail relationship is created on the Detail Object as a new custom field specified as a Master-Detail relationship. Master-Detail Relationship fields are always created on the Detail (child) and related lists can be set to display on the page layout of the Master (parent). Junction objects have two master-detail relationships and are used to establish a many-to-many relationship in Salesforce. Refer to https://help.salesforce.com/articleView?id=overview_of_custom_object_relationships.htm&type=0&language=en_US&release=206.13 for a good Objects Relationship Overview."
+    "explanation": "The Master-Detail relationship is created on the Detail Object as a new custom field specified as a Master-Detail relationship. Master-Detail Relationship fields are always created on the Detail (child) and related lists can be set to display on the page layout of the Master (parent). Junction objects have two master-detail relationships and are used to establish a many-to-many relationship in Salesforce."
   },
   {
     "id": 238,
