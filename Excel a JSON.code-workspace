@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../Excel a JSON"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Admin-Certificate"
+	}
+}
