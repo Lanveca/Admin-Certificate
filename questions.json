@@ -3885,21 +3885,6 @@
     "explanation": "Events are for meetings and the Cloud Scheduler is also used for meeting requests that are sent to people outside of your Salesforce organization. A Task is used to schedule tasks for users to complete."
   },
   {
-    "id": 255,
-    "module": "Data and Analytics Management",
-    "question": "You have been tasked with creating a complex report that contains data from four different objects that are not related to one another. This complex report needs to be able to display record level values for records that belong to each of these four object. What would you do to fulfill this request?",
-    "options": [
-      "Create a Custom Report Type of the four objects.",
-      "Create a Matrix Report and include the four objects.",
-      "Create a Joined Report and add a block for each of the four objects.",
-      "Create a Lightning Page and add a Lightning Component for Complex Reports to it."
-    ],
-    "correctAnswers": [
-      2
-    ],
-    "explanation": "Custom Report Types contain objects that are related to one another. You can create a Joined Report of un-related objects by adding additional blocks for each unrelated object. Refer to https://help.salesforce.com/articleView?id=reports_joined_create.htm&type=5 for more details."
-  },
-  {
     "id": 256,
     "module": "Sales and Marketing Applications",
     "question": "This Sales and Productivity Feature is available in Lightning Experience, and provides users with Key Fields and Guidance for Success at the top of the page layout, which may be modified with each stage of an opportunity.",
