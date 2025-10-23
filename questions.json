@@ -3825,7 +3825,7 @@
   {
     "id": 251,
     "module": "Configuration and Setup",
-    "question": "Which of the following is a proper definition of the Time Based Workflow Queue?",
+    "question": "Which of the following is a proper definition of the Time Based Workflow Queue?  (Select 2)",
     "options": [
       "Set the field to Read-Only in the Field Level Security (FLS) settings.",
       "Override the standard page layout with a Visualforce Page, rendered as a PDF.",
