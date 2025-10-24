@@ -4646,7 +4646,7 @@
   {
     "id": 304,
     "module": "Object Manager and Lightning App Builder",
-    "question": "When creating a Lookup field that is not required, what are the three valid behavior options you can specify if the lookup record is deleted? ",
+    "question": "When creating a Lookup field that is not required, what are the three valid behavior options you can specify if the lookup record is deleted? (select 3)",
     "options": [
       "Delete this record also",
       "Clear the value of this field",
@@ -4654,6 +4654,8 @@
       "Don't allow deletion of the lookup record that's part of a lookup relationship"
     ],
     "correctAnswers": [
+      0,
+      1,
       3
     ],
     "explanation": "Reparenting is an option for Master-Detail relationships, not Lookups."
