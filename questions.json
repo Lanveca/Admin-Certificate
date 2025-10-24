@@ -4657,6 +4657,7 @@
       3
     ],
     "explanation": "Reparenting is an option for Master-Detail relationships, not Lookups."
+  },
   {
     "id": 305,
     "module": "Service and Support Applications",
