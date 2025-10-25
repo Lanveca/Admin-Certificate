@@ -2468,7 +2468,7 @@
     "correctAnswers": [
       1
     ],
-    "explanation": "Escalation rules automatically escalate cases when the case meets the criteria defined in the rule entry. You can create rule entries, which define criteria for escalating a case, and escalation actions, which define what happens when a case escalates. Refer to https://help.salesforce.com/articleView?id=rules_escalation_create.htm&type=0&language=en_US&release=206.13 for more details."
+    "explanation": "Escalation rules automatically escalate cases when the case meets the criteria defined in the rule entry. You can create rule entries, which define criteria for escalating a case, and escalation actions, which define what happens when a case escalates."
   },
   {
     "id": 164,
