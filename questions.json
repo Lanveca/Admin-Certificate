@@ -5015,7 +5015,7 @@
     "correctAnswers": [
       4
     ],
-    "explanation": "Auto-Response Rules can be created for Cases and are used to send an email based on the first rule entry criteria that matches in a sequence of rule entries. It is important to know the difference between auto-response rules and workflow email alerts, so refer to https://help.salesforce.com/articleView?id=rules_differences_auto_workflow.htm&type=0 to see the difference between the two."
+    "explanation": "Auto-Response Rules can be created for Cases and are used to send an email based on the first rule entry criteria that matches in a sequence of rule entries. It is important to know the difference between auto-response rules and workflow email alerts"
   },
   {
     "id": 328,
