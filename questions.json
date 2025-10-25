@@ -2906,7 +2906,7 @@
     "correctAnswers": [
       1
     ],
-    "explanation": "Case teams help groups of people work together to solve a case, such as a support agent, support manager, and a product manager. Case Teams are different from Queues, which enable anyone from within a group of users to take ownership of a case. Cases can be owned by an individual user or a queue, but when you have a scenario that requires multiple people to all work on an individual case together, and they each play a specific role, you will want to utilize Case Teams. Chatter provides collaboration ability on cases. Refer to https://help.salesforce.com/articleView?id=caseteam_def.htm&type=0&language=en_US&release=206.13 for more details."
+    "explanation": "Case teams help groups of people work together to solve a case, such as a support agent, support manager, and a product manager. Case Teams are different from Queues, which enable anyone from within a group of users to take ownership of a case. Cases can be owned by an individual user or a queue, but when you have a scenario that requires multiple people to all work on an individual case together, and they each play a specific role, you will want to utilize Case Teams. Chatter provides collaboration ability on cases."
   },
   {
     "id": 192,
