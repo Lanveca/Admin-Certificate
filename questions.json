@@ -2360,24 +2360,6 @@
     "explanation": "Sales Processes dictates which Stages are visible on an opportunity. These can vary by Record Type, but it is in Sales Processes that you show and hide the actual Stages that are available on opportunities for users."
   },
   {
-    "id": 157,
-    "module": "Object Manager and Lightning App Builder",
-    "question": "A user reports they are no longer able to see a field on an Account record that they used to be able to see. What things should you check to troubleshoot why this field has disappeared for this user? (select 3)",
-    "options": [
-      "The user is sadly mistaken. Blame them and do nothing.",
-      "The user is sadly mistaken. Blame them and do nothing.",
-      "The user is sadly mistaken. Blame them and do nothing.",
-      "The user is sadly mistaken. Blame them and do nothing.",
-      "Check the Field Level Security of the field to see if it is now hidden for the user's profile."
-    ],
-    "correctAnswers": [
-      2,
-      3,
-      4
-    ],
-    "explanation": "A field disappearing on a user can be because of several things. The Page Layout could have been revised, with the field now removed. The user may have switched profiles or the page layout assignment for their profile may have been changed as well, thus removing the field from view. You can also log in as the user and see if they can see the field via a report, for instance. The one thing I am getting at here with this question is that the Role setting for a user does not dictate their access and visibility to a specific field on a record, but grants or denies their access to the record itself. Think in terms of Field Level Security, Page Layouts and their Assignments and Profile Settings for individual fields under the Object Settings section of a Profile whenever fields are not displaying for a user. With all this said, users are often mistaken, thinking that they have access to something that they never have. Another possibility in this scenario is that a field is not displayed if an Account is of one record type, but is displayed if a different Record Type. There are a myriad of possibilities, but Role Hierarchy does not control field visibility."
-  },
-  {
     "id": 158,
     "module": "Service and Support Applications",
     "question": "The Operations Manager has requested that a form be added to the Company website, so that customers can fill out support requests. These requests need to create a new case in Salesforce upon submission from the website. What Salesforce feature would you utilize to fulfill this request?",
