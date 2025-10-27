@@ -49,6 +49,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   showMainMenu();
 });
 
+// Paso 1: Función actualizada con el nuevo botón
 function showMainMenu() {
   examMode = false;
   const appDiv = document.getElementById('app');
@@ -66,6 +67,12 @@ function showMainMenu() {
   btnExam.textContent = 'Exam Mode';
   btnExam.onclick = () => startExamMode();
   appDiv.appendChild(btnExam);
+
+  // Nuevo botón para cargar questions_2025.json
+  const btnExam2025 = document.createElement('button');
+  btnExam2025.textContent = 'Exam Mode 2025';
+  btnExam2025.onclick = () => startExamMode2025();
+  appDiv.appendChild(btnExam2025);
 }
 
 function showUnitsMenu() {
@@ -108,6 +115,35 @@ function startExamMode() {
   currentIndex = 0;
   examUserAnswers = [];
   showExamQuestion(currentQuestions[currentIndex]);
+}
+
+// Paso 2: Nueva función añadida aquí
+async function startExamMode2025() {
+  examMode = true;
+  endedEarly = false;
+  currentUnit = 'Exam Mode 2025';
+  examUserAnswers = [];
+  try {
+    // Carga específica del JSON questions_2025.json
+    const response = await fetch('questions_2025.json');
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    // Seleccionar todas las preguntas, o el número que quieras (ejemplo usa todas)
+    currentQuestions = data;
+    currentIndex = 0;
+    showExamQuestion(currentQuestions[currentIndex]);
+  } catch (error) {
+    console.error('Failed to load 2025 questions:', error);
+    // Usamos un div de mensaje en lugar de alert
+    const appDiv = document.getElementById('app');
+    const errorMsg = document.createElement('div');
+    errorMsg.textContent = 'Error loading 2025 questions. Make sure "questions_2025.json" exists.';
+    errorMsg.style.color = 'red';
+    appDiv.prepend(errorMsg);
+    // No volvemos al menú principal automáticamente para que se vea el error
+  }
 }
 
 function getRandomQuestions(allQuestions, n) {
@@ -243,7 +279,8 @@ function showExamQuestion(question) {
 
   // Info y enunciado de la pregunta
   const info = document.createElement('p');
-  info.textContent = `(Exam Mode) Question ${currentIndex + 1} of ${currentQuestions.length}`;
+  // Usamos currentUnit para diferenciar los modos de examen
+  info.textContent = `(${currentUnit}) Question ${currentIndex + 1} of ${currentQuestions.length}`;
   appDiv.appendChild(info);
 
   const questionEl = document.createElement('h2');
@@ -319,16 +356,29 @@ function showExamResult() {
   });
 
   const total = examUserAnswers.length;
-  const minToPass = Math.ceil(total * 0.65);
+  // Ajustamos el total de preguntas al número de preguntas cargadas (puede no ser 60)
+  const totalQuestionsInSet = currentQuestions.length;
+  const minToPass = Math.ceil(totalQuestionsInSet * 0.65);
+  // La nota se basa en las respondidas si acaba pronto
+  const scoreBase = endedEarly ? total : totalQuestionsInSet; 
+  const userScore = (correctCount / scoreBase) * 100;
+  
+  // El "passed" debe basarse en el total de preguntas del examen
   const passed = correctCount >= minToPass;
+
 
   const header = document.createElement('h2');
   header.textContent = endedEarly ? 'Exam Ended Early' : 'Exam Finished!';
   appDiv.appendChild(header);
 
   const stats = document.createElement('p');
-  stats.textContent = `Answered: ${total} / ${currentQuestions.length} | Correct: ${correctCount} | Needed to Pass: ${minToPass}`;
+  stats.textContent = `Answered: ${total} / ${totalQuestionsInSet} | Correct: ${correctCount} | Needed to Pass: ${minToPass} (${(0.65 * 100).toFixed(0)}%)`;
   appDiv.appendChild(stats);
+  
+  const score = document.createElement('p');
+  score.textContent = `Your Score: ${userScore.toFixed(1)}%`;
+  appDiv.appendChild(score);
+
 
   const status = document.createElement('p');
   status.textContent = passed ? 'PASS' : 'FAIL';
