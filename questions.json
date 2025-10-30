@@ -4107,7 +4107,9 @@
       "Formula Field with a Return Type of Text.",
       "Formula Field with a Return Type of Number"
     ],
-    "correctAnswers": [],
+    "correctAnswers": [
+      0
+    ],
     "explanation": "This can be accomplished by creating a new custom Formula field. This Formula field would need a Return Type of Date specified. This would then display in Date format whatever the date would be 7 days prior to the entered Closed Date on an Opportunity. The actual formula would look like Reminder_Date__c = CloseDate - 7 - If you go through the process of creating this type of field in Salesforce, you'll actually see this exact formula as the example they give in the Formula Return Type selection for Date. Check it out."
   },
   {
