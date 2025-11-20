@@ -1,0 +1,942 @@
+[
+  {
+    "id": 1,
+    "module": "Salesforce Certified Administrator",
+    "question": "The marketing director at Northern Trail Outfitters has requested that the Budget field is populated in order for the Lead Status field to be marked as qualified. What tool should the administrator use to fulfill this request?",
+    "options": [
+      "Workflow Rule",
+      "Validation Rule",
+      "Require Field",
+      "Lead Conversion"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 2,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which two actions should an administrator perform with Case escalation rules?",
+    "options": [
+      "Send email notifications",
+      "Re-assign the Case",
+      "Re-open the Case",
+      "Change the Case Priority"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": 3,
+    "module": "Salesforce Certified Administrator",
+    "question": "Cloud Kicks wants its reports to show a Fiscal Year that starts on February 1 and has 12 months. How should the administrator address this requirement?",
+    "options": [
+      "Set the Fiscal Year to Standard and the duration to 12 months",
+      "Set the Fiscal Year to Standard and the starting month as February",
+      "Set the Fiscal Year to Custom and the starting month as February",
+      "Set the Fiscal Year to Custom and the duration to 4 quarters"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 4,
+    "module": "Salesforce Certified Administrator",
+    "question": "Users at Cloud Kicks want to be able to create a task that will repeat every two weeks. What should an administrator do to meet this requirement?",
+    "options": [
+      "Enable Creation of Recurring Tasks",
+      "Workflow rule to create recurring tasks",
+      "Turn on Recurring Activities",
+      "Flow to create recurring tasks"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 5,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers requires a different Lightning page to be displayed when Accounts are viewed in the Sales Console and in the Service Console. How should an administrator meet this requirement?",
+    "options": [
+      "Create different user profiles",
+      "Assign Lightning pages as app default",
+      "Update page layout assignments",
+      "Define multiple record types"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 6,
+    "module": "Salesforce Certified Administrator",
+    "question": "An administrator has assigned a permission set group with the two-factor authentication for User Interface Logins permission and the two-factor authentication for API Logins permission to a group of users. Which two prompts will happen when one of the users attempts to log in to Data Loader?",
+    "options": [
+      "Users need to connect an authenticator app to their Salesforce account",
+      "Users need to enter a verification code from email or SMS, whichever has higher priority",
+      "Users need to download and install an authenticator app on their mobile device",
+      "Users need to get a security token from a trusted network using Reset My Security Token"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": 7,
+    "module": "Salesforce Certified Administrator",
+    "question": "When users log in to Salesforce via the user interface, which two settings does the system check for authentication?",
+    "options": [
+      "The user's Two-Factor Authentication for User Interface Logins permission",
+      "The user's Two-Factor Authentication for API Logins permission",
+      "The user's profile login hours restrictions",
+      "The role IP address restrictions"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 8,
+    "module": "Salesforce Certified Administrator",
+    "question": "Northern Trail Outfitters has the Case object set to private. The support manager raised a concern that reps have a broader view of data than expected and can see all cases on their group's dashboards. What could be causing reps to have inappropriate access to data on dashboards?",
+    "options": [
+      "Dashboard's running user",
+      "Public Dashboards",
+      "Dashboard Subscriptions",
+      "Dashboard Filters"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 9,
+    "module": "Salesforce Certified Administrator",
+    "question": "The administrator at AW Computing wants Account details, related lists, and Chatter feeds to each appear on separate tabs when viewing an Account. Which type of page should the administrator create?",
+    "options": [
+      "Lightning home page",
+      "Lightning app page",
+      "Lightning page component",
+      "Lightning record page"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 10,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar provides a 1-year warranty on all of the panels it installs. Installation details, along with the warranty information, are captured on a custom object called Installation. The installation record is created by the installer from the mobile app. Customers sometimes receive a longer warranty as a way of increasing customer satisfaction when an installation gets delayed or has issues. How should the administrator configure Salesforce to capture the expiration date of the warranty?",
+    "options": [
+      "Add a validation rule to ensure the Expiration Date field is populated",
+      "Use a formula as the default value of the warranty Expiration Date field",
+      "Include the warranty Expiration Date field on the mobile page layout",
+      "Create a formula field to display 1 year from the warranty purchased"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 11,
+    "module": "Salesforce Certified Administrator",
+    "question": "Northern Trail Outfitters wants to encourage employees to choose secure and appropriate passwords for their Salesforce accounts. Which three password policies should an administrator configure?",
+    "options": [
+      "Number of days until expiration",
+      "Maximum invalid login attempts",
+      "Require use of Password Manager App",
+      "Prohibited password values",
+      "Password complexity requirements"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      4
+    ]
+  },
+  {
+    "id": 12,
+    "module": "Salesforce Certified Administrator",
+    "question": "The client services and customer support teams share the same profile but have different permission sets. The custom object Retention related list needs to be restricted to the client services team on the Lightning record page layout. What should the administrator use to fulfill this request?",
+    "options": [
+      "Page Layout Assignment",
+      "Sharing Settings",
+      "Component Visibility",
+      "Record Type Assignment"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 13,
+    "module": "Salesforce Certified Administrator",
+    "question": "Sales managers would like to know what could be implemented to surface important values based on the stage of the opportunity. Which tool should an administrator use to meet this requirement?",
+    "options": [
+      "Path Key Fields",
+      "Workflow Rules",
+      "Dynamic Forms",
+      "Opportunity Processes"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 14,
+    "module": "Salesforce Certified Administrator",
+    "question": "The administrator at Ursa Major Solar imported records into an object by mistake. Which two tools should be used to undo this import?",
+    "options": [
+      "Data Import Wizard",
+      "Weekly Data Export",
+      "Data Loader",
+      "Mass Delete Records"
+    ],
+    "correctAnswers": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": 15,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers has a private sharing model for Opportunities and uses Opportunity teams. Criteria-based sharing rules are not used. A sales rep at Universal Containers leaves the company and their user record is deactivated. The rep is later rehired in the same role. The administrator activates the old user record. The user is added to the same default Opportunity teams but is no longer able to see the same records the user worked on before leaving the company. What is the likely cause?",
+    "options": [
+      "The record type of the Opportunity records was changed",
+      "The records were manually shared with the user",
+      "The stage of the Opportunity records was changed to closed lost",
+      "Permission sets were removed when the user was deactivated"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 16,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which tool should an administrator use to review recent configuration changes made in their org?",
+    "options": [
+      "Critical Updates",
+      "Debug Logs",
+      "Field History Tracking",
+      "Setup Audit Trail"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 17,
+    "module": "Salesforce Certified Administrator",
+    "question": "The administrator has been asked to automate a simple field update on the account. When a support agent changes the status of the account to 'Audited', they would like the system to automatically update the Audited Date field on the account with today's date. Which tool should the administrator use to complete this automation?",
+    "options": [
+      "Flow Builder",
+      "Validation Rule",
+      "Approval Process",
+      "Formula Field"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 18,
+    "module": "Salesforce Certified Administrator",
+    "question": "An analytics user at Cloud Kicks needs Read, Create, and Edit access for objects and should be restricted from deleting any records. What should the administrator do to meet this requirement?",
+    "options": [
+      "Create and assign a permission set that includes Read, Create, and Edit access",
+      "Give the user View All access and assign them to the highest role in the role hierarchy",
+      "Create and assign a custom profile with Delete access removed for each object",
+      "Assign the standard System Administrator profile to the analytics user"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 19,
+    "module": "Salesforce Certified Administrator",
+    "question": "When a sales rep clicks a button on an opportunity, a simple discount calculator screen should be launched. Which automation tool should an administrator use to build this discount calculator screen?",
+    "options": [
+      "Process Builder",
+      "Platform Event",
+      "Flow Builder",
+      "Workflow Rule"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 20,
+    "module": "Salesforce Certified Administrator",
+    "question": "Sales reps at Ursa Major Solar are having difficulty managing deals. The leadership team has asked the administrator to help sales reps prioritize and close more deals. What should the administrator configure to help with these issues?",
+    "options": [
+      "Einstein Lead Scoring",
+      "Einstein Activity Capture",
+      "Einstein Search Personalization",
+      "Einstein Opportunity Scoring"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 21,
+    "module": "Salesforce Certified Administrator",
+    "question": "A new sales rep at Ursa Major Solar has a qualified lead that is ready for conversion. When using the Lead conversion process, which two records can be created?",
+    "options": [
+      "Case",
+      "Account",
+      "Contact",
+      "Campaign"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 22,
+    "module": "Salesforce Certified Administrator",
+    "question": "Cloud Kicks (CK) captures whether an opportunity should be reviewed by someone in product engineering with a checkbox field called Needs Review. CK also has a picklist field on the opportunity for Product Type. When a sales rep saves an opportunity, they need to select the Product Type or check the Needs Review box. What should an administrator use to accomplish this?",
+    "options": [
+      "Before Save flow",
+      "Validation rule",
+      "Workflow rule",
+      "Required fields"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 23,
+    "module": "Salesforce Certified Administrator",
+    "question": "Cloud Kicks has a screen flow with two questions on the same screen, but only one is necessary at a time. The administrator has been asked to show only the question that is needed. How should an administrator complete this?",
+    "options": [
+      "Use branching in the flow screen to show the proper scenario",
+      "Use conditional visibility to hide the unnecessary question",
+      "Use a new version of the flow for each scenario",
+      "Use a decision element and a new screen to show the proper question"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 24,
+    "module": "Salesforce Certified Administrator",
+    "question": "The administrator at Ursa Major Solar wants to add prepopulated subjects for Tasks and Events. Tasks should have the subjects Schedule Site Visit, and Send Contract, while Events should have the subjects Site Visit and Ride Along. How can this requirement be configured?",
+    "options": [
+      "Include Schedule Site Visit, Send Contract, Site Visit, and Ride Along picklist values for the Activity subject field",
+      "Add the new values to the predefined field values for the global actions New Event and New Task",
+      "Add Schedule Site Visit and Send Contract picklist values for the Task subject field. Add Site Visit and Ride Along picklist values for Event subject field",
+      "Create a new custom Subject picklist field on Activity and add the field values"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 25,
+    "module": "Salesforce Certified Administrator",
+    "question": "DreamHouse Realty needs to use consistent picklist values in the Category field on Accounts and Cases, with values respective to record types. Which two features should the administrator use to fulfill this requirement?",
+    "options": [
+      "Global picklist",
+      "Multi-select picklist",
+      "Dependent picklist",
+      "Custom picklist"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 26,
+    "module": "Salesforce Certified Administrator",
+    "question": "Northern Trail Outfitters wants to initiate expense reports from Salesforce to the external HR system. This process needs to be reviewed by managers and directors. Which two tools should an administrator configure?",
+    "options": [
+      "Outbound Message",
+      "Quick Action",
+      "Email Alert Action",
+      "Approval Process"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 27,
+    "module": "Salesforce Certified Administrator",
+    "question": "The administrator at Ursa Major Solar has been asked to change the Work Item and Project custom object relationship from a master-detail to a lookup. Which scenario could prevent the administrator from fulfilling this requirement?",
+    "options": [
+      "The lookup field in all the records contains a value",
+      "A junction object is required to support the lookup",
+      "Roll-up summary fields exist on the master object",
+      "The lookup field is required for saving records"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 28,
+    "module": "Salesforce Certified Administrator",
+    "question": "Cloud Kicks wants a report to categorize accounts into small, medium, and large based on the dollar value found in the Contract Value field. What feature should an administrator use to meet this request?",
+    "options": [
+      "Bucket Column",
+      "Filter Logic",
+      "Group Rows",
+      "Detail Column"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 29,
+    "module": "Salesforce Certified Administrator",
+    "question": "The marketing team at Ursa Major Solar wants to send a personalized email whenever a lead fills out the web-to-lead form on their website. They want to send different messages based on the Lead Industry field value. What should an administrator configure to meet this requirement?",
+    "options": [
+      "Use a validation rule to trigger workflow to email the lead",
+      "Create an assignment rule to email the lead",
+      "Add a public group and Process Builder to email the lead",
+      "Configure an auto-response rule to email the lead"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 30,
+    "module": "Salesforce Certified Administrator",
+    "question": "Cloud Kicks has decided to delete a custom field. What will happen to the data in the field when it is deleted?",
+    "options": [
+      "The data associated with the field is removed",
+      "The data is restorable from the recycle bin",
+      "The data is permanently deleted",
+      "The data in the field is stored for 20 days"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": 31,
+    "module": "Salesforce Certified Administrator",
+    "question": "Currently, when support reps at Ursa Major Solar close a case, they manually send an email notification to the customer. The support manager would like to automate this process, as too many reps are forgetting this step. Which two settings should the administrator use to meet this request?",
+    "options": [
+      "Case close template in the support settings",
+      "Add the Knowledge component to the closed layout",
+      "Auto-response rule step set for status of closed",
+      "Notify contact checkbox on close page layout"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 32,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Solar Major is evaluating a brand new Salesforce org for its service team and would like to know what objects will be made available with out of the box Service Cloud. Which three of the standard objects are available to an administrator considering a support use case?",
+    "options": [
+      "Case",
+      "Request",
+      "Ticket",
+      "Contract",
+      "Account"
+    ],
+    "correctAnswers": [
+      0,
+      3,
+      4
+    ]
+  },
+  {
+    "id": 33,
+    "module": "Salesforce Certified Administrator",
+    "question": "DreamHouse Realty regularly processes customer requests for warranty work and would like to offer customers a self-serve option to generate cases. Which two solutions should an administrator use to meet this request?",
+    "options": [
+      "Case Queues",
+      "Email-to-Case",
+      "Web-to-Case",
+      "Case Escalation"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 34,
+    "module": "Salesforce Certified Administrator",
+    "question": "What is the order of execution when a Case record is saved?",
+    "options": [
+      "Validation rules, Assignment rules, Escalation rules, Auto-response rules",
+      "Assignment rules, Validation rules, Workflow rules, Escalation rules",
+      "Assignment rules, Auto-response rules, Workflow rules, Escalation rules",
+      "Validation rules, Escalation rules, Workflow rules, Auto-response rules"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 35,
+    "module": "Salesforce Certified Administrator",
+    "question": "Cloud Kicks wants to give credit to Opportunity team members based on the level of effort contributed by each person toward each deal. What feature should the administrator use to meet this requirement?",
+    "options": [
+      "List Views",
+      "Queues",
+      "Stages",
+      "Splits"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 36,
+    "module": "Salesforce Certified Administrator",
+    "question": "What are two considerations an administrator should keep in mind when working with Salesforce objects?",
+    "options": [
+      "Only standard objects support master-detail relationships",
+      "Standard objects are included with Salesforce",
+      "Custom and standard objects have standard fields",
+      "A new standard object can be created"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 37,
+    "module": "Salesforce Certified Administrator",
+    "question": "AW Computing wants to prevent users from updating the Account Annual Revenue field to be a negative value or an amount more than $100 billion. How should an administrator accomplish this request?",
+    "options": [
+      "Enable Account Revenue limits in Setup, with 0 as the minimum and 100 billion as the maximum",
+      "Build a scheduled report displaying Accounts with Account Revenue that is negative or greater than 100 billion",
+      "Make the Account Revenue field required on the page layout",
+      "Create a validation rule that displays an error if Account Revenue is below 0 or greater than 100 billion"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 38,
+    "module": "Salesforce Certified Administrator",
+    "question": "What are three settings an administrator should configure to make it easy for approvers to respond to approval requests?",
+    "options": [
+      "Specify initial submission actions within the approval process",
+      "Enable the organization's email approval response setting",
+      "Update the organization's Chatter settings to allow approvals",
+      "Add the Items to Approve component to the approvers' home page",
+      "Create a flow to automatically approve all records"
+    ],
+    "correctAnswers": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 39,
+    "module": "Salesforce Certified Administrator",
+    "question": "Cloud Kicks has the organization-wide defaults for Opportunity set to Private. Which two features should the administrator use to open up access to opportunity records for sales users working on collaborative deals?",
+    "options": [
+      "Sharing set",
+      "Role hierarchy",
+      "Profiles",
+      "Sharing rules"
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": 40,
+    "module": "Salesforce Certified Administrator",
+    "question": "Sales users at Cloud Kicks are requesting that the data in the Industry field on the Account object displays on the Opportunity page layout. Which type of field should an administrator create to accomplish this?",
+    "options": [
+      "Master-detail relationship field",
+      "Custom Account field",
+      "Cross-object formula field",
+      "Standard Account field"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 41,
+    "module": "Salesforce Certified Administrator",
+    "question": "Sales and Customer Care at Ursa Major Solar need to see different fields on the Case related list from the Account record. Sales users want to see Case created date and status while Customer Care would like to see owner, status, and contact. What should the administrator use to achieve this?",
+    "options": [
+      "Related Lookup Filters",
+      "Compact Layout Editor",
+      "Page Layout Editor",
+      "Search Layout Editor"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 42,
+    "module": "Salesforce Certified Administrator",
+    "question": "The sales team at Ursa Major Solar has asked the administrator to automate an outbound message. What should the administrator utilize to satisfy the request?",
+    "options": [
+      "Task Assignment",
+      "Case Auto-Response Rule",
+      "Record-triggered flow",
+      "Process Builder"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 43,
+    "module": "Salesforce Certified Administrator",
+    "question": "The VP of sales at DreamHouse Realty has requested a dashboard to visualize enterprise sales across the different teams. The key piece of data is the total of all sales for the year and the progress to the enterprise sales goal. What dashboard component will effectively show this number and the proximity to the total goal as a single value?",
+    "options": [
+      "Table",
+      "Donut",
+      "Gauge",
+      "Stacked Bar"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 44,
+    "module": "Salesforce Certified Administrator",
+    "question": "An administrator at DreamHouse Realty wants an easier way to assign cases based on agent capacity and skill set. Which feature should the administrator enable to meet this requirement?",
+    "options": [
+      "Knowledge Management",
+      "Omni-Channel",
+      "Territory Management",
+      "Escalation Rules"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 45,
+    "module": "Salesforce Certified Administrator",
+    "question": "Cloud Kicks (CK) has a new administrator who is asked to put together a memo detailing Salesforce usage to budget for upcoming license purchases. Where should the administrator go to find out what type of licenses CK has purchased and how many are available?",
+    "options": [
+      "User management settings in setup",
+      "Usage-based entitlements related list in company information",
+      "User licenses related list in company information",
+      "Search for licenses types in setup"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 46,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers is trying to improve the user experience when searching for the right status on a case. The company currently has one support process that is used for all record types on cases. The support process has 10 status values. Service reps say they never need more than five depending on what kind of case they are working on. How should the administrator improve on the current implementation?",
+    "options": [
+      "Edit the status choices directly on the record type",
+      "Create a Screen Flow that shows only the correct values for status and surface the flow in the utility bar of the console",
+      "Review which status choices are needed for each record type and create support processes for each that is necessary",
+      "Reduce the number of case status values to five"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 47,
+    "module": "Salesforce Certified Administrator",
+    "question": "The administrator for AW Computing is working with a user who is having trouble logging in to Salesforce. What should the administrator do to identify why the user is unable to log in?",
+    "options": [
+      "Check the attempted logins by running the setup audit trail",
+      "Pull the password history to ensure the password policy was followed",
+      "Reset the security token for the profile",
+      "Review the login history for the user"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 48,
+    "module": "Salesforce Certified Administrator",
+    "question": "Northern Trail Outfitters wants to calculate how much revenue has been generated for each of its marketing campaigns. How should an administrator deliver this information?",
+    "options": [
+      "Create a roll-up summary field on Opportunity to Campaign",
+      "Design a standard Campaign report and add the Value Won Opportunities in Campaign field",
+      "Perform periodic data jobs to update campaign records",
+      "Add a Total Value field on Campaign and use a workflow rule to update the value when an opportunity is won"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 49,
+    "module": "Salesforce Certified Administrator",
+    "question": "An administrator at Universal Containers needs an automated way to delete records based on field values. What automated solution should the administrator use?",
+    "options": [
+      "Process Builder",
+      "Flow Builder",
+      "Automation Studio",
+      "Workflow"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 50,
+    "module": "Salesforce Certified Administrator",
+    "question": "Cloud Kicks needs to change the owner of a case when it has been open for more than 7 days. How should the administrator complete this requirement?",
+    "options": [
+      "Assignment Rules",
+      "Escalation Rules",
+      "Auto-Response Rules",
+      "Validation Rules"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 51,
+    "module": "Salesforce Certified Administrator",
+    "question": "At Ursa Major Solar, a flow is in place that sends a reminder email 30 days before the warranty expiration date. A customer renews their warranty for another three years. What is the expected behavior of the email element in the flow?",
+    "options": [
+      "The email is not sent because the customers email address was missing",
+      "The email is locked in the job queue until it meets the criteria",
+      "The email is sent with the 30 day reminder criteria",
+      "The email is not sent because the record no longer meets the criteria"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 52,
+    "module": "Salesforce Certified Administrator",
+    "question": "The service manager at Ursa Major Solar wants to let customers know that they have received their cases via email and their website. Medium-priority and high-priority cases should receive different email notifications than low-priority cases. The administrator has created three email templates for this purpose. How should an administrator configure this requirement?",
+    "options": [
+      "Configure one workflow rule that fires when cases are created. Add a filter for case priority. Select the appropriate email template for the rule.",
+      "Include three assignment rules that fire when cases are created. Add a filter for case priority. Select the appropriate email template for each rule.",
+      "Add three auto-response rules. Configure one rule entry criteria for each rule and set a filter for case priority. Select the appropriate email template for each rule entry.",
+      "Create one auto-response rule. Configure three rule entry criteria and set a filter for case priority. Select the appropriate email template for each rule entry."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 53,
+    "module": "Salesforce Certified Administrator",
+    "question": "The sales director at Cloud Kicks wants to be able to predict upcoming revenue in the next several fiscal quarters so they can set goals and benchmark how reps are performing. Which two features should the administrator configure?",
+    "options": [
+      "Forecasting",
+      "Sales Quotas",
+      "Opportunity List View",
+      "Opportunity Stages"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": 54,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar offers amazing experiences for all of its employees. The employee engagement committee wants to post updates while restricting other employees from posting. What should the administrator create to meet this request?",
+    "options": [
+      "Chatter Stream",
+      "Chatter Recommendations",
+      "Chatter Broadcast Group",
+      "Chatter Unlisted Group"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 55,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers requires that when an opportunity is closed won, all other open opportunities on the same account must be marked as closed lost. Which automation solution should an administrator use to implement this request?",
+    "options": [
+      "Quick Action",
+      "Workflow Rule",
+      "Outbound Message",
+      "Flow Builder"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 56,
+    "module": "Salesforce Certified Administrator",
+    "question": "The administrator at Universal Containers has a screen flow that helps users create new leads. When Lead Source is \"Search Engine\", the administrator needs to require the user to choose a specific search engine from a picklist. If Lead Source is not \"Search Engine\", this picklist should be hidden. What is the most efficient way for the administrator to complete this requirement?",
+    "options": [
+      "Use a conditional filter in the screen element to only show Specific Search Engine field only when Lead Source is \"Search Engine\".",
+      "Configure a picklist for Specific Search Engine, and use a validation rule to conditionally show only when Lead Source is \"Search Engine\".",
+      "Create a picklist for Specific Search Engine, and set conditional visibility so that it is only shown when Lead Source is \"Search Engine\".",
+      "Use an assignment element, one for when Lead Source is \"Search Engine\" and one for everything else."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 57,
+    "module": "Salesforce Certified Administrator",
+    "question": "Northern Trail Outfitters wants to track ROI for contacts that are key stakeholders for opportunities. The VP of sales requested that this information be accessible on the opportunity and available for reporting. Which two options should the administrator configure to meet these requirements?",
+    "options": [
+      "Add the Campaign Member related list to the Opportunity page layout",
+      "Add the Opportunity Contact Role related list to the Opportunity page layout",
+      "Customize Campaign Member Role",
+      "Customize Campaign Role",
+      "Customize Opportunity Contact Role"
+    ],
+    "correctAnswers": [
+      1,
+      4
+    ]
+  },
+  {
+    "id": 58,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which three items are available in the mobile navigation menu?",
+    "options": [
+      "Dashboards",
+      "Lightning Home Page",
+      "Lightning App Pages",
+      "Chatter",
+      "Utility Bar"
+    ],
+    "correctAnswers": [
+      0,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 59,
+    "module": "Salesforce Certified Administrator",
+    "question": "DreamHouse Realty wants to offer a form on its Experience Cloud site where inspectors will submit findings from a property inspection. Which feature should an administrator place on the page to fulfill this requirement?",
+    "options": [
+      "Screen Flow",
+      "Record Detail",
+      "Autolaunched Flow",
+      "Related List"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 60,
+    "module": "Salesforce Certified Administrator",
+    "question": "Users at Cloud Kicks are reporting different options when updating a custom picklist on the Opportunity object based on the kind of opportunity. Where should an administrator update the option in the picklist?",
+    "options": [
+      "Related lookup filters",
+      "Record type",
+      "Picklist value sets",
+      "Fields and relationships"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 61,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which setting on a profile makes a tab hidden in the All App Launcher or visible in any app, but still allows a user to view records that would normally be found under this tab?",
+    "options": [
+      "Object Permissions",
+      "App Permissions",
+      "Tab Settings",
+      "Org-wide Defaults"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 62,
+    "module": "Salesforce Certified Administrator",
+    "question": "The administrator at Cloud Kicks has a custom picklist field on Lead, which is missing on the Contact when leads are converted. Which two items should the administrator do to make sure these values are populated?",
+    "options": [
+      "Map the picklist field on the Lead to the Contact",
+      "Set the picklist field to be required on the Lead object",
+      "Update the picklist value with a validation rule",
+      "Create a custom picklist field on Contact"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 63,
+    "module": "Salesforce Certified Administrator",
+    "question": "AW Computing has six sales teams in a region. These teams always consist of the same account manager, engineer, and assistant. What should the administrator configure to make it easier for teams to collaborate with the same customer?",
+    "options": [
+      "Enable account teams and show the users how to set up a default account team",
+      "Propose the users manually share all their accounts with their teammates",
+      "Enable and configure standard opportunity teams with splits",
+      "Create a queue for each team and assign account ownership to the queue"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 64,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which two solutions could an administrator find on the AppExchange to enhance their organization?",
+    "options": [
+      "Components",
+      "Customers",
+      "Communities",
+      "Consultants"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 65,
+    "module": "Salesforce Certified Administrator",
+    "question": "A sales rep has a list of 300 accounts with contacts that they want to load at one time. Which tool should the administrator utilize to import the records to Salesforce?",
+    "options": [
+      "Data Import Wizard",
+      "Data Loader",
+      "Dataloader.io",
+      "Manual Import"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  }
+]
