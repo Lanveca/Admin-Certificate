@@ -2,428 +2,482 @@ class QuestionBank {
   constructor() {
     this.questions = [];
   }
-  async loadQuestions() {
+
+  // Carga el banco general (questions.json) para Units y Random
+  async loadGeneralQuestions() {
     try {
-    const response = await fetch('questions.json');
+      const response = await fetch('questions.json');
       const data = await response.json();
       this.questions = data;
-      assignUnitToQuestions(this.questions);
-      console.log(`Loaded ${this.questions.length} questions.`);
+      this.assignUnits(this.questions);
+      console.log(`Cargadas ${this.questions.length} preguntas generales.`);
     } catch (error) {
-      console.error('Failed to load questions:', error);
+      console.error('Error cargando questions.json:', error);
     }
+  }
+
+  // Carga un examen oficial específico (Official-Exams/X.json)
+  async loadOfficialExam(number) {
+    try {
+      // Asegúrate de que la carpeta en tu proyecto se llama exactamente "Official-Exams"
+      const response = await fetch(`Official-Exams/${number}.json`);
+      if (!response.ok) throw new Error('Archivo no encontrado');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      alert(`No se pudo cargar el examen ${number}. Asegúrate de que el archivo Official-Exams/${number}.json exista.`);
+      return null;
+    }
+  }
+
+  assignUnits(questions) {
+    // Mapeo de palabras clave a unidades (puedes ajustarlo si cambian los módulos)
+    const units_keywords = {
+      'Configuration and Setup': 'Configuration and Setup',
+      'Object Manager': 'Object Manager and Lightning App Builder',
+      'Sales and Marketing': 'Sales and Marketing Applications',
+      'Service and Support': 'Service and Support Applications',
+      'Productivity': 'Productivity and Collaboration',
+      'Data': 'Data and Analytics Management',
+      'Workflow': 'Workflow/Process Automation',
+      'Automation': 'Workflow/Process Automation'
+    };
+
+    questions.forEach(q => {
+      let assigned = false;
+      for (const key in units_keywords) {
+        if (q.module && q.module.includes(key)) {
+          q.unit = units_keywords[key];
+          assigned = true;
+          break;
+        }
+      }
+      if (!assigned) q.unit = q.module || 'Miscellaneous';
+    });
   }
 }
 
-// Nuevo mapeo de unidades (categorías definitivas)
-const units_keywords = {
-  'Configuration and Setup': ['Configuration and Setup'],
-  'Object Manager and Lightning App Builder': ['Object Manager and Lightning App Builder'],
-  'Sales and Marketing Applications': ['Sales and Marketing Applications'],
-  'Service and Support Applications': ['Service and Support Applications'],
-  'Productivity and Collaboration': ['Productivity and Collaboration'],
-  'Data and Analytics Management': ['Data and Analytics Management'],
-  'Workflow/Process Automation': ['Workflow/Process Automation']
-};
-
-function assignUnitToQuestions(questions) {
-  questions.forEach(q => {
-    if (units_keywords[q.module]) {
-      q.unit = q.module; // La unidad ahora es el mismo nombre del módulo
-    } else {
-      q.unit = 'Miscellaneous'; // Por si alguna pregunta queda sin categoría válida
-    }
-  });
-}
-
-const questionBank = new QuestionBank();
-let currentIndex = 0;
+const app = new QuestionBank();
 let currentQuestions = [];
-let currentUnit = null;
-let examMode = false;
-let examUserAnswers = [];
-let endedEarly = false;
+let currentIndex = 0;
+let userAnswers = []; // Para guardar respuestas en modos con puntuación
 
+// Inicialización
 window.addEventListener('DOMContentLoaded', async () => {
-  await questionBank.loadQuestions();
+  await app.loadGeneralQuestions();
   showMainMenu();
 });
 
-// Paso 1: Función actualizada con el nuevo botón
+// --- VISTAS DEL MENÚ ---
+
 function showMainMenu() {
-  examMode = false;
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
+
   const title = document.createElement('h1');
-  title.textContent = 'Salesforce Admin Practice';
+  title.textContent = 'Práctica Salesforce Admin';
   appDiv.appendChild(title);
 
-  const btnUnits = document.createElement('button');
-  btnUnits.textContent = 'Study by Units';
-  btnUnits.onclick = () => showUnitsMenu();
-  appDiv.appendChild(btnUnits);
+  // Botón 1: UNITS
+  createButton(appDiv, 'UNITS', () => showUnitsMenu());
 
-  const btnExam = document.createElement('button');
-  btnExam.textContent = 'Exam Mode';
-  btnExam.onclick = () => startExamMode();
-  appDiv.appendChild(btnExam);
+  // Botón 2: EXAM MODE (Random del general)
+  createButton(appDiv, 'MODO EXAMEN (Aleatorio)', () => startGeneralExamMode());
 
-  // Nuevo botón para cargar questions_2025.json
-  const btnExam2025 = document.createElement('button');
-  btnExam2025.textContent = 'Exam Mode 2025';
-  btnExam2025.onclick = () => startExamMode2025();
-  appDiv.appendChild(btnExam2025);
+  // Botón 3: EXÁMENES OFICIALES
+  createButton(appDiv, 'EXÁMENES OFICIALES', () => showOfficialExamsMenu());
 }
 
 function showUnitsMenu() {
-  examMode = false;
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
+  createBackButton(appDiv, showMainMenu);
 
-  const backBtn = document.createElement('button');
-  backBtn.textContent = 'Back to Main Menu';
-  backBtn.onclick = () => showMainMenu();
-  appDiv.appendChild(backBtn);
+  const title = document.createElement('h2');
+  title.textContent = 'Estudiar por Unidad';
+  appDiv.appendChild(title);
 
-  const header = document.createElement('h2');
-  header.textContent = 'Choose a Unit';
-  appDiv.appendChild(header);
+  // Obtener unidades únicas
+  const units = [...new Set(app.questions.map(q => q.unit))].sort();
 
-  const units = [...new Set(questionBank.questions.map(q => q.unit))];
   units.forEach(unit => {
-    const btn = document.createElement('button');
-    btn.textContent = `${unit} (${questionBank.questions.filter(q => q.unit === unit).length} questions)`;
-    btn.onclick = () => startUnitQuiz(unit);
-    appDiv.appendChild(btn);
+    const count = app.questions.filter(q => q.unit === unit).length;
+    createButton(appDiv, `${unit} (${count})`, () => startUnitQuiz(unit));
   });
 }
 
+function showOfficialExamsMenu() {
+  const appDiv = document.getElementById('app');
+  appDiv.innerHTML = '';
+  createBackButton(appDiv, showMainMenu);
 
-function startUnitQuiz(unit) {
-  examMode = false;
-  currentUnit = unit;
-  currentQuestions = questionBank.questions.filter(q => q.unit === unit);
-  currentIndex = 0;
-  showQuestion(currentQuestions[currentIndex]);
-}
+  const title = document.createElement('h2');
+  title.textContent = 'Selecciona un Examen Oficial';
+  appDiv.appendChild(title);
 
-function startExamMode() {
-  examMode = true;
-  endedEarly = false;
-  currentUnit = 'Exam Mode';
-  currentQuestions = getRandomQuestions(questionBank.questions, 60);
-  currentIndex = 0;
-  examUserAnswers = [];
-  showExamQuestion(currentQuestions[currentIndex]);
-}
+  const grid = document.createElement('div');
+  grid.className = 'exam-grid';
+  appDiv.appendChild(grid);
 
-// Paso 2: Nueva función añadida aquí
-async function startExamMode2025() {
-  examMode = true;
-  endedEarly = false;
-  currentUnit = 'Exam Mode 2025';
-  examUserAnswers = [];
-  try {
-    // Carga específica del JSON questions_2025.json
-    const response = await fetch('questions_2025.json');
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    // Seleccionar todas las preguntas, o el número que quieras (ejemplo usa todas)
-    currentQuestions = data;
-    currentIndex = 0;
-    showExamQuestion(currentQuestions[currentIndex]);
-  } catch (error) {
-    console.error('Failed to load 2025 questions:', error);
-    // Usamos un div de mensaje en lugar de alert
-    const appDiv = document.getElementById('app');
-    const errorMsg = document.createElement('div');
-    errorMsg.textContent = 'Error loading 2025 questions. Make sure "questions_2025.json" exists.';
-    errorMsg.style.color = 'red';
-    appDiv.prepend(errorMsg);
-    // No volvemos al menú principal automáticamente para que se vea el error
+  // Generar botones del 1 al 11
+  for (let i = 1; i <= 11; i++) {
+    const btn = document.createElement('button');
+    btn.textContent = `Examen ${i}`;
+    btn.onclick = () => selectOfficialModeType(i);
+    grid.appendChild(btn);
   }
 }
 
-function getRandomQuestions(allQuestions, n) {
-  const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, n);
-}
-
-function showQuestion(question) {
+function selectOfficialModeType(examNumber) {
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
+  createBackButton(appDiv, showOfficialExamsMenu);
 
-  const backBtn = document.createElement('button');
-  backBtn.textContent = 'Back to Units';
-  backBtn.onclick = () => showUnitsMenu();
-  appDiv.appendChild(backBtn);
+  const title = document.createElement('h2');
+  title.textContent = `Examen Oficial ${examNumber}`;
+  appDiv.appendChild(title);
+
+  const subtitle = document.createElement('h3');
+  subtitle.textContent = 'Elige el modo de realización:';
+  appDiv.appendChild(subtitle);
+
+  // Opción A: Modo Examen (Sin feedback hasta el final)
+  createButton(appDiv, 'Modo Examen (Nota al final)', async () => {
+    let questions = await app.loadOfficialExam(examNumber);
+    if (questions) {
+        // MEZCLAR PREGUNTAS ANTES DE EMPEZAR
+        questions = mezclarArray(questions);
+        startClassicExam(questions, `Oficial ${examNumber}`);
+    }
+  });
+
+  // Opción B: Modo Estudio (Bloqueante)
+  createButton(appDiv, 'Modo Estudio (Corregir al momento)', async () => {
+    let questions = await app.loadOfficialExam(examNumber);
+    if (questions) {
+        // MEZCLAR PREGUNTAS ANTES DE EMPEZAR
+        questions = mezclarArray(questions);
+        startBlockingStudyMode(questions, `Oficial ${examNumber}`);
+    }
+  });
+}
+
+// --- LÓGICA DE MODOS DE JUEGO ---
+
+// 1. MODO UNITS (Feedback inmediato, no bloqueante, explicación visible)
+function startUnitQuiz(unit) {
+  currentQuestions = app.questions.filter(q => q.unit === unit);
+  currentIndex = 0;
+  renderQuestionWithFeedback(currentQuestions[currentIndex], unit, false);
+}
+
+// 2. MODO EXAMEN GENERAL (Aleatorio 60 preguntas, nota al final)
+function startGeneralExamMode() {
+  // Mezclar y coger 60
+  const shuffled = [...app.questions].sort(() => 0.5 - Math.random());
+  currentQuestions = shuffled.slice(0, 60);
+  currentIndex = 0;
+  userAnswers = [];
+  renderClassicExamQuestion(currentQuestions[currentIndex], 'Examen Aleatorio');
+}
+
+// 3. MODO EXAMEN OFICIAL CLÁSICO (Nota al final)
+function startClassicExam(questions, title) {
+  currentQuestions = questions;
+  currentIndex = 0;
+  userAnswers = [];
+  renderClassicExamQuestion(currentQuestions[currentIndex], title);
+}
+
+// 4. MODO ESTUDIO OFICIAL (Bloqueante, sin explicación, solo Correcto/Incorrecto)
+function startBlockingStudyMode(questions, title) {
+  currentQuestions = questions;
+  currentIndex = 0;
+  renderBlockingQuestion(currentQuestions[currentIndex], title);
+}
+
+// --- RENDERS DE PREGUNTAS ---
+
+// Renderizador A: Para Units (Muestra explicación)
+function renderQuestionWithFeedback(question, titleContext, isBlocking) {
+  // Este lo usamos para UNITS (comportamiento original)
+  const appDiv = document.getElementById('app');
+  appDiv.innerHTML = '';
+  createBackButton(appDiv, showMainMenu);
 
   const info = document.createElement('p');
-  info.textContent = `Unit: ${currentUnit} (Question ${currentIndex + 1} of ${currentQuestions.length})`;
+  info.textContent = `${titleContext}: Pregunta ${currentIndex + 1} de ${currentQuestions.length}`;
   appDiv.appendChild(info);
 
-  const questionEl = document.createElement('h2');
-  questionEl.textContent = question.question;
-  appDiv.appendChild(questionEl);
+  renderQuestionTextAndOptions(appDiv, question);
 
-  if (question.correctAnswers.length > 1) {
-    const multiAns = document.createElement('div');
-    multiAns.classList.add('multi-answer-msg');
-    multiAns.textContent = 'Select ALL that apply.';
-    appDiv.appendChild(multiAns);
-  }
+  const submitBtn = document.createElement('button');
+  submitBtn.textContent = 'Comprobar';
+  submitBtn.onclick = () => {
+    const selected = getSelectedOptions();
+    if (selected.length === 0) return;
 
-  // Respuestas
-  question.options.forEach((opt, idx) => {
-    const label = document.createElement('label');
-    const inputType = question.correctAnswers.length > 1 ? 'checkbox' : 'radio';
-    const input = document.createElement('input');
-    input.type = inputType;
-    input.name = 'option';
-    input.value = idx;
-    label.appendChild(input);
-    label.appendChild(document.createTextNode(' ' + opt));
-    appDiv.appendChild(label);
-  });
+    submitBtn.disabled = true;
+    disableOptions();
 
-  const btn = document.createElement('button');
-  btn.textContent = 'Submit';
-  btn.onclick = function () {
-    // BLOQUEAR el botón
-    btn.disabled = true;
-    // BLOQUEAR las opciones
-    const inputs = document.querySelectorAll('input[name="option"]');
-    inputs.forEach(i => i.disabled = true);
-    validateAnswer(question);
+    const isCorrect = validateAnswer(question, selected);
+    showFeedbackMessage(appDiv, isCorrect, question.explanation || "Sin explicación adicional."); // Mostrar explicación en Units
+    
+    createNextButton(appDiv, () => {
+        currentIndex++;
+        if (currentIndex < currentQuestions.length) {
+            renderQuestionWithFeedback(currentQuestions[currentIndex], titleContext, isBlocking);
+        } else {
+            showEndScreen(titleContext, false);
+        }
+    });
   };
-  appDiv.appendChild(btn);
-
-  // ---- Flechas de navegación al fondo a la derecha ----
-  const navDiv = document.createElement('div');
-  navDiv.className = 'question-nav-buttons';
-
-  // Botón flecha izquierda (←)
-  if (currentIndex > 0) {
-    const prevBtn = document.createElement('button');
-    prevBtn.innerHTML = '&#8592;';
-    prevBtn.className = 'nav-arrow-btn';
-    prevBtn.onclick = function () {
-      currentIndex -= 1;
-      showQuestion(currentQuestions[currentIndex]);
-    };
-    navDiv.appendChild(prevBtn);
-  }
-
-  // Botón flecha derecha (→)
-  if (currentIndex < currentQuestions.length - 1) {
-    const nextBtn = document.createElement('button');
-    nextBtn.innerHTML = '&#8594;';
-    nextBtn.className = 'nav-arrow-btn';
-    nextBtn.onclick = function () {
-      currentIndex += 1;
-      showQuestion(currentQuestions[currentIndex]);
-    };
-    navDiv.appendChild(nextBtn);
-  } else {
-    // Si es la última pregunta, botón finalizar
-    const finishBtn = document.createElement('button');
-    finishBtn.textContent = 'Finalizar';
-    finishBtn.onclick = showEndScreen;
-    finishBtn.className = 'nav-arrow-btn';
-    navDiv.appendChild(finishBtn);
-  }
-
-  appDiv.appendChild(navDiv);
+  appDiv.appendChild(submitBtn);
 }
 
-
-function validateAnswer(question) {
-  const inputs = document.querySelectorAll('input[name="option"]');
-  const selected = Array.from(inputs).filter(i => i.checked).map(i => parseInt(i.value));
-  const correct =
-    selected.length === question.correctAnswers.length &&
-    selected.every(v => question.correctAnswers.includes(v));
+// Renderizador B: Para Exámenes (Clásico - Guarda respuesta y pasa)
+function renderClassicExamQuestion(question, titleContext) {
   const appDiv = document.getElementById('app');
+  appDiv.innerHTML = '';
+  
+  const topBar = document.createElement('div');
+  topBar.style.display = 'flex';
+  topBar.style.justifyContent = 'space-between';
+  
+  const exitBtn = document.createElement('button');
+  exitBtn.textContent = 'Salir';
+  exitBtn.style.backgroundColor = '#666';
+  exitBtn.style.padding = '5px 10px';
+  exitBtn.onclick = showMainMenu;
+  topBar.appendChild(exitBtn);
 
-  const result = document.createElement('p');
-  result.textContent = correct ? 'Correct!' : 'Incorrect!';
-  result.style.fontWeight = 'bold';
-  result.style.color = correct ? 'green' : 'red';
-  appDiv.appendChild(result);
+  appDiv.appendChild(topBar);
 
-  const explanation = document.createElement('p');
-  explanation.textContent = 'Explanation: ' + question.explanation;
-  appDiv.appendChild(explanation);
+  const info = document.createElement('p');
+  info.textContent = `${titleContext}: Pregunta ${currentIndex + 1} de ${currentQuestions.length}`;
+  appDiv.appendChild(info);
+
+  renderQuestionTextAndOptions(appDiv, question);
 
   const nextBtn = document.createElement('button');
-  nextBtn.textContent = currentIndex < currentQuestions.length - 1 ? 'Next Question' : 'Finish';
+  nextBtn.textContent = (currentIndex < currentQuestions.length - 1) ? 'Siguiente' : 'Finalizar Examen';
   nextBtn.onclick = () => {
+    const selected = getSelectedOptions();
+    // En examen permitimos dejar en blanco? Asumiremos que sí o cuenta como mal.
+    userAnswers.push({ question, selected });
+    
     currentIndex++;
-    if (currentIndex < currentQuestions.length) showQuestion(currentQuestions[currentIndex]);
-    else showEndScreen();
+    if (currentIndex < currentQuestions.length) {
+      renderClassicExamQuestion(currentQuestions[currentIndex], titleContext);
+    } else {
+      showExamResults(titleContext);
+    }
   };
   appDiv.appendChild(nextBtn);
 }
 
-function showExamQuestion(question) {
+// Renderizador C: Para Modo Estudio Oficial (Bloqueante)
+function renderBlockingQuestion(question, titleContext) {
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
+  createBackButton(appDiv, () => selectOfficialModeType(parseInt(titleContext.replace('Oficial ', ''))));
 
-  // Botón de salir del examen
-  const backBtn = document.createElement('button');
-  backBtn.textContent = 'Exit Exam';
-  backBtn.onclick = () => showMainMenu();
-  appDiv.appendChild(backBtn);
-
-  // Info y enunciado de la pregunta
   const info = document.createElement('p');
-  // Usamos currentUnit para diferenciar los modos de examen
-  info.textContent = `(${currentUnit}) Question ${currentIndex + 1} of ${currentQuestions.length}`;
+  info.textContent = `${titleContext} (Estudio): Pregunta ${currentIndex + 1} de ${currentQuestions.length}`;
   appDiv.appendChild(info);
 
-  const questionEl = document.createElement('h2');
-  questionEl.textContent = question.question;
-  appDiv.appendChild(questionEl);
+  renderQuestionTextAndOptions(appDiv, question);
 
-  if (question.correctAnswers.length > 1) {
-    const multiAns = document.createElement('div');
-    multiAns.classList.add('multi-answer-msg');
-    multiAns.textContent = 'Select ALL that apply.';
-    appDiv.appendChild(multiAns);
+  const feedbackDiv = document.createElement('div');
+  feedbackDiv.id = 'blocking-feedback';
+  appDiv.appendChild(feedbackDiv);
+
+  const actionBtn = document.createElement('button');
+  actionBtn.textContent = 'Comprobar';
+  appDiv.appendChild(actionBtn);
+
+  actionBtn.onclick = () => {
+    // Si el botón dice "Siguiente", avanzamos
+    if (actionBtn.textContent === 'Siguiente') {
+        currentIndex++;
+        if (currentIndex < currentQuestions.length) {
+            renderBlockingQuestion(currentQuestions[currentIndex], titleContext);
+        } else {
+            showEndScreen(titleContext, false);
+        }
+        return;
+    }
+
+    // Lógica de Comprobar
+    const selected = getSelectedOptions();
+    if (selected.length === 0) return;
+
+    const isCorrect = validateAnswer(question, selected);
+
+    if (isCorrect) {
+        // Correcto: Bloquear, mostrar verde y cambiar botón
+        disableOptions();
+        feedbackDiv.className = 'feedback-msg feedback-correct';
+        feedbackDiv.textContent = '¡Correcto!';
+        actionBtn.textContent = 'Siguiente';
+    } else {
+        // Incorrecto: Solo mensaje rojo, NO bloquear, permitir reintentar
+        feedbackDiv.className = 'feedback-msg feedback-incorrect';
+        feedbackDiv.textContent = 'Incorrecto. Inténtalo de nuevo.';
+        // No cambiamos el botón, el usuario debe cambiar su selección y darle a Comprobar otra vez
+    }
+  };
+}
+
+// --- FUNCIONES AUXILIARES ---
+
+// FUNCIÓN DE MEZCLA (Fisher-Yates Shuffle)
+function mezclarArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
+  return array;
+}
 
+function createButton(parent, text, onClick) {
+  const btn = document.createElement('button');
+  btn.textContent = text;
+  btn.onclick = onClick;
+  parent.appendChild(btn);
+  return btn;
+}
+
+function createBackButton(parent, onClick) {
+  const btn = document.createElement('button');
+  btn.textContent = '← Volver';
+  btn.style.marginBottom = '10px';
+  btn.style.backgroundColor = '#6c757d';
+  btn.onclick = onClick;
+  parent.appendChild(btn);
+}
+
+function renderQuestionTextAndOptions(parent, question) {
+  const qTitle = document.createElement('h2');
+  qTitle.textContent = question.question;
+  parent.appendChild(qTitle);
+
+  if (question.correctAnswers && question.correctAnswers.length > 1) {
+    const hint = document.createElement('p');
+    hint.textContent = '(Selecciona todas las correctas)';
+    hint.style.color = '#666';
+    hint.style.fontSize = '0.9rem';
+    parent.appendChild(hint);
+  }
 
   question.options.forEach((opt, idx) => {
     const label = document.createElement('label');
-    const inputType = question.correctAnswers.length > 1 ? 'checkbox' : 'radio';
     const input = document.createElement('input');
-    input.type = inputType;
+    // Determinar si es radio o checkbox
+    input.type = (question.correctAnswers && question.correctAnswers.length > 1) ? 'checkbox' : 'radio';
     input.name = 'option';
     input.value = idx;
+    
     label.appendChild(input);
     label.appendChild(document.createTextNode(' ' + opt));
-    appDiv.appendChild(label);
+    parent.appendChild(label);
   });
-
-  // WRAPPER para los botones de exam
-  const btnsWrapper = document.createElement('div');
-  btnsWrapper.className = 'exam-btns-wrapper';
-
-  const nextBtn = document.createElement('button');
-  nextBtn.textContent = currentIndex < currentQuestions.length - 1 ? 'Next' : 'Finish Exam';
-  nextBtn.onclick = () => {
-    captureExamAnswer(question);
-    currentIndex++;
-    if (currentIndex < currentQuestions.length) showExamQuestion(currentQuestions[currentIndex]);
-    else showExamResult();
-  };
-  btnsWrapper.appendChild(nextBtn);
-
-  const earlyFinishBtn = document.createElement('button');
-  earlyFinishBtn.textContent = 'Finish Exam Early';
-  earlyFinishBtn.classList.add('finish-early-btn');
-  earlyFinishBtn.onclick = () => {
-    captureExamAnswer(question);
-    endedEarly = true;
-    showExamResult();
-  };
-  btnsWrapper.appendChild(earlyFinishBtn);
-
-  appDiv.appendChild(btnsWrapper);
 }
 
-function captureExamAnswer(question) {
-  const selected = Array.from(document.querySelectorAll('input[name="option"]:checked')).map(i =>
-    parseInt(i.value)
-  );
-  examUserAnswers.push({ question, selected });
+function getSelectedOptions() {
+  const inputs = document.querySelectorAll('input[name="option"]:checked');
+  return Array.from(inputs).map(i => parseInt(i.value));
 }
 
-function showExamResult() {
+function disableOptions() {
+  const inputs = document.querySelectorAll('input[name="option"]');
+  inputs.forEach(i => i.disabled = true);
+}
+
+function validateAnswer(question, selected) {
+  // Compara arrays de índices
+  if (!question.correctAnswers) return false;
+  if (selected.length !== question.correctAnswers.length) return false;
+  const sortedSelected = selected.sort().toString();
+  const sortedCorrect = [...question.correctAnswers].sort().toString();
+  return sortedSelected === sortedCorrect;
+}
+
+function showFeedbackMessage(parent, isCorrect, explanation) {
+  const div = document.createElement('div');
+  div.className = isCorrect ? 'feedback-msg feedback-correct' : 'feedback-msg feedback-incorrect';
+  div.innerHTML = `<strong>${isCorrect ? '¡Correcto!' : 'Incorrecto'}</strong><br/>${explanation}`;
+  parent.appendChild(div);
+}
+
+function createNextButton(parent, onClick) {
+  const btn = document.createElement('button');
+  btn.textContent = 'Siguiente Pregunta';
+  btn.style.marginTop = '10px';
+  btn.onclick = onClick;
+  parent.appendChild(btn);
+}
+
+// PANTALLAS FINALES
+
+function showEndScreen(title, showScore) {
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
 
-  let correctCount = 0;
-  const failList = [];
-  examUserAnswers.forEach(ans => {
-    const ok =
-      ans.selected.length === ans.question.correctAnswers.length &&
-      ans.selected.every(v => ans.question.correctAnswers.includes(v));
-    if (ok) correctCount++;
-    else failList.push(ans);
+  const h2 = document.createElement('h2');
+  h2.textContent = `¡${title} Completado!`;
+  appDiv.appendChild(h2);
+
+  createButton(appDiv, 'Volver al Menú Principal', showMainMenu);
+}
+
+function showExamResults(title) {
+  const appDiv = document.getElementById('app');
+  appDiv.innerHTML = '';
+
+  let correct = 0;
+  userAnswers.forEach(ans => {
+    if (validateAnswer(ans.question, ans.selected)) correct++;
   });
 
-  const total = examUserAnswers.length;
-  // Ajustamos el total de preguntas al número de preguntas cargadas (puede no ser 60)
-  const totalQuestionsInSet = currentQuestions.length;
-  const minToPass = Math.ceil(totalQuestionsInSet * 0.65);
-  // La nota se basa en las respondidas si acaba pronto
-  const scoreBase = endedEarly ? total : totalQuestionsInSet; 
-  const userScore = (correctCount / scoreBase) * 100;
-  
-  // El "passed" debe basarse en el total de preguntas del examen
-  const passed = correctCount >= minToPass;
+  const score = Math.round((correct / userAnswers.length) * 100) || 0;
+  const passed = score >= 65; // Criterio Salesforce estándar
 
+  const h2 = document.createElement('h2');
+  h2.textContent = 'Resultados del Examen';
+  appDiv.appendChild(h2);
 
-  const header = document.createElement('h2');
-  header.textContent = endedEarly ? 'Exam Ended Early' : 'Exam Finished!';
-  appDiv.appendChild(header);
+  const pScore = document.createElement('p');
+  pScore.style.fontSize = '1.5rem';
+  pScore.innerHTML = `Puntuación: <strong>${score}%</strong> (${correct}/${userAnswers.length})`;
+  pScore.style.color = passed ? 'green' : 'red';
+  appDiv.appendChild(pScore);
 
-  const stats = document.createElement('p');
-  stats.textContent = `Answered: ${total} / ${totalQuestionsInSet} | Correct: ${correctCount} | Needed to Pass: ${minToPass} (${(0.65 * 100).toFixed(0)}%)`;
-  appDiv.appendChild(stats);
-  
-  const score = document.createElement('p');
-  score.textContent = `Your Score: ${userScore.toFixed(1)}%`;
-  appDiv.appendChild(score);
+  const pStatus = document.createElement('p');
+  pStatus.textContent = passed ? '¡APROBADO!' : 'SUSPENSO';
+  pStatus.style.fontWeight = 'bold';
+  appDiv.appendChild(pStatus);
 
+  // Revisión de fallos
+  const failed = userAnswers.filter(ans => !validateAnswer(ans.question, ans.selected));
+  if (failed.length > 0) {
+    const h3 = document.createElement('h3');
+    h3.textContent = 'Revisión de Fallos';
+    h3.style.marginTop = '30px';
+    appDiv.appendChild(h3);
 
-  const status = document.createElement('p');
-  status.textContent = passed ? 'PASS' : 'FAIL';
-  status.style.fontWeight = 'bold';
-  status.style.color = passed ? 'green' : 'red';
-  appDiv.appendChild(status);
-
-  if (failList.length > 0) {
-    const title = document.createElement('h3');
-    title.textContent = 'Incorrect Answers Review';
-    appDiv.appendChild(title);
-
-    failList.forEach(item => {
-      const qDiv = document.createElement('div');
-      qDiv.className = 'incorrect-review-block';
-      qDiv.innerHTML = `
-        <span class="rev-label question">QUESTION:</span>
-        <div>${item.question.question}</div>
-        <span class="rev-label your">Your Answer:</span>
-        <div>${item.selected.map(i => item.question.options[i]).join(', ') || '<em>None</em>'}</div>
-        <span class="rev-label correct">Correct Answers:</span>
-        <div>${item.question.correctAnswers.map(i => item.question.options[i]).join(', ')}</div>
-        <span class="rev-label explanation">Explanation:</span>
-        <div>${item.question.explanation}</div>
-      `;
-      appDiv.appendChild(qDiv);
+    failed.forEach((item, i) => {
+       const block = document.createElement('div');
+       block.className = 'incorrect-review-block'; // Clase existente en tu CSS
+       block.innerHTML = `
+         <p><strong>Pregunta:</strong> ${item.question.question}</p>
+         <p style="color:red">Tu respuesta: ${item.selected.map(idx => item.question.options[idx]).join(', ') || 'Ninguna'}</p>
+         <p style="color:green">Correcta: ${item.question.correctAnswers.map(idx => item.question.options[idx]).join(', ')}</p>
+         <p><em>${item.question.explanation || ''}</em></p>
+       `;
+       appDiv.appendChild(block);
     });
   }
 
-  const btn = document.createElement('button');
-  btn.textContent = 'Back to Main Menu';
-  btn.onclick = () => showMainMenu();
-  appDiv.appendChild(btn);
-}
-
-function showEndScreen() {
-  const appDiv = document.getElementById('app');
-  appDiv.innerHTML = '';
-
-  const msg = document.createElement('h2');
-  msg.textContent = examMode ? 'Exam Finished!' : `Unit "${currentUnit}" Completed!`;
-  appDiv.appendChild(msg);
-
-  const backBtn = document.createElement('button');
-  backBtn.textContent = 'Back to Main Menu';
-  backBtn.onclick = () => showMainMenu();
-  appDiv.appendChild(backBtn);
+  createButton(appDiv, 'Volver al Menú Principal', showMainMenu);
 }
