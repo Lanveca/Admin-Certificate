@@ -1,0 +1,936 @@
+[
+  {
+    "id": 1,
+    "module": "Salesforce ADM-201",
+    "question": "User at Cloud Kicks want to see information more useful for their role on the Case page.\nHow should an administrator make the pages more dynamic and easier to use?",
+    "options": [
+      "Add Component visibility filters to the Components.",
+      "Remove fields from the record details component.",
+      "Delete the extra component from the page.",
+      "Include more tab components with filters."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 2,
+    "module": "Salesforce ADM-201",
+    "question": "An administrator has assigned a permission set group with the two-factor authentication for User Interface Logins permissions and the two-factor authentication for API Logins permission to a group of users.\nWhich two prompts will happen when one of the users attempts to log in to Data Loader?",
+    "options": [
+      "Users need to connect an authenticator app to their Salesforce account.",
+      "Users need to get a security token from a trusted network using Reset My Security Token.",
+      "Users need to download and install an authenticator app on their mobile device.",
+      "Users need to enter a verification code from email or SMS, whichever has higher priority."
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ]
+  },
+  {
+    "id": 3,
+    "module": "Salesforce ADM-201",
+    "question": "An administrator at Northern Trail Outfitters is creating a validation rule.\nWhich two functions should the administrator use when creating a validation rule?",
+    "options": [
+      "Formula return type",
+      "Error condition formula",
+      "Error message location",
+      "Rule active date"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 4,
+    "module": "Salesforce ADM-201",
+    "question": "Ursa Major classifies its accounts as Silver, Gold, or Platinum Level. When a new case is created for a Silver or Gold partner, it should go to the Regular Support Queue. When an account is Platinum Level, it should automatically go to the Priority Support Queue.\nWhat should the administrator use to achieve this?",
+    "options": [
+      "Assignment Rules",
+      "Case Rules",
+      "Workflow Rules",
+      "Escalation Rules"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 5,
+    "module": "Salesforce ADM-201",
+    "question": "The administrator at Cloud Kicks created a new field for tracking returns on their new cloud shoe. A user has submitted a case to the administrator indicating that the new field is unavailable.\nWhich two steps should an administrator do to troubleshoot this issue?",
+    "options": [
+      "Ensure that the page layout for the user's profile has been updated.",
+      "Run the setup audit trail for the organization.",
+      "Update the organization wide default for the object.",
+      "Review the field level security of the field for the user profile"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 6,
+    "module": "Salesforce ADM-201",
+    "question": "An administrator at Dreamhouse Reality needs to Create Customized pages for the salesforce mobile app.\nWhich two types of pages could an administrator build and customize using the Lightning App Builder?",
+    "options": [
+      "User Page",
+      "Dashboard page",
+      "App page",
+      "Record Page"
+    ],
+    "correctAnswers": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": 7,
+    "module": "Salesforce ADM-201",
+    "question": "Northern Trail Outfitters wants to initiate expense reports from Salesforce to the external HR system. This process needs to be reviewed by managers and directors.\nWhich two tools should an administrator configure?",
+    "options": [
+      "Quick Action",
+      "Outbound Message",
+      "Approval Process",
+      "Email Alert Action"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 8,
+    "module": "Salesforce ADM-201",
+    "question": "Ursa Major Solar has a path on Case. The company wants to require its users to follow the status values as they are on the path. Agents should be prohibited from reverting the Case back to a previous status.\nWhich feature should an administrator use to fulfill this request?",
+    "options": [
+      "Predefined Field Values",
+      "Global Value Picklists",
+      "Dependent Picklists",
+      "Validation Rules"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 9,
+    "module": "Salesforce ADM-201",
+    "question": "An administrator at Northern Trail Outfitters is unable to add a new user in salesforce.\nWhat could cause this issue?",
+    "options": [
+      "The Username is not a corporate email address",
+      "The username is less than 80 characters.",
+      "The Username is a fake email address.",
+      "The Username is already in use."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 10,
+    "module": "Salesforce ADM-201",
+    "question": "The administrator at universal containers has a screen flow that helps users create new leads. When lead source is \"Search Engine\", the administrator needs to require the user to choose a specific a search engine from a picklist. If lead source is not \"Search Engine\", this picklist should be hidden.\nHow should the administrator complete this requirement?",
+    "options": [
+      "Assign a decision element to direct the user to a second screen to hold specific search engine only when a lead source is \"Search Engine\".",
+      "Use an assignment element, one for when lead source is \"Search Engine\" and one for everything else.",
+      "Create a picklist for specific search engine, and set conditional visibility so that is only shown when lead source is \"Search Engine\".",
+      "Configure a picklist for specific search engine, and use a validation rule to conditionally show only when lead source is \"Search Engine\""
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 11,
+    "module": "Salesforce ADM-201",
+    "question": "Support reps at Cloud Kicks (CK) are reporting that when they try to close a case, the Closed option in the Case Status picklist is missing. CK has asked the administrator to find a solution.\nWhy are the support reps unable to see the Closed option in the specified picklist?",
+    "options": [
+      "The Case record type is missing Closed as a picklist value.",
+      "The Close Case page layout must be used to close a case.",
+      "The Show Closed Statuses in Case Status Field checkbox is set to the default.",
+      "The Support Process being used omits Closed as a status choice."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 12,
+    "module": "Salesforce ADM-201",
+    "question": "The standard Lead Rating field has picklist values of Hot, Warm, and Cold. A list of new leads was imported without errors even though several records had the value of Unrated in the Rating field.\nHow were these records added without error?",
+    "options": [
+      "The Restricted picklist checkbox was unchecked.",
+      "Field-level security was set to Visible for all profiles.",
+      "A global picklist value set was used to populate the picklist.",
+      "The Add to All Record Types checkbox was selected."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 13,
+    "module": "Salesforce ADM-201",
+    "question": "Ursa Major Solar wants its sales reps to be aware when they are speaking with high-profile customers.\nWhich two options should be added to the Lightning record pages to achieve this?",
+    "options": [
+      "Custom Component",
+      "Highlight Panel",
+      "Action and Recommendations",
+      "Component Visibility Filter",
+      "Rich Text Area"
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ]
+  },
+  {
+    "id": 14,
+    "module": "Salesforce ADM-201",
+    "question": "A new Sales Rep at Ursa Major has a qualified lead that is ready for conversation.\nWhen using the Lead Conversion process, which two records can be Created?",
+    "options": [
+      "Account",
+      "Campaign",
+      "Case",
+      "Contact"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 15,
+    "module": "Salesforce ADM-201",
+    "question": "An administrator has been asked to update a flow that was created as part of a recent update. When the administrator opens the flow for editing, the Flow toolbox offers only four elements: Assignment, Decision, Get Records, and Loop.\nWhat would cause this?",
+    "options": [
+      "The flow is a screen flow.",
+      "The version of the flow is inactive.",
+      "The flow is a before save flow.",
+      "The version of the flow is activated."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 16,
+    "module": "Salesforce ADM-201",
+    "question": "The administrator for Cloud Kicks has created a screen flow to help service reps ask the same set of questions when customers call in with issues. This screen should be visible from cases.\nHow should the screen flow be distributed?",
+    "options": [
+      "Page Layout",
+      "Component Filter",
+      "Lightning page",
+      "Home page"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 17,
+    "module": "Salesforce ADM-201",
+    "question": "Northern Trail Outfitters uses a custom object Invoice to collect customer payment information from an external billing system. The Billing System field needs to be filled on every Invoice record.\nHow should an administrator ensure this requirement?",
+    "options": [
+      "Make the field universally required.",
+      "Create a Process Builder to set the field.",
+      "Define an approval process for the child.",
+      "Require the field on the record type."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 18,
+    "module": "Salesforce ADM-201",
+    "question": "The administrator at DreamHouse Realty added an email quick action to the Case page layout and is unable to see the action on the case feed.\nWhich feature must be enabled to ensure the quick action will be displayed as expected?",
+    "options": [
+      "Email Notifications",
+      "Email-to-Case",
+      "Email Alerts",
+      "Email Templates"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 19,
+    "module": "Salesforce ADM-201",
+    "question": "Sales users at Universal Containers are reporting that it is taking a long time to edit opportunity records. Normally, the only field they are editing is the Stage field.\nWhich two options should the administrator recommend to help simplify the process?",
+    "options": [
+      "Add a path for stage to the opportunity record page.",
+      "Use a Kanban list view for Opportunity.",
+      "Configure an auto launched flow for Opportunity editing.",
+      "Create a simplified Opportunity page layout."
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 20,
+    "module": "Salesforce ADM-201",
+    "question": "Sales managers would like to know what could be implemented to surface important values based on the stage of the opportunity.\nWhich tool should an administrator use to meet the requirement?",
+    "options": [
+      "Dynamic forms",
+      "Path key fields",
+      "Opportunity processes",
+      "Workflow rules"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 21,
+    "module": "Salesforce ADM-201",
+    "question": "Cloud Kicks has a custom object named shoe. The administrator has been asked to ensure that when a relationship is created between Account and shoe to prevent orphaned shoe records.\nWhat should the administrator do to complete this requirement?",
+    "options": [
+      "Create an indirect lookup",
+      "Create an encrypted lookup",
+      "Create a hierarchical lookup",
+      "Create a master-detail lookup."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 22,
+    "module": "Salesforce ADM-201",
+    "question": "The DreamHouse Realty team has a master-detail relationship set up with open house as the parent object and visitors as the child object.\nWhat type of field should the administrator add to the open house object to track number of visitors?",
+    "options": [
+      "Roll-up Summary.",
+      "Multi-select Picklist",
+      "Cross-object formula field",
+      "Indirect lookup"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 23,
+    "module": "Salesforce ADM-201",
+    "question": "Northern Trail Outfitters wants emails received from customers to generate cases automatically.\nHow should the administrator ensure that the emails are sent to the correct queue?",
+    "options": [
+      "Utilize a flow to identify the correct queue and assign the case.",
+      "Use a custom email services to set the owner of the case upon creation.",
+      "Create an Escalation Rules to send cases to the correct queue.",
+      "Configure Email-to-Case so emails are delivered to the correct queue"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 24,
+    "module": "Salesforce ADM-201",
+    "question": "Users at Cloud Kicks are reporting different options when uploading a custom picklist on the Opportunity object based on the kind of opportunity.\nWhere Should an administrator update the option in the picklist?",
+    "options": [
+      "Fields and relationships",
+      "Related lookup filters",
+      "Record Type",
+      "Picklist value sets"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 25,
+    "module": "Salesforce ADM-201",
+    "question": "The administrator at Universal Container has created two objects: Containers_c and Purchase_c. Management has requested that all container records display on purchase records in Salesforce.\nWhich type of relationship between Containers_c and Purchase_c should satisfy the requirement?",
+    "options": [
+      "Roll-Up Summary field",
+      "Formula field",
+      "Master-detail field",
+      "Lookup field"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 26,
+    "module": "Salesforce ADM-201",
+    "question": "Universal Containers wants to provide reseller partners with discounted prices on the products they purchase.\nHow should an administrator configure this requirement?",
+    "options": [
+      "Add a Partner_Discount_c field to the Opportunity",
+      "Build separate reseller partner products.",
+      "Use a different Opportunity record type.",
+      "Create a separate PriceBook for reseller partners."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 27,
+    "module": "Salesforce ADM-201",
+    "question": "Cloud kicks wants to track shoe designs by products. Shoe designs should be unable to be deleted, and there can be multiple design for one product across various stages.\nWhich two steps should the administration configure to meet this requirement?",
+    "options": [
+      "Create a Custom Object for shoe design.",
+      "Configure a Custom Lookup Field for shoe design on the product object.",
+      "Add a custom master detail field for shoe design on the Product Object.",
+      "Use the Standard Object for designs."
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ]
+  },
+  {
+    "id": 28,
+    "module": "Salesforce ADM-201",
+    "question": "The Human resources department at Northern Trail outfitters wants employees to provide feedback about the manager using a custom object in Salesforce. It is important that managers are unable to see the feedback records from their staff.\nHow should an administrator configure the custom object to meet this requirement?",
+    "options": [
+      "Uncheck grant access using Hierarchies.",
+      "Define a criteria-based sharing rules.",
+      "Set the default external access to private.",
+      "Configure an owner-based sharing rules."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 29,
+    "module": "Salesforce ADM-201",
+    "question": "Cloud Kicks needs to change the owner of a case when it has been open for more than 7 days.\nHow should the administrator complete this requirement?",
+    "options": [
+      "Auto Response Rules",
+      "Validation Rule",
+      "Escalation Rule",
+      "Assignment Rule"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 30,
+    "module": "Salesforce ADM-201",
+    "question": "Universal Containers has a private sharing model for Opportunities and uses Opportunity teams. A sales rep at Universal Containers leaves the company and their user record is deactivated. The rep is later rehired and the administrator activates the old user record. The user is added to the same default Opportunity teams but is no longer able to view records the user worked on before leaving the company.\nWhat is the likely cause?",
+    "options": [
+      "The stage of the Opportunity records was changed to closed lost.",
+      "Permission sets were removed when the user was deactivated.",
+      "The record type of the Opportunity records was changed.",
+      "The records were manually shared with the user."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  [
+  {
+    "id": 31,
+    "module": "Salesforce ADM-201",
+    "question": "The administrator has created new users for ten new employees at Northern Trail Outfitters.\nWhy are these users unable to access the account object in the Salesforce org?",
+    "options": [
+      "Users' profile requires a sharing rule for Accounts.",
+      "Users' profile requires permission to the Account object.",
+      "Users' roles are low on the role hierarchy.",
+      "Organization-wide defaults are set to private."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 32,
+    "module": "Salesforce ADM-201",
+    "question": "An Administrator at DreamHouse Realty wants an easier way to assign an agent capacity and skill set. Which feature should the administrator enable to meet this requirement?",
+    "options": [
+      "Knowledge Management.",
+      "Omni-Channel",
+      "Escalation Rules",
+      "Territory Management"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 33,
+    "module": "Salesforce ADM-201",
+    "question": "Which three aspects of standard fields should an administrator customize?",
+    "options": [
+      "Picklist Values",
+      "Help Text",
+      "Field history tracking",
+      "Decimal Places",
+      "Field name"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": 34,
+    "module": "Salesforce ADM-201",
+    "question": "Cloud kicks needs to ensure appropriate shipping details are used in orders. Reps should have a streamlined solutions to update the shipping address on selected orders associated with an account when the shipping address is changed on the account.\nHow should the administrator deliver this requirement?",
+    "options": [
+      "An autolaunched flow on the order page that updates all open orders shipping addresses whenever the account shipping addresses changes.",
+      "An autolaunched flow on the account page that updates all open orders shipping addresses whenever the account shipping addresses changes.",
+      "A screen flow on the order page that lets the reps choose the updated account shipping address in all open associated orders",
+      "A screen flow on the account page that lets the reps choose the updated account shipping address in all open associated orders"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 35,
+    "module": "Salesforce ADM-201",
+    "question": "Once an opportunity reaches the negotiation stage at cloud kicks, The Amount fields becomes required for sales users. Sales managers need to be able to move opportunities inti this stage without knowing the amount.\nHow should the administrator require this field during the negotiation stage for sales users but allow their managers to make changes?",
+    "options": [
+      "Make the field required for all users.",
+      "Create to formula field to fill in the field for managers.",
+      "Assign the administrator profile to the managers.",
+      "Configure a validation rule to meet the criteria."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 36,
+    "module": "Salesforce ADM-201",
+    "question": "The administrator at Ursa Major Solar imported records into an object by mistake.\nWhich two tools should be used to undo this import?",
+    "options": [
+      "Weekly Data Export",
+      "Mass Delete Records",
+      "Data Loader",
+      "Data Import Wizard"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 37,
+    "module": "Salesforce ADM-201",
+    "question": "The administrator at cloud kicks has been ask to change the company's Shoe style field to prevent users from selecting more than one style on a record.\nWhich two steps should an administrator do to accomplish this?",
+    "options": [
+      "Reactivate the appropriate Shoe Style values after the field type changes.",
+      "Select the \"Choose only one value\" checkbox on the pick list field.",
+      "Back-up the Shoe Style values in existing records.",
+      "Change the field type from a multi-select picklist field to a picklist field."
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": 38,
+    "module": "Salesforce ADM-201",
+    "question": "A user at Northern Trail Outfitters Is having trouble logging into Salesforce. The user's login history shows that this person has attempted to log in multiple times and has been locked out of the organization.\nWhich two ways should the administrator help the user log into Salesforce?",
+    "options": [
+      "Log in as the user to unlock the user and reset the password.",
+      "Reset the password policies to allow the user to login.",
+      "Reset password on the user's record detail page.",
+      "Use the unlock button on the user's record detail page."
+    ],
+    "correctAnswers": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": 39,
+    "module": "Salesforce ADM-201",
+    "question": "Sales reps at Cloud Kicks want to be notified when they have a high likelihood of winning an opportunity over $1,000,000.\nWhich feature meets this requirement?",
+    "options": [
+      "Key Deals",
+      "Big Deal Alerts",
+      "Activity Timeline.",
+      "Performance chart."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 40,
+    "module": "Salesforce ADM-201",
+    "question": "The sales manager at Cloud Kicks wants to set up a business process where opportunity discounts over 30% need to be approved by the VP of sales. Any discounts above 10% need to be approved by the user's manager. The administrator has been tasked with creating an approval process.\nWhich are two considerations the administrator needs to review before setting up this approval process?",
+    "options": [
+      "Create a custom Discount field on the opportunity to capture the discount amount",
+      "Populate the Manager standard field on the sales users' User Detail page.",
+      "Configure two separate approval processes.",
+      "Allow the submitter choose the approver manually."
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": 41,
+    "module": "Salesforce ADM-201",
+    "question": "DreamHouse Realty (DHR) wants a templated process with a mortgage calculator that generated leads for loans. DHR needs to complete the project within 30 days and has maxed out its budget for the year.\nWhich AppExchange item should help the administrator to meet the request?",
+    "options": [
+      "Lightning Data",
+      "Lightning Community",
+      "Flow Solutions",
+      "Bolt Solutions"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 42,
+    "module": "Salesforce ADM-201",
+    "question": "Which item is available in a Lightning App where visibility is limited to the Salesforce Mobile App?",
+    "options": [
+      "Today",
+      "Favorites",
+      "Utility Bar.",
+      "Home Page."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 43,
+    "module": "Salesforce ADM-201",
+    "question": "The administrator at Ursa Major Solar has Created a new record type for customer warranty cases which two assignments should the administrator use to display the new record type to users?",
+    "options": [
+      "Profile Assignment",
+      "Role Assignment",
+      "App Manager Assignment.",
+      "Page layout Assignment."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 44,
+    "module": "Salesforce ADM-201",
+    "question": "The Sales manager at DreamHouse Realty wants the sales users to have a quick way to view and edit the Opportunities in their pipeline expected to close in the next 90 days.\nWhat should an administrator do to accomplish this request?",
+    "options": [
+      "Create a custom report and schedule the sales users to receive it each day as a reminder to update their opportunities.",
+      "Enable Sales Console and show users how to open a tab for each opportunity in the pipeline that meets the requirements.",
+      "Create a list view on the Opportunity object and recommend users switch the view to Kanban to edit by drag and drop.",
+      "Make a new Sales dashboard and add a component that shows all opportunities that meet the criteria."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 45,
+    "module": "Salesforce ADM-201",
+    "question": "An administrator has been asked to change the data type of an auto number to text field.\nWhat should the administrator be aware of before changing the field?",
+    "options": [
+      "Existing field values will remain unchanged.",
+      "Existing field values will be Converted.",
+      "Existing field values will be deleted.",
+      "Existing auto number field to Text is prevented."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 46,
+    "module": "Salesforce ADM-201",
+    "question": "An analytics user at Cloud Kicks needs Read, Create, and Edit access for objects and Should be restricted from deleting any records.\nWhat should the administrator do to meet this requirement?",
+    "options": [
+      "Assign the standard System Administrator profile to the analytical user.",
+      "Give the user View all access and assign them to the highest role in the role hierarchy.",
+      "Create and assign a custom profile with Delete access removed for each object.",
+      "Create and assign a permission set that includes Read, Create, and Edit access"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 47,
+    "module": "Salesforce ADM-201",
+    "question": "At Universal Containers, there is a custom field on the Lead named Product Category. Management wants this information to be part of the Opportunity upon lead conversion.\nWhat action should the administrator take to satisfy the request?",
+    "options": [
+      "Map the lead custom field to the product's product category field.",
+      "Create a workflow to update Opportunity fields based on the lead.",
+      "Create a custom field on the Opportunity and map the two fields.",
+      "Configure the product categories picklist field on the product."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 48,
+    "module": "Salesforce ADM-201",
+    "question": "Clod Kicks has a screen flow with two questions on the same screen, but only one is necessary at a time. The administrator has been asked to show only the questions that is needed.\nHow should an administrator complete this?",
+    "options": [
+      "Use a new version of the flow for each scenario.",
+      "Use a decision element and a new screen to show the proper question",
+      "Use a conditional visibility to hide the unnecessary question",
+      "Use branching in the flow screen to show the proper scenario"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 49,
+    "module": "Salesforce ADM-201",
+    "question": "AW Computing would like to improve its Case Lightning record page by including:\n• A filtered component to display a message in bold font when a case is saved as acriticalrecord type.\n• A quick way to update the account status from the case layout.\nWhich two components should an administrator use to satisfy these requests?",
+    "options": [
+      "Related List",
+      "Related Record",
+      "Record details",
+      "Rich text"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 50,
+    "module": "Salesforce ADM-201",
+    "question": "Marketing users at Cloud Kicks should be able to view and edit converted leads. The administrator has assigned them permission set with the View and edit Converted Leads permission.\nWhich two ways can the marketing users now access converted leads for editing?",
+    "options": [
+      "Find them in the global search result.",
+      "Search the Recent Records component on the homepage.",
+      "Utilize a list view where lead status equals Qualified.",
+      "Use the Data Import Wizard,"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 51,
+    "module": "Salesforce ADM-201",
+    "question": "An administrator at AW Computing has been asked to help the Support team with report folders. They want a folder called Support Reports and two folders underneath called Helpdesk and R&D.\nThe Support organization uses public groups for Support Agents, R&D, and Managers. Support agents should be able to run Helpdesk reports, but should not be able to view R&D reports. Support managers should be able to view and edit all reports.\nWhich two ways should these folders be shared?",
+    "options": [
+      "Share the R&D folder with Support Managers with Edit Access.",
+      "Share the Helpdesk folder with Support Agents with View access.",
+      "Share the Support Reports folder with Support Managers with Edit Access.",
+      "hare the Support Reports folder with Support Agents with View Access."
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 52,
+    "module": "Salesforce ADM-201",
+    "question": "DreamHouse Realty regularly processes customer requests for warranty work and would like to offer customers a self-serve option to generate cases.\nWhich two solutions should an administrator use to meet this request?",
+    "options": [
+      "Web-to-Case",
+      "Case Escalation",
+      "Case Queues",
+      "Email-to-Case"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 53,
+    "module": "Salesforce ADM-201",
+    "question": "Northern Trail Outfitters wants to track ROI for contacts that are key stakeholders for opportunities. The VP of Sales requested that this information be accessible on the opportunity and available for reporting.\nWhich two options should the administrator configure to meet these requirements?",
+    "options": [
+      "Customize Campaign Member Role.",
+      "Add the Campaign Member related list to the Opportunity page layout.",
+      "Customize Campaign Role.",
+      "Customize Opportunity Contact Role.",
+      "Add the Opportunity Contact Role related list to the Opportunity page layout."
+    ],
+    "correctAnswers": [
+      3,
+      4
+    ]
+  },
+  {
+    "id": 54,
+    "module": "Salesforce ADM-201",
+    "question": "Ursa Major Solar has a path on Case. The Company wants to require its users to follow the status values as they are on the path. Agents should be prohibited from preventing the case back to a previous status.\nWhich Feature Should an administrator use to fulfill this request?",
+    "options": [
+      "Validation rules.",
+      "Global Value Picklists",
+      "Predefined field Values.",
+      "Dependent Picklists."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 55,
+    "module": "Salesforce ADM-201",
+    "question": "Sales and Customer Care at Ursa Major Solar need to see different fields on the Case related list from the Account record. Sales users want to see Case created date and status while Customer Care would like to see owner, status, and contact.\nWhat should the administrator use to achieve this?",
+    "options": [
+      "Related Lookup Filters",
+      "Compact Layout Editor",
+      "Page Layout editor",
+      "Search Layout Editor"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 56,
+    "module": "Salesforce ADM-201",
+    "question": "The support manager at Cloud Kicks wants to respond to customers as quickly as possible. They have requested that the response include the top five troubleshooting tips that could help solve the customer's issue.\nWhat should the administrator suggest to meet these requirement?",
+    "options": [
+      "Auto-Response Rules",
+      "Email Alerts",
+      "Knowledge Articles",
+      "Assignment Rules"
+    ],
+    "correctAnswers": []
+  },
+  {
+    "id": 57,
+    "module": "Salesforce ADM-201",
+    "question": "The Client services and customer support teams share the same profile but have different permission sets. The Custom Object Retention related list needs to be restricted to the client services team on the Lightning record page layout.\nWhat should the administrator use to fulfil this request?",
+    "options": [
+      "Sharing settings",
+      "Page Layout Assignment",
+      "Component Visibility",
+      "Record Type Assignment"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 58,
+    "module": "Salesforce ADM-201",
+    "question": "An administrator at Universal Containers has been asked to prevent users from accessing Salesforce from outside of their network.\nWhat are two considerations for this configuration?",
+    "options": [
+      "IP address restrictions are set on the profile or globally for the org.",
+      "Assign single sign-on to a permission set to allow users to log in when outside the network.",
+      "Enforce Login IP Ranges on Every Request must be selected to enforce IP restrictions.",
+      "Restrict U2F Security Keys on the user's profile to enforce login hours."
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ]
+  },
+  {
+    "id": 59,
+    "module": "Salesforce ADM-201",
+    "question": "Users at Dreamhouse Reality are only allowed to see opportunities they own. Leadership wants an enterprise- wide dashboard of all open opportunities in the pipeline so that users can see how the company is performing at any point in time.\nHow should an administrator create the dashboard without changing any sharing setting?",
+    "options": [
+      "Update the dashboard to folder settings to manager for the sales reps role.",
+      "Add a filter to the dashboard to filter the opportunities by owner role.",
+      "Build individual dashboards for profiles that need to see the enterprise results.",
+      "Create a dashboard with the running User set as someone who can see all Opportunities"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 60,
+    "module": "Salesforce ADM-201",
+    "question": "The marketing director at Northern Trail Outfitters has requested that the budget field is populated in order for the Lead Status field to be marked as qualified.\nWhat tool should the administrator use to fulfill this request?",
+    "options": [
+      "Lead Conversion.",
+      "Require Field.",
+      "Workflow Rule",
+      "Validation Rule"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 61,
+    "module": "Salesforce ADM-201",
+    "question": "An administration needs to store the ID of record type of later use in a flow.\nWhich kind of variable should the administrator use?",
+    "options": [
+      "Boolean variable",
+      "Text variable",
+      "ID variable",
+      "Record variable"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 62,
+    "module": "Salesforce ADM-201",
+    "question": "Cloud Kicks is Introducing a new shoe model and wants to advertise on TV, radio, print, and social under the banner of a called New Runners. In addition, total statistics for this marketing effort need to be aggregated and visible.\nWhich feature should the administrator use to implement this functionality?",
+    "options": [
+      "Junction object",
+      "Parent campaign field",
+      "Lookup relationship",
+      "Master-detail relationship"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 63,
+    "module": "Salesforce ADM-201",
+    "question": "An administrator Creates a custom text area field on the Account object and adds it to the service team's page layout. The services team manager loves the addition of this field and wants it to appear in the highlights panel so that the services reps can quickly find it when on the Account Page.\nHow should the administrator accomplish this?",
+    "options": [
+      "Create a new page layout and a new section titled highlights panel.",
+      "In the Account object manager, create a custom compact layout.",
+      "From the page layout editor, drag the field to the highlights panel.",
+      "Make the field required and move it to the top of the page."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 64,
+    "module": "Salesforce ADM-201",
+    "question": "The events manager at dream house realty has a hot lead from a successful open house that needs to become a contact with an associated opportunity.\nHow should this be accomplished from the campaign keeping the associated campaign member history?",
+    "options": [
+      "Delete the lead and create a new contact and opportunity.",
+      "Clone the lead and convert the cloned record to a contact.",
+      "Convert the lead from the campaign member detail page.",
+      "Add a contact from a campaign member detail page."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 65,
+    "module": "Salesforce ADM-201",
+    "question": "administrator at Northern Trail Outfitters is unable to add a new user in Salesforce.\nWhat could cause this issue?",
+    "options": [
+      "The username is already in use another organization.",
+      "The username is restricted to a domain specific to my domain.",
+      "The email address used for the username has a contact record.",
+      "The email used for the username is not a corporate email address."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  }
+]
+
+]
