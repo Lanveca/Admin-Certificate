@@ -1,0 +1,998 @@
+[
+  {
+    "id": 1,
+    "module": "Salesforce Certified Administrator",
+    "question": "The platform administrator for the Cloud Kicks has a flow that makes several updates to Contacts when they are being created. If the Contact Status is \"New\" and the Contact's email is known, the platform administrator would also like to send a welcome email. What should the platform administrator do to complete this requirement?",
+    "options": [
+      "Update the flow with a decision to send the email when needed.",
+      "Create a process builder with email alert to send the email.",
+      "Update the flow with a formula to send the email when needed.",
+      "Create a workflow rule with email alert to send the email."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 2,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which two levels of access should be set when sharing a document folder with users?",
+    "options": [
+      "Read/Write",
+      "Read/Write/Create/Delete",
+      "Read/Write/Create",
+      "Read-only"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 3,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which two objects can be related to Campaign Members?",
+    "options": [
+      "Leads",
+      "Contact Roles",
+      "Partners",
+      "Contacts"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 4,
+    "module": "Salesforce Certified Administrator",
+    "question": "The managers at Ursa Major Solar asked the platform administrator to quickly provide access to sales reports and dashboards. How can this be done?",
+    "options": [
+      "Search the AppExchange for free adoption report apps.",
+      "Log a case to Salesforce Support.",
+      "Use the Salesforce Auto-Report Builder.",
+      "Build reports and dashboards."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 5,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar uses Validation Rule Fields. What are two of these fields?",
+    "options": [
+      "Error Condition Formula",
+      "Error Message",
+      "Active Date",
+      "Owner"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": 6,
+    "module": "Salesforce Certified Administrator",
+    "question": "What should a System Platform Administrator do to organize the fields available on a report?",
+    "options": [
+      "Modify the standard report type.",
+      "Edit the Report Builder layout.",
+      "Enable Dynamic Reports.",
+      "Create a custom report type."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 7,
+    "module": "Salesforce Certified Administrator",
+    "question": "The marketing team is asked to provide branding and messaging for email templates to be used throughout the customer support process. In which two locations can the System Platform Administrator implement customer-facing email templates with respect to Cases?",
+    "options": [
+      "Case Auto-response Rules",
+      "Support Reps' Send Email options",
+      "Case Escalation Notifications",
+      "Owner Assignment Notifications"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": 8,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar has the following process regarding its opportunities: There are three different lines of business (Widget A, Widget B, Widget C) that each contain fields specific to that line of business's industry and customers. For each line of business, there is a specific set of fields that Sales users should see and a different set of fields that Marketing users should see. A Platform Administrator needs to configure Page Layouts and Record Types for the Opportunity object so that each team sees what it needs to see, without cluttered layouts containing unnecessary fields. What should the Platform Administrator do to accomplish this goal?",
+    "options": [
+      "Create three Record Types (Widget A, Widget B, Widget C) with six Page Layouts (Sales Widget A, Sales Widget B, Sales Widget C, Marketing Widget A, Marketing Widget B, and Marketing Widget C).",
+      "Create six Record Types (Marketing Widget A, Marketing Widget B, Marketing Widget C, Sales Widget A, Sales Widget B, and Sales Widget C) with six total Page Layouts, one for each Record Type.",
+      "Create six Record Types (Sales Widget A, Sales Widget B, Sales Widget C, Marketing Widget A, Marketing Widget B, and Marketing Widget C) with one Page Layout.",
+      "Create one Record Type with six Page Layouts (Marketing Widget A, Marketing Widget B, Marketing Widget C, Sales Widget A, Sales Widget B, and Sales Widget C)."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 9,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which two best practices are recommended prior to mass-deleting records?",
+    "options": [
+      "Schedule a weekly data export and download the backup zip files.",
+      "Create a new list view for all records that need to be deleted.",
+      "Download a Setup Audit Trail for the last six months before deletion.",
+      "Run and export a report to archive data before deletion."
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 10,
+    "module": "Salesforce Certified Administrator",
+    "question": "The customer support team wants to use a different Page Layout when closing a Case. Which method should the System Platform Administrator use to fulfill this request?",
+    "options": [
+      "Case Close Page Layout",
+      "Support Process",
+      "Record Type and Page Layout",
+      "Field-Level Security"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 11,
+    "module": "Salesforce Certified Administrator",
+    "question": "The platform administrator at Ursa Major Solar needs to provide information for total Salesforce licenses, used licenses, and the remaining Salesforce licenses. Where in setup can this information be found?",
+    "options": [
+      "Profiles",
+      "Critical Updates",
+      "Company Information",
+      "Users"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 12,
+    "module": "Salesforce Certified Administrator",
+    "question": "A sales executive at Universal Containers wants to be notified whenever high-value opportunities are created for hot accounts. What should a platform administrator do to meet this requirement?",
+    "options": [
+      "Create a validation rule that evaluates the account rating.",
+      "Create a workflow rule on the opportunity object.",
+      "Create an auto-response rule on the opportunity object.",
+      "Create an escalation rule based on the opportunity amount."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 13,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar is using products and price books. Which two items should a platform administrator take into considerations about these features?",
+    "options": [
+      "Products without a price are automatically added to the standard price book.",
+      "A product can have a different list price in different price books.",
+      "If price books contain assets, they can NOT contain products.",
+      "The standard and list price for a product can be listed in more than one currency."
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": 14,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers has asked its Platform Administrator to automatically set some fields when a Lead is created. What is the best way for the platform administrator to perform this automation?",
+    "options": [
+      "Record Triggered-Flow that runs Before save",
+      "Use a Screen Flow with default values",
+      "Use Process Builder that launches a flow",
+      "Create 1 Workflow rule per field"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 15,
+    "module": "Salesforce Certified Administrator",
+    "question": "The Sales Operations team notices an increase in Opportunities without Products. Which configuration change should the System Platform Administrator make to help Sales Reps remember to add Products to every Opportunity?",
+    "options": [
+      "Set the Org-Wide Defaults for Price Books to Use and Products to Read Only.",
+      "Create a Workflow Rule on the Opportunity object to add a default Product to Opportunities with no Products.",
+      "Enable the Opportunity setting to prompt users to add products to opportunities.",
+      "Create a related list to enable the user to view the related products."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 16,
+    "module": "Salesforce Certified Administrator",
+    "question": "A System Platform Administrator wants to implement a feature for call recording to monitor customer service quality using Salesforce Service Cloud. Which two statements regarding call recording should be considered when implementing this requirement?",
+    "options": [
+      "Call recording is a feature that will not work with Salesforce Service Cloud.",
+      "Call recording is a feature that a developer might create with Salesforce App Cloud.",
+      "Call recording is a native feature available with Salesforce by default.",
+      "Call recording is a feature of some add-on products from the AppExchange."
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": 17,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers uses an Auto-numbering system to uniquely identify each support request. They want customers to know this number as soon as possible. Which two features should the System Platform Administrator implement to allow customers have quick access to this information?",
+    "options": [
+      "Case Feed Layout Actions",
+      "Auto-response Rules",
+      "Case Comment Notifications",
+      "Self-service Portal"
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": 18,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which two changes are tracked in the Setup Audit Trail?",
+    "options": [
+      "Using the Data Loader",
+      "Resetting a user's password",
+      "Using the Data Import Wizard",
+      "Creating a List View"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 19,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar is importing data and has many records that do NOT meet the data validation criteria. What will occur?",
+    "options": [
+      "The import process will require user authorization in order to import the invalid records.",
+      "The import process will ignore the data validation criteria.",
+      "The import process will abort when it encounters the first invalid record.",
+      "The import process will fail, but only for the records with invalid data."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 20,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers has a renewals sales team that will use the Opportunity object. They want to use many of the same picklist fields that are already defined, but will need unique picklist values. What feature allows a System Platform Administrator to maintain the same field for two different teams?",
+    "options": [
+      "Page Layouts",
+      "Permission Sets",
+      "Sales Processes",
+      "Record Types"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 21,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers created a new custom object to track Inventory items. The Support Team cannot see the Inventory object's tab. Which two settings should the System Platform Administrator check to find the cause of the problem?",
+    "options": [
+      "Inventory object Page Layouts",
+      "Support Team Profiles",
+      "Support Team Permission Sets",
+      "Inventory object Sharing Settings"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 22,
+    "module": "Salesforce Certified Administrator",
+    "question": "What is the maximum number of components that can be added to a single Dashboard?",
+    "options": [
+      "20",
+      "15",
+      "50",
+      "3"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 23,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers has two business groups, Products and Services. Both groups will be using opportunities to track deals, but different fields are required by each group. In which two ways should a platform administrator meet this requirement?",
+    "options": [
+      "Create two permission sets.",
+      "Create two lead processes.",
+      "Create two record types.",
+      "Create two page layouts."
+    ],
+    "correctAnswers": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": 24,
+    "module": "Salesforce Certified Administrator",
+    "question": "A platform administrator at Ursa Major Solar is setting up case feed. What should the platform administrator consider?",
+    "options": [
+      "The Service Cloud user feature license is required for case feed.",
+      "Chatter feed tracking must be enabled for the case object.",
+      "By default, the case feed replaces the standard case detail page.",
+      "The Use Case Feed permission is automatically active for all profiles."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 25,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar customers are starting to request custom-sized solar panels, which are currently unavailable in the standard inventory. Management has decided to add custom sizing as an add-on item in Salesforce. The platform administrator needs to allow sales users to add custom sizing to the total opportunity sale. What should the platform administrator do to achieve this goal?",
+    "options": [
+      "Make a new custom object related to opportunities for custom sizing.",
+      "Add a new field on the opportunity labeled custom sizing.",
+      "Add custom sizing as a new product in an order.",
+      "Add custom sizing as a new product in a pricebook."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 26,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar needs to transfer records from one user to another user during a mass transfer of account records. Which two record types can be used for this transfer?",
+    "options": [
+      "Open cases",
+      "Closed activities",
+      "Related custom object records",
+      "Closed cases"
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 27,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar (UMS) is using the workflow field update. Which two actions can UMS complete with this feature?",
+    "options": [
+      "Modify the record type of a record.",
+      "Apply a specific value to a field.",
+      "Choose a formula field for a field update.",
+      "Update the value of a field on a child object."
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": 28,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers utilizes a private sharing model for Accounts, Contacts, and Opportunities. When account owners are on vacation, a back-up sales rep needs access to all Accounts with the rating of Hot. How should the System Platform Administrator give the back-up sales rep access to Hot Accounts?",
+    "options": [
+      "Create a criteria-based sharing rule to share all Hot Accounts with all the users in the back-up rep's public group.",
+      "Create a criteria-based sharing rule to share all Hot Accounts with the user in the back-up rep account field.",
+      "Use a workflow rule to change ownership for all the Hot Accounts where the owner's On Vacation field is checked.",
+      "Instruct the Hot Account owner to manually share the Accounts with the back-up rep before leaving on vacation."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 29,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar has a social marketing team set up as a public group. A sales representative would like to engage the social marketing team on one opportunity. What should the sales representative do to ensure the social marketing team can access the opportunity?",
+    "options": [
+      "Add the public group to an opportunity queue.",
+      "Change the opportunity owner to the public group.",
+      "Manually share the record with the public group.",
+      "Add the public group to the opportunity team."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 30,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which configuration action should be performed to ensure every Case gets assigned to a valid Owner?",
+    "options": [
+      "Define the Default Case Owner in Support Settings.",
+      "Configure a default value for the Case Owner field.",
+      "Create a Workflow Rule that checks for a blank Owner field.",
+      "Create a Validation Rule based on the Created By field."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 31,
+    "module": "Salesforce Certified Administrator",
+    "question": "How should the System Platform Administrator implement biweekly notifications for Sales Reps that include Opportunities that need attention based on the Opportunity Owner's last login, past due Opportunities, and all Opportunities that have not been updated in the last 30 days?",
+    "options": [
+      "Create a Chatter Group.",
+      "Create Opportunity Update Reminders.",
+      "Create Scheduled Reports.",
+      "Create Scheduled Dashboards."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 32,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers has a complex sales process with multiple record types, each shared with all Profiles. Some users complain about the Record Type selection screen when creating new Opportunities. Which two actions should the System Platform Administrator take to allow these users to bypass choosing a Record Type?",
+    "options": [
+      "Instruct users to update the Default Record Type in My Settings.",
+      "Remove Record Types from the users' Sales Process.",
+      "Remove the Record Type field from the users' Page Layout.",
+      "Remove Record Types from the users' Profiles."
+    ],
+    "correctAnswers": [
+      0,
+      3
+    ]
+  },
+  {
+    "id": 33,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar wants all Sales Users to see a dashboard that displays Total Closed/Won Opportunity Amount by User on a monthly basis. The Opportunity sharing model is private. What should the platform administrator do to fulfill this request?",
+    "options": [
+      "Request for the Sales Manager to create the Dashboard from the Opportunities by User Report, select \"View Dashboard as Me\", and save in the shared Dashboard Folder.",
+      "Request for the Sales Manager to create the Dashboard from the Opportunities by User Report and save it to her private Dashboards Folder.",
+      "Create the Dashboard from the Opportunities by User Report, choose the Sales Manager as RunAs User and Save in the private Dashboard Folder.",
+      "Create the Dashboard from the Opportunities by User Report, then save it in the shared Dashboard Folder as a Dynamic Dashboard."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 34,
+    "module": "Salesforce Certified Administrator",
+    "question": "Salesforce users at Universal Containers complain that global search returns too many records. Which two configurations should a System Platform Administrator perform to help users manage search results?",
+    "options": [
+      "Specify the Keywords and include them into the object's search layout.",
+      "Specify the Search Filter Fields for the object's search layout.",
+      "Enable Sidebar Search Auto-Complete in the object's search settings.",
+      "Reduce the number of records displayed for each object in the Search Results page."
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": 35,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar is experiencing quality assurance issues with a product line. A platform administrator needs to use a standard object to track the extent of the problem. Which standard object should be used?",
+    "options": [
+      "Opportunity",
+      "Product",
+      "Account",
+      "Case"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 36,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar has an opportunity record with a close date of November 15, which fulfills the criteria of a time-dependent workflow rule. The time-dependent action is scheduled for November 8. The opportunity is edited before November 8, however, and no longer meets the criteria. What happens to the time-dependent action?",
+    "options": [
+      "It is put on hold.",
+      "It will execute on November 8.",
+      "It is automatically removed from the queue.",
+      "It will execute on November 15."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 37,
+    "module": "Salesforce Certified Administrator",
+    "question": "How can multiple Campaign records be associated with a single Opportunity?",
+    "options": [
+      "Primary Campaign Source",
+      "Campaign Influence",
+      "Campaign Hierarchy",
+      "Campaign Members"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 38,
+    "module": "Salesforce Certified Administrator",
+    "question": "A user is unable to log in to Salesforce. What should a Salesforce platform administrator do?",
+    "options": [
+      "Unlock the User.",
+      "View the user's login history.",
+      "Ask the user to change their password.",
+      "Change the user's profile."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 39,
+    "module": "Salesforce Certified Administrator",
+    "question": "A new approval process is being adapted by Ursa Major Solar. After an opportunity has been approved, the contract is sent to the customer for signature as the final step in that process. How can the platform administrator implement this functionality?",
+    "options": [
+      "Use the Salesforce Autosign flow.",
+      "Check the \"Send PDF\" box on the approval process setup.",
+      "Hire a consulting firm to develop a document signing workflow.",
+      "Install an app from the AppExchange."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 40,
+    "module": "Salesforce Certified Administrator",
+    "question": "At Ursa Major Solar, Sales representatives use a custom report type for Account reports. New fields have been created on the Account Object. A platform administrator needs to report on the newly created fields. What should the platform administrator do to achieve this goal?",
+    "options": [
+      "From the Custom Report Type, Edit Layout, then add the new fields to the report.",
+      "Create a new account report and add the new fields from the Report Builder.",
+      "Create a new account report folder, go to share, and then add the new fields.",
+      "From the Custom Report Type, Edit Object Relationships, then add the new fields to the report."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 41,
+    "module": "Salesforce Certified Administrator",
+    "question": "The platform administrator at Cloud Kicks want to update the Account with the number of records on a custom object. How should the platform administrator fulfill this requirement?",
+    "options": [
+      "Create a Formula",
+      "Create a Process",
+      "Create a Workflow Rule",
+      "Create a Flow"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 42,
+    "module": "Salesforce Certified Administrator",
+    "question": "How can a System Platform Administrator discover who added a field to the account page layout?",
+    "options": [
+      "Create a poll in the Admin Chatter group.",
+      "Download the Setup Audit Trail.",
+      "Review the Account Last Modified By field.",
+      "Run an Account History report."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 43,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar needs a case to be automatically created. Which three features can a platform administrator use to accomplish this goal?",
+    "options": [
+      "SMS-to-case",
+      "Email-to-case",
+      "Lightning for Outlook",
+      "Web-to-case",
+      "Process Builder"
+    ],
+    "correctAnswers": [
+      1,
+      3,
+      4
+    ]
+  },
+  {
+    "id": 44,
+    "module": "Salesforce Certified Administrator",
+    "question": "In which situation is the Case Contact notified when a support representative adds a new case comment?",
+    "options": [
+      "The Support Representative posts the comment to the Case Chatter Feed.",
+      "The System Platform Administrator enables Case Comment Notification to Contacts.",
+      "The Support Representative uses the Send Email Action on the Case Feed.",
+      "The System Platform Administrator configures the Case Auto-Response Rules."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 45,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar has the following environment and requirements: Critical, high-priority accounts have an assigned District Manager, Sales Representative, Inside Sales Representative, and Customer Service Representative. The Sales Manager wants to prevent these accounts from being inadvertently contacted more than once on the same day. The Sales Manager wants to report on various customer interactions. How should the platform administrator fulfill these requirements?",
+    "options": [
+      "Enter comments into the notes section on the account.",
+      "Post customer interactions in Chatter on the account.",
+      "Log a separate task, call, or activity on the account.",
+      "Log a case on the account."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 46,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar recently acquired a company whose sales team has a unique sales process, with stages that are different from the current setup of stages in Salesforce. The Chief Technology Officer (CTO) has decided that the new sales team should NOT change their process at all. What should the platform administrator do to incorporate the new sales team's process?",
+    "options": [
+      "Create new values for the opportunity stage field and use field-level security to control which teams see which fields.",
+      "Create new values for the opportunity stage field; order them so that the new Sales team's values are at the bottom of the picklist.",
+      "Create a record type and page layout for the new sales team and a custom field for the new stages.",
+      "Create new values for the opportunity stage field; create a new sales process assigned to a custom record type for the new sales team."
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 47,
+    "module": "Salesforce Certified Administrator",
+    "question": "A Finance user with the \"View All Data\" permission enabled sees no Opportunities when opening a Sales pipeline report. However, a Sales Rep sees Opportunities as expected. Which two actions should a System Platform Administrator perform to resolve this problem?",
+    "options": [
+      "Update the report filter to show All Opportunities.",
+      "Change the Org-Wide Opportunity Sharing Default to Public Read.",
+      "Select Save Hierarchy Level on the pipeline report.",
+      "Create a Custom Report Type for the user that shows all records."
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ]
+  },
+  {
+    "id": 48,
+    "module": "Salesforce Certified Administrator",
+    "question": "A Delegated Platform Administrator at Universal Containers cannot edit the Created Date field for the Account record. What reason should the System Platform Administrator give for why this is occurring?",
+    "options": [
+      "This is a System Audit field and it is Read-Only for existing records.",
+      "This field is Read-Only in Field-Level Security settings.",
+      "This field is defined as Read-Only on the Page Layout.",
+      "This user does not have Edit permissions on the Account object."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 49,
+    "module": "Salesforce Certified Administrator",
+    "question": "What are two ways to customize basic reports using Lightning Experience?",
+    "options": [
+      "By adding a Lightning Component",
+      "By adding a filter",
+      "By adding a chart",
+      "By adding links to external pages"
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 50,
+    "module": "Salesforce Certified Administrator",
+    "question": "The Password Policy shows that the length of time until passwords expire is 90 days. However, some users find that their passwords expire every 30 days. Where should the System Platform Administrator change the password expiration period for these users?",
+    "options": [
+      "Profiles assigned to the Users",
+      "Roles assigned to the Users",
+      "Permission Sets assigned to the Users",
+      "Individual User records"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 51,
+    "module": "Salesforce Certified Administrator",
+    "question": "Recently, one of Ursa Major Solar's (UMS) competitors lost critical data after a powerful hurricane caused multiple power outages. UMS needs to ensure that its Salesforce data is backed up and protected from such an event. Which two statements are true regarding this goal?",
+    "options": [
+      "UMS can use Salesforce's daily backup service, which is provided via a zip file.",
+      "UMS should contact Salesforce Support for a free backup.",
+      "UMS can download an app from the AppExchange.",
+      "UMS can use Salesforce's weekly or monthly backup service, which is provided via a zip file."
+    ],
+    "correctAnswers": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": 52,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar needs to fulfill the following requirements: A custom object must be created to capture account survey data. Users need the ability to select an account from the survey record and view related surveys on the account record. Which two actions can a platform administrator configure to meet these requirements?",
+    "options": [
+      "Create a lookup relationship field on the account object.",
+      "Create a lookup relationship field on the survey object.",
+      "Put the account related list on the survey page layout.",
+      "Put the survey related list on the account page layout."
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": 53,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers regularly imports Accounts from an external order system that has its own ID field for each record. What should the System Platform Administrator do to help prevent duplicates during these imports?",
+    "options": [
+      "Create a unique External ID field on Accounts in Salesforce for matching.",
+      "Use the ID from the order system in place of the Salesforce ID.",
+      "Create a formula field that identifies matches.",
+      "Use VLOOKUP to find matching records in Salesforce."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 54,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which feature should Ursa Major Solar use if they want their support agents who are skilled in a particular product line to own cases directly after customers log them from an automated channel?",
+    "options": [
+      "Workflow field update",
+      "Case escalation rules",
+      "Assignment rules",
+      "Case team routing"
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 55,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar's platform administrator created a new account record type, but when marketing users are creating new account records, they are unable to choose the new record type. What are two potential causes of this issue?",
+    "options": [
+      "The record type default setting is disabled.",
+      "The record type is disassociated from the page layout.",
+      "The record type is disabled on the marketing user profile.",
+      "The record type is deactivated."
+    ],
+    "correctAnswers": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": 56,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers wants Sales Reps to process credit card payments when an Opportunity is Closed Won. Which approach should the System Platform Administrator use to enable this feature?",
+    "options": [
+      "Create a Workflow Rule Email Alert to notify Finance.",
+      "Add payment detail custom fields to the Opportunity.",
+      "Install an AppExchange credit card payment package.",
+      "Build a standard Visualforce page and Salesforce site."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 57,
+    "module": "Salesforce Certified Administrator",
+    "question": "Users at Universal Containers (UC) adhere to the following process for expense reports: Create the expense report. Attach receipts in an Expenses app. Send the report to the accountant to review and approve. A platform administrator needs to enable this app for Salesforce Mobile. What should the platform administrator consider from the User's perspective?",
+    "options": [
+      "A user can utilize Search, create list views, and receive record push notifications from Chatter.",
+      "A user can create records, attach receipts as photos, and submit for approval.",
+      "A user can search Salesforce Records, attach receipts as photos, and approve records from Chatter.",
+      "A user can create list views, attach receipts as photos, and submit records for approval."
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 58,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which Salesforce tool should a platform administrator use to better understand all of the configuration changes that have been made from January 1 through July 1?",
+    "options": [
+      "Setup Audit Trail",
+      "Custom Report Type",
+      "Network Access Settings",
+      "Debug Log"
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 59,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar uses data from the grand total of a custom report to create their dashboard. Which two components will populate the grand total properly?",
+    "options": [
+      "Metric",
+      "Gauge",
+      "Chart",
+      "Table"
+    ],
+    "correctAnswers": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": 60,
+    "module": "Salesforce Certified Administrator",
+    "question": "A user's profile can be controlled by which three settings?",
+    "options": [
+      "Assigned apps",
+      "Security at the field-level",
+      "Feature license assignment",
+      "Record type assignment",
+      "Locale settings"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      3
+    ]
+  },
+  {
+    "id": 61,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers wants to create a field to store credit card numbers and needs to make sure the information is protected. Which two actions allow the System Platform Administrator to provide enhanced security for this field?",
+    "options": [
+      "Use different Record Types for users.",
+      "Create an Encrypted Text field.",
+      "Configure different Page Layouts for users.",
+      "Update Field-Level Security settings."
+    ],
+    "correctAnswers": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": 62,
+    "module": "Salesforce Certified Administrator",
+    "question": "What are two reasons a user cannot be deactivated?",
+    "options": [
+      "The user account is frozen.",
+      "The user is a Customer Community Platform Administrator.",
+      "The user is the recipient of Workflow Email Alerts.",
+      "The user is the Owner of open Opportunities."
+    ],
+    "correctAnswers": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 63,
+    "module": "Salesforce Certified Administrator",
+    "question": "Universal Containers sells through many different reseller networks. Each reseller's deals are tracked on separate opportunities. The sales manager is concerned that the pipeline report is not accurate due to multiple opportunities for the same end customer. How should the sales process be modified to ensure opportunities are not double-counted in the pipeline?",
+    "options": [
+      "Change the amount on the duplicate opportunities to zero.",
+      "Enable duplicate management to prevent the creation of the duplicate opportunities.",
+      "Change the forecast category to Omitted on the duplicate opportunities.",
+      "Create one opportunity and use the competitors related list to track the different resellers."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 64,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar has a private sharing model on opportunities. Leadership has asked the platform administrator to create a new custom object that will track customer payment information and will link to the opportunity. Only those users with access to the opportunity should be able to see the records on the new object. What should the platform administrator create to achieve this goal?",
+    "options": [
+      "A master-detail relationship with a criteria-based sharing rule",
+      "A master-detail relationship with profile permissions",
+      "A lookup relationship with profile permissions",
+      "A lookup relationship with a criteria-based sharing rule"
+    ],
+    "correctAnswers": [
+      1
+    ]
+  },
+  {
+    "id": 65,
+    "module": "Salesforce Certified Administrator",
+    "question": "Users at Ursa Major Solar are trying to create Opportunities. When populating a custom picklist field, the users receive errors. Additionally, when the users select either of the two values in the picklist, they receive different error messages above the field and are unable to save the Opportunities. Why is this error likely occurring?",
+    "options": [
+      "The picklist field has contradicting validation rules.",
+      "The two picklist values are unavailable to the Record Type.",
+      "The users don't have access to the picklist field.",
+      "The users don't have access to the Large Enterprise Record Type."
+    ],
+    "correctAnswers": [
+      0
+    ]
+  },
+  {
+    "id": 66,
+    "module": "Salesforce Certified Administrator",
+    "question": "A Platform Administrator at Ursa Major Solar is converting a lead and needs to capture custom lead data on the converted contact. What should the platform administrator do to accomplish this goal?",
+    "options": [
+      "Utilize the lead conversion wizard to select the fields.",
+      "Map custom lead fields to standard contact fields.",
+      "Map custom lead fields to custom contact fields.",
+      "Utilize the data loader to move the custom lead data."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  },
+  {
+    "id": 67,
+    "module": "Salesforce Certified Administrator",
+    "question": "Which two actions should a platform administrator perform to provide a sales team with an easy solution for gathering customer requirements and sharing presentations with their customers?",
+    "options": [
+      "Add customers to libraries.",
+      "Ensure opportunity teams are created for customers.",
+      "Use Salesforce Files to post presentations in Chatter.",
+      "Add customers to private Chatter groups."
+    ],
+    "correctAnswers": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": 68,
+    "module": "Salesforce Certified Administrator",
+    "question": "Support Representatives at Universal Containers want the same Technical Engineer group to be associated with each new Case. What should a System Platform Administrator define to implement this requirement?",
+    "options": [
+      "A Default Case Team on each User's record",
+      "A Workflow Rule to add the Case Team",
+      "A Default Case Team on each Account record",
+      "A Case Assignment Rule to associate the Case Team"
+    ],
+    "correctAnswers": [
+      3
+    ]
+  },
+  {
+    "id": 69,
+    "module": "Salesforce Certified Administrator",
+    "question": "Ursa Major Solar (USM) has a Web-to-Case form on its Lightning Customer Community. USM wants to separate Cases into the following product categories: Residential, Lots/Land, Commercial. USM has added a picklist field to store this data. How can the Case be automatically placed in the correct queue upon submission?",
+    "options": [
+      "Create an Escalation Rule entry for each picklist value and set to zero minutes.",
+      "Create Record Types for each picklist value and a Business Process to move each Case to the correct Queue.",
+      "Create Assignment Rules based on the picklist values to move Cases to a Queue.",
+      "Create Record Types for each picklist value and assign to each product team's profile."
+    ],
+    "correctAnswers": [
+      2
+    ]
+  }
+]

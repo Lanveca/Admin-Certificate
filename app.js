@@ -30,7 +30,7 @@ class QuestionBank {
     }
   }
 
-  // NUEVO: Carga el archivo Unicas.json de la raíz
+  // Carga el archivo Unicas.json de la raíz
   async loadUnicas() {
     try {
       const response = await fetch('Unicas.json');
@@ -39,6 +39,20 @@ class QuestionBank {
       return data;
     } catch (error) {
       alert('No se pudo cargar Unicas.json. Asegúrate de que esté en la carpeta raíz.');
+      return null;
+    }
+  }
+
+  // NUEVO: Carga el archivo APP EXTERNA.JSON de la raíz
+  async loadAppExterna() {
+    try {
+      // Nota: Asegúrate de que el nombre del archivo coincida exactamente (mayúsculas/espacios)
+      const response = await fetch('APP EXTERNA.JSON');
+      if (!response.ok) throw new Error('Archivo no encontrado');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      alert('No se pudo cargar APP EXTERNA.JSON. Asegúrate de que esté en la carpeta raíz.');
       return null;
     }
   }
@@ -140,6 +154,14 @@ function showOfficialExamsMenu() {
   btnUnicas.onclick = () => selectOfficialModeType('unicas');
   grid.appendChild(btnUnicas);
 
+  // --- NUEVO BOTÓN: APP EXTERNA ---
+  const btnAppExterna = document.createElement('button');
+  btnAppExterna.textContent = '★ APP EXTERNA';
+  btnAppExterna.style.fontWeight = 'bold'; 
+  btnAppExterna.style.border = '2px solid #0070d2'; // Mismo estilo resaltado
+  btnAppExterna.onclick = () => selectOfficialModeType('app-externa');
+  grid.appendChild(btnAppExterna);
+
   // Generar botones del 1 al 11
   for (let i = 1; i <= 11; i++) {
     const btn = document.createElement('button');
@@ -149,14 +171,23 @@ function showOfficialExamsMenu() {
   }
 }
 
-// examIdentifier puede ser un número (1-11) o el string 'unicas'
+// examIdentifier puede ser un número (1-11), 'unicas' o 'app-externa'
 function selectOfficialModeType(examIdentifier) {
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
   createBackButton(appDiv, showOfficialExamsMenu);
 
   const isUnicas = examIdentifier === 'unicas';
-  const titleText = isUnicas ? 'Examen Únicas' : `Examen Oficial ${examIdentifier}`;
+  const isAppExterna = examIdentifier === 'app-externa';
+  
+  let titleText = '';
+  if (isUnicas) {
+    titleText = 'Examen Únicas';
+  } else if (isAppExterna) {
+    titleText = 'Examen App Externa';
+  } else {
+    titleText = `Examen Oficial ${examIdentifier}`;
+  }
 
   const title = document.createElement('h2');
   title.textContent = titleText;
@@ -169,6 +200,7 @@ function selectOfficialModeType(examIdentifier) {
   // Helper para cargar las preguntas correctas según el ID
   const loadQuestions = async () => {
     if (isUnicas) return await app.loadUnicas();
+    if (isAppExterna) return await app.loadAppExterna();
     return await app.loadOfficialExam(examIdentifier);
   };
 
