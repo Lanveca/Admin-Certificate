@@ -30,8 +30,21 @@ class QuestionBank {
     }
   }
 
+  // NUEVO: Carga el archivo Unicas.json de la raíz
+  async loadUnicas() {
+    try {
+      const response = await fetch('Unicas.json');
+      if (!response.ok) throw new Error('Archivo no encontrado');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      alert('No se pudo cargar Unicas.json. Asegúrate de que esté en la carpeta raíz.');
+      return null;
+    }
+  }
+
   assignUnits(questions) {
-    // Mapeo de palabras clave a unidades (puedes ajustarlo si cambian los módulos)
+    // Mapeo de palabras clave a unidades
     const units_keywords = {
       'Configuration and Setup': 'Configuration and Setup',
       'Object Manager': 'Object Manager and Lightning App Builder',
@@ -119,6 +132,14 @@ function showOfficialExamsMenu() {
   grid.className = 'exam-grid';
   appDiv.appendChild(grid);
 
+  // --- BOTÓN EXAMEN ÚNICAS ---
+  const btnUnicas = document.createElement('button');
+  btnUnicas.textContent = '★ EXAMEN ÚNICAS';
+  btnUnicas.style.fontWeight = 'bold'; 
+  btnUnicas.style.border = '2px solid #0070d2'; // Resaltar estilo Salesforce
+  btnUnicas.onclick = () => selectOfficialModeType('unicas');
+  grid.appendChild(btnUnicas);
+
   // Generar botones del 1 al 11
   for (let i = 1; i <= 11; i++) {
     const btn = document.createElement('button');
@@ -128,36 +149,45 @@ function showOfficialExamsMenu() {
   }
 }
 
-function selectOfficialModeType(examNumber) {
+// examIdentifier puede ser un número (1-11) o el string 'unicas'
+function selectOfficialModeType(examIdentifier) {
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
   createBackButton(appDiv, showOfficialExamsMenu);
 
+  const isUnicas = examIdentifier === 'unicas';
+  const titleText = isUnicas ? 'Examen Únicas' : `Examen Oficial ${examIdentifier}`;
+
   const title = document.createElement('h2');
-  title.textContent = `Examen Oficial ${examNumber}`;
+  title.textContent = titleText;
   appDiv.appendChild(title);
 
   const subtitle = document.createElement('h3');
   subtitle.textContent = 'Elige el modo de realización:';
   appDiv.appendChild(subtitle);
 
+  // Helper para cargar las preguntas correctas según el ID
+  const loadQuestions = async () => {
+    if (isUnicas) return await app.loadUnicas();
+    return await app.loadOfficialExam(examIdentifier);
+  };
+
   // Opción A: Modo Examen (Sin feedback hasta el final)
   createButton(appDiv, 'Modo Examen (Nota al final)', async () => {
-    let questions = await app.loadOfficialExam(examNumber);
+    let questions = await loadQuestions();
     if (questions) {
-        // MEZCLAR PREGUNTAS ANTES DE EMPEZAR
         questions = mezclarArray(questions);
-        startClassicExam(questions, `Oficial ${examNumber}`);
+        startClassicExam(questions, titleText);
     }
   });
 
   // Opción B: Modo Estudio (Bloqueante)
   createButton(appDiv, 'Modo Estudio (Corregir al momento)', async () => {
-    let questions = await app.loadOfficialExam(examNumber);
+    let questions = await loadQuestions();
     if (questions) {
-        // MEZCLAR PREGUNTAS ANTES DE EMPEZAR
         questions = mezclarArray(questions);
-        startBlockingStudyMode(questions, `Oficial ${examNumber}`);
+        // Pasamos examIdentifier explícitamente para gestionar el botón "Volver"
+        startBlockingStudyMode(questions, titleText, examIdentifier);
     }
   });
 }
@@ -168,12 +198,11 @@ function selectOfficialModeType(examNumber) {
 function startUnitQuiz(unit) {
   currentQuestions = app.questions.filter(q => q.unit === unit);
   currentIndex = 0;
-  renderQuestionWithFeedback(currentQuestions[currentIndex], unit, false);
+  renderQuestionWithFeedback(currentQuestions[currentIndex], unit);
 }
 
 // 2. MODO EXAMEN GENERAL (Aleatorio 60 preguntas, nota al final)
 function startGeneralExamMode() {
-  // Mezclar y coger 60
   const shuffled = [...app.questions].sort(() => 0.5 - Math.random());
   currentQuestions = shuffled.slice(0, 60);
   currentIndex = 0;
@@ -190,17 +219,16 @@ function startClassicExam(questions, title) {
 }
 
 // 4. MODO ESTUDIO OFICIAL (Bloqueante, sin explicación, solo Correcto/Incorrecto)
-function startBlockingStudyMode(questions, title) {
+function startBlockingStudyMode(questions, title, examId) {
   currentQuestions = questions;
   currentIndex = 0;
-  renderBlockingQuestion(currentQuestions[currentIndex], title);
+  renderBlockingQuestion(currentQuestions[currentIndex], title, examId);
 }
 
 // --- RENDERS DE PREGUNTAS ---
 
-// Renderizador A: Para Units (Muestra explicación)
-function renderQuestionWithFeedback(question, titleContext, isBlocking) {
-  // Este lo usamos para UNITS (comportamiento original)
+// Renderizador A: Para Units (Muestra explicación y botón siguiente)
+function renderQuestionWithFeedback(question, titleContext) {
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
   createBackButton(appDiv, showMainMenu);
@@ -221,12 +249,12 @@ function renderQuestionWithFeedback(question, titleContext, isBlocking) {
     disableOptions();
 
     const isCorrect = validateAnswer(question, selected);
-    showFeedbackMessage(appDiv, isCorrect, question.explanation || "Sin explicación adicional."); // Mostrar explicación en Units
+    showFeedbackMessage(appDiv, isCorrect, question.explanation || "Sin explicación adicional.");
     
     createNextButton(appDiv, () => {
         currentIndex++;
         if (currentIndex < currentQuestions.length) {
-            renderQuestionWithFeedback(currentQuestions[currentIndex], titleContext, isBlocking);
+            renderQuestionWithFeedback(currentQuestions[currentIndex], titleContext);
         } else {
             showEndScreen(titleContext, false);
         }
@@ -263,7 +291,7 @@ function renderClassicExamQuestion(question, titleContext) {
   nextBtn.textContent = (currentIndex < currentQuestions.length - 1) ? 'Siguiente' : 'Finalizar Examen';
   nextBtn.onclick = () => {
     const selected = getSelectedOptions();
-    // En examen permitimos dejar en blanco? Asumiremos que sí o cuenta como mal.
+    // Guardamos la respuesta del usuario
     userAnswers.push({ question, selected });
     
     currentIndex++;
@@ -277,10 +305,12 @@ function renderClassicExamQuestion(question, titleContext) {
 }
 
 // Renderizador C: Para Modo Estudio Oficial (Bloqueante)
-function renderBlockingQuestion(question, titleContext) {
+function renderBlockingQuestion(question, titleContext, examId) {
   const appDiv = document.getElementById('app');
   appDiv.innerHTML = '';
-  createBackButton(appDiv, () => selectOfficialModeType(parseInt(titleContext.replace('Oficial ', ''))));
+  
+  // Botón volver que sabe regresar a la selección de modos usando examId
+  createBackButton(appDiv, () => selectOfficialModeType(examId));
 
   const info = document.createElement('p');
   info.textContent = `${titleContext} (Estudio): Pregunta ${currentIndex + 1} de ${currentQuestions.length}`;
@@ -297,11 +327,11 @@ function renderBlockingQuestion(question, titleContext) {
   appDiv.appendChild(actionBtn);
 
   actionBtn.onclick = () => {
-    // Si el botón dice "Siguiente", avanzamos
+    // Si el botón ya cambió a "Siguiente", avanzamos
     if (actionBtn.textContent === 'Siguiente') {
         currentIndex++;
         if (currentIndex < currentQuestions.length) {
-            renderBlockingQuestion(currentQuestions[currentIndex], titleContext);
+            renderBlockingQuestion(currentQuestions[currentIndex], titleContext, examId);
         } else {
             showEndScreen(titleContext, false);
         }
@@ -318,20 +348,20 @@ function renderBlockingQuestion(question, titleContext) {
         // Correcto: Bloquear, mostrar verde y cambiar botón
         disableOptions();
         feedbackDiv.className = 'feedback-msg feedback-correct';
-        feedbackDiv.textContent = '¡Correcto!';
+        // Mostramos explicación si existe, si no, solo Correcto
+        feedbackDiv.innerHTML = `<strong>¡Correcto!</strong><br/>${question.explanation || ''}`;
         actionBtn.textContent = 'Siguiente';
     } else {
         // Incorrecto: Solo mensaje rojo, NO bloquear, permitir reintentar
         feedbackDiv.className = 'feedback-msg feedback-incorrect';
         feedbackDiv.textContent = 'Incorrecto. Inténtalo de nuevo.';
-        // No cambiamos el botón, el usuario debe cambiar su selección y darle a Comprobar otra vez
+        // No cambiamos el botón, el usuario debe cambiar su selección
     }
   };
 }
 
 // --- FUNCIONES AUXILIARES ---
 
-// FUNCIÓN DE MEZCLA (Fisher-Yates Shuffle)
 function mezclarArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -373,7 +403,7 @@ function renderQuestionTextAndOptions(parent, question) {
   question.options.forEach((opt, idx) => {
     const label = document.createElement('label');
     const input = document.createElement('input');
-    // Determinar si es radio o checkbox
+    // Checkbox si hay múltiples respuestas, radio si es única
     input.type = (question.correctAnswers && question.correctAnswers.length > 1) ? 'checkbox' : 'radio';
     input.name = 'option';
     input.value = idx;
@@ -395,7 +425,6 @@ function disableOptions() {
 }
 
 function validateAnswer(question, selected) {
-  // Compara arrays de índices
   if (!question.correctAnswers) return false;
   if (selected.length !== question.correctAnswers.length) return false;
   const sortedSelected = selected.sort().toString();
@@ -418,7 +447,7 @@ function createNextButton(parent, onClick) {
   parent.appendChild(btn);
 }
 
-// PANTALLAS FINALES
+// --- PANTALLAS FINALES ---
 
 function showEndScreen(title, showScore) {
   const appDiv = document.getElementById('app');
@@ -468,7 +497,7 @@ function showExamResults(title) {
 
     failed.forEach((item, i) => {
        const block = document.createElement('div');
-       block.className = 'incorrect-review-block'; // Clase existente en tu CSS
+       block.className = 'incorrect-review-block'; // Asegúrate de tener esta clase en styles.css
        block.innerHTML = `
          <p><strong>Pregunta:</strong> ${item.question.question}</p>
          <p style="color:red">Tu respuesta: ${item.selected.map(idx => item.question.options[idx]).join(', ') || 'Ninguna'}</p>
